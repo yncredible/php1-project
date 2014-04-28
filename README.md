@@ -1,4 +1,19 @@
-php1-project
-============
+#OpenTable
 
-The PHP1 project repo - reinventing the restaurant business
+>##Project PHP 1
+Reinventing the restaurant business
+
+Contributors:
+
+* Kimberly Gysbrecht-Segers
+* Kristof Van Espen 
+* Yannick Nijs
+* Jens Ivens
+
+---
+---
+
+	
+
+
+
