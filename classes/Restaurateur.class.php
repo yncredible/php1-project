@@ -151,5 +151,34 @@
 			}
 			return $available;
 		}
+
+		public function Login($email, $password)
+		{
+			$db = new Db();
+
+			//hash the password first
+			$hashedPass = md5($password . $this->salt);
+
+			//check if the given email matches the given password
+			$sql = "SELECT * FROM restaurateur WHERE owner_email = '$email' AND owner_password = '$hashedPass'";
+
+			$result = $db->conn->query($sql);
+
+			$countRecords_Account = mysqli_num_rows($result);
+			echo $countRecords_Account;
+			if($result)
+			{
+				//if the inputs match and only 1 record gets thrown, give him an idintification key
+				if($countRecords_Account == 1)
+				{
+					$_SESSION['ownerIdentity'] = $email;
+				}
+				//if they don't match, throw an error and no key
+				else
+				{
+					$this->errors['errorLogin'] = "Your email and/or password are wrong!";
+				}
+			}
+		}
 	}
  ?>
