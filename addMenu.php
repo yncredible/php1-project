@@ -1,4 +1,10 @@
  <?php
+ 	session_start();
+ 	
+ 	if(!isset($_SESSION['ownerIdentity']))
+ 	{
+ 		header("location: login.php");
+ 	}
 
 	if(!empty($_POST))
 	{
