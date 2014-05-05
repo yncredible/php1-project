@@ -96,15 +96,6 @@
 
 			$sql = "insert INTO restaurant (restaurant_name, restaurant_street, restaurant_number, restaurant_postalCode, restaurant_city, restaurant_email, restaurant_website, owner_id)
 						VALUES (
-<<<<<<< HEAD
-									'". $this->nameRestaurant."',
-									'". $this->streetRestaurant."',
-									'". $this->numberRestaurant."',
-									'". $this->postalcodeRestaurant."',
-									'". $this->cityRestaurant."',
-									'". $this->emailRestaurant."',
-									'". $this->websiteRestaurant."',
-=======
 									'". $db->conn->real_escape_string($this->nameRestaurant)."',
 									'". $db->conn->real_escape_string($this->streetRestaurant)."',
 									'". $db->conn->real_escape_string($this->numberRestaurant)."',
@@ -112,7 +103,6 @@
 									'". $db->conn->real_escape_string($this->cityRestaurant)."',
 									'". $db->conn->real_escape_string($this->emailRestaurant)."',
 									'". $db->conn->real_escape_string($this->websiteRestaurant)."',
->>>>>>> updateBranch
 									'". $ownerID."'
 								)";
 
