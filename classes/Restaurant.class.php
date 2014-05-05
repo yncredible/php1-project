@@ -96,6 +96,7 @@
 
 			$sql = "insert INTO restaurant (restaurant_name, restaurant_street, restaurant_number, restaurant_postalCode, restaurant_city, restaurant_email, restaurant_website, owner_id)
 						VALUES (
+<<<<<<< HEAD
 									'". $this->nameRestaurant."',
 									'". $this->streetRestaurant."',
 									'". $this->numberRestaurant."',
@@ -103,10 +104,36 @@
 									'". $this->cityRestaurant."',
 									'". $this->emailRestaurant."',
 									'". $this->websiteRestaurant."',
+=======
+									'". $db->conn->real_escape_string($this->nameRestaurant)."',
+									'". $db->conn->real_escape_string($this->streetRestaurant)."',
+									'". $db->conn->real_escape_string($this->numberRestaurant)."',
+									'". $db->conn->real_escape_string($this->postalcodeRestaurant)."',
+									'". $db->conn->real_escape_string($this->cityRestaurant)."',
+									'". $db->conn->real_escape_string($this->emailRestaurant)."',
+									'". $db->conn->real_escape_string($this->websiteRestaurant)."',
+>>>>>>> updateBranch
 									'". $ownerID."'
 								)";
 
-			$db->conn->query($sql);
+			$result = $db->conn->query($sql);
+
+
+			if($result)
+				{
+					$sql2 = "SELECT restaurant_id FROM restaurant WHERE restaurant_name = '$this->nameRestaurant' AND restaurant_city = '$this->cityRestaurant' AND restaurant_number = '$this->numberRestaurant'" ;
+
+					$result2 = $db->conn->query($sql2);
+
+					if($result2)
+					{
+						$results = mysqli_fetch_array($result2, MYSQL_ASSOC);
+
+						$restaurantID = $results['restaurant_id'];
+						
+						$_SESSION['restaurantIdentity'] = $restaurantID;
+					}
+				}
 			
 
 		}
