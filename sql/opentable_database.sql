@@ -1,32 +1,25 @@
--- phpMyAdmin SQL Dump
--- version 3.5.2.2
--- http://www.phpmyadmin.net
---
--- Machine: 127.0.0.1
--- Genereertijd: 05 mei 2014 om 19:17
--- Serverversie: 5.5.27
--- PHP-versie: 5.4.7
+/*
+Navicat MySQL Data Transfer
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+Source Server         : dbs
+Source Server Version : 50611
+Source Host           : localhost:3306
+Source Database       : opentable
 
+Target Server Type    : MYSQL
+Target Server Version : 50611
+File Encoding         : 65001
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+Date: 2014-05-05 21:02:43
+*/
 
---
--- Databank: `opentable`
---
+SET FOREIGN_KEY_CHECKS=0;
 
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `menu`
---
-
-CREATE TABLE IF NOT EXISTS `menu` (
+-- ----------------------------
+-- Table structure for `menu`
+-- ----------------------------
+DROP TABLE IF EXISTS `menu`;
+CREATE TABLE `menu` (
   `menu_id` int(11) NOT NULL AUTO_INCREMENT,
   `menu_name` longtext NOT NULL,
   `menu_description` longtext NOT NULL,
@@ -34,15 +27,18 @@ CREATE TABLE IF NOT EXISTS `menu` (
   `menu_category` varchar(255) NOT NULL,
   `restaurant_id` int(11) NOT NULL,
   PRIMARY KEY (`menu_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of menu
+-- ----------------------------
+INSERT INTO `menu` VALUES ('1', 'Balletjes', 'met tomatensaus', '500', 'hoofdgerecht', '25');
 
---
--- Tabelstructuur voor tabel `openinghours`
---
-
-CREATE TABLE IF NOT EXISTS `openinghours` (
+-- ----------------------------
+-- Table structure for `openinghours`
+-- ----------------------------
+DROP TABLE IF EXISTS `openinghours`;
+CREATE TABLE `openinghours` (
   `opening_id` int(11) NOT NULL AUTO_INCREMENT,
   `opening_monday_from` time NOT NULL,
   `opening_monday_until` time NOT NULL,
@@ -61,15 +57,17 @@ CREATE TABLE IF NOT EXISTS `openinghours` (
   `opening_remarks` longtext NOT NULL,
   `restaurant_id` int(11) NOT NULL,
   PRIMARY KEY (`opening_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of openinghours
+-- ----------------------------
 
---
--- Tabelstructuur voor tabel `order`
---
-
-CREATE TABLE IF NOT EXISTS `order` (
+-- ----------------------------
+-- Table structure for `order`
+-- ----------------------------
+DROP TABLE IF EXISTS `order`;
+CREATE TABLE `order` (
   `order_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_quantity` int(11) NOT NULL,
   `order_price` int(11) NOT NULL,
@@ -77,48 +75,63 @@ CREATE TABLE IF NOT EXISTS `order` (
   `menu_id` int(11) NOT NULL,
   `table_id` int(11) NOT NULL,
   PRIMARY KEY (`order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of order
+-- ----------------------------
 
---
--- Tabelstructuur voor tabel `restaurant`
---
-
-CREATE TABLE IF NOT EXISTS `restaurant` (
+-- ----------------------------
+-- Table structure for `restaurant`
+-- ----------------------------
+DROP TABLE IF EXISTS `restaurant`;
+CREATE TABLE `restaurant` (
   `restaurant_id` int(11) NOT NULL AUTO_INCREMENT,
   `restaurant_name` varchar(255) NOT NULL,
   `restaurant_street` varchar(255) NOT NULL,
-  `restaurant_housenr` varchar(5) NOT NULL,
-  `restaurant_postalcode` varchar(255) NOT NULL,
+  `restaurant_number` int(6) NOT NULL,
+  `restaurant_postalCode` int(6) NOT NULL,
   `restaurant_city` varchar(255) NOT NULL,
   `restaurant_email` varchar(255) NOT NULL,
   `restaurant_website` varchar(255) NOT NULL,
   `owner_id` int(11) NOT NULL,
+  `menu_id` int(11) NOT NULL,
+  `openingHours_id` int(11) NOT NULL,
   PRIMARY KEY (`restaurant_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of restaurant
+-- ----------------------------
+INSERT INTO `restaurant` VALUES ('1', 'Segers', 'Em van der velde straat', '97', '2830', 'Willebroek', 'kimberlygs@hotmail.be', 'www.hallo.com', '0', '0', '0');
+INSERT INTO `restaurant` VALUES ('2', 'Segers', 'Em van der velde straat', '97', '2830', 'Willebroek', 'kimberlygs@hotmail.be', 'www.hallo.com', '0', '0', '0');
+INSERT INTO `restaurant` VALUES ('3', 'Pizza Hut', 'Markt', '3', '1840', 'Londerzeel', 'pizzahut@pizza.be', 'www.pizza.be', '25', '0', '0');
 
---
--- Tabelstructuur voor tabel `restaurateur`
---
-
-CREATE TABLE IF NOT EXISTS `restaurateur` (
+-- ----------------------------
+-- Table structure for `restaurateur`
+-- ----------------------------
+DROP TABLE IF EXISTS `restaurateur`;
+CREATE TABLE `restaurateur` (
   `owner_id` int(11) NOT NULL AUTO_INCREMENT,
   `owner_name` varchar(255) NOT NULL,
   `owner_email` varchar(255) NOT NULL,
   `owner_password` varchar(255) NOT NULL,
   PRIMARY KEY (`owner_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of restaurateur
+-- ----------------------------
+INSERT INTO `restaurateur` VALUES ('25', 'Kristof', 'krisvanespen@hotmail.com', 'b6a460f0cad54e15bb99c45276125e09');
+INSERT INTO `restaurateur` VALUES ('26', 'Kristof', 'kristof@creativebrain.be', 'b6a460f0cad54e15bb99c45276125e09');
+INSERT INTO `restaurateur` VALUES ('27', '4wrabdzf', 'creativesurename@gmail.com', 'b6a460f0cad54e15bb99c45276125e09');
+INSERT INTO `restaurateur` VALUES ('28', '4wrabdzf', 'qwert@test.be', 'b6a460f0cad54e15bb99c45276125e09');
 
---
--- Tabelstructuur voor tabel `table`
---
-
-CREATE TABLE IF NOT EXISTS `table` (
+-- ----------------------------
+-- Table structure for `table`
+-- ----------------------------
+DROP TABLE IF EXISTS `table`;
+CREATE TABLE `table` (
   `table_id` int(11) NOT NULL AUTO_INCREMENT,
   `table_nr` varchar(255) NOT NULL,
   `table_persons` int(11) NOT NULL,
@@ -126,8 +139,8 @@ CREATE TABLE IF NOT EXISTS `table` (
   `table_description` longtext NOT NULL,
   `restaurant_id` int(11) NOT NULL,
   PRIMARY KEY (`table_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- ----------------------------
+-- Records of table
+-- ----------------------------
