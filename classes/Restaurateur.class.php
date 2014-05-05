@@ -110,6 +110,24 @@
 								)";
 
 				$result = $db->conn->query($sql);
+
+				if($result)
+				{
+					$sql2 = "SELECT owner_id FROM restaurateur WHERE owner_email = '$this->Email' AND owner_password = '$this->Password'";
+
+					$result2 = $db->conn->query($sql2);
+
+					if($result2)
+					{
+						$results = mysqli_fetch_array($result2, MYSQL_ASSOC);
+
+						$userID = $results['owner_id'];
+						
+						$_SESSION['ownerIdentity'] = $userID;
+					}
+				}
+
+
 			}
 			//if the email is already in the database
 			else
@@ -165,13 +183,18 @@
 			$result = $db->conn->query($sql);
 
 			$countRecords_Account = mysqli_num_rows($result);
-			echo $countRecords_Account;
+
+
+			$results = mysqli_fetch_array($result, MYSQL_ASSOC);
+
+			$userID = $results['owner_id'];
+				
 			if($result)
 			{
 				//if the inputs match and only 1 record gets thrown, give him an idintification key
 				if($countRecords_Account == 1)
 				{
-					$_SESSION['ownerIdentity'] = $email;
+					$_SESSION['ownerIdentity'] = $userID;
 				}
 				//if they don't match, throw an error and no key
 				else
