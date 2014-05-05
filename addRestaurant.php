@@ -1,5 +1,6 @@
 <?php
 	session_start();
+<<<<<<< HEAD:addNewRestaurant.php
 	
 	if(!isset($_SESSION['ownerIdentity']))
  	{
@@ -14,6 +15,22 @@
 	{
 		include_once("classes/Restaurant.class.php");
 
+=======
+
+	if(!isset($_SESSION['ownerIdentity']))
+ 	{
+ 		header("location: login.php");
+ 	}
+ 	else
+ 	{
+ 		$ownerID = $_SESSION['ownerIdentity'];
+ 	}
+
+	if(!empty($_POST))
+	{
+		include_once("classes/Restaurant.class.php");
+
+>>>>>>> updateBranch:addRestaurant.php
 		$restaurant = new Restaurant();
 		$restaurant->nameRestaurant = $_POST["name_restaurant"];
 		$restaurant->streetRestaurant = $_POST["street_restaurant"];
