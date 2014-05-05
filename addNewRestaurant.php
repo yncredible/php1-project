@@ -1,17 +1,29 @@
 <?php
-	if(!empty($_POST)){
-	include_once("classes/Restaurant.class.php");
+	session_start();
+	
+	if(!isset($_SESSION['ownerIdentity']))
+ 	{
+ 		header("location: login.php");
+ 	}
+ 	else
+ 	{
+ 		$ownerID = $_SESSION['ownerIdentity'];
+ 	}
 
-	$restaurant = new Restaurant();
-	$restaurant->nameRestaurant = $_POST["name_restaurant"];
-	$restaurant->streetRestaurant = $_POST["street_restaurant"];
-	$restaurant->numberRestaurant = $_POST["number_restaurant"];
-	$restaurant->postalcodeRestaurant = $_POST["postalcode_restaurant"];
-	$restaurant->cityRestaurant = $_POST["city_restaurant"];
-	$restaurant->emailRestaurant = $_POST["email_restaurant"];
-	$restaurant->websiteRestaurant = $_POST["website_restaurant"];
+	if(!empty($_POST))
+	{
+		include_once("classes/Restaurant.class.php");
 
-	$restaurant->addRestaurant();
+		$restaurant = new Restaurant();
+		$restaurant->nameRestaurant = $_POST["name_restaurant"];
+		$restaurant->streetRestaurant = $_POST["street_restaurant"];
+		$restaurant->numberRestaurant = $_POST["number_restaurant"];
+		$restaurant->postalcodeRestaurant = $_POST["postalcode_restaurant"];
+		$restaurant->cityRestaurant = $_POST["city_restaurant"];
+		$restaurant->emailRestaurant = $_POST["email_restaurant"];
+		$restaurant->websiteRestaurant = $_POST["website_restaurant"];
+
+		$restaurant->addRestaurant($ownerID);
 	}
 
 ?><html>
