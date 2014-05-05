@@ -89,11 +89,12 @@
 				
 			}
 		}
-		public function addRestaurant(){
+		public function addRestaurant($ownerID)
+		{
 
 			$db = new Db();
 
-			$sql = "insert INTO restaurant (restaurant_name, restaurant_street, restaurant_number, restaurant_postalCode, restaurant_city, restaurant_email, restaurant_website)
+			$sql = "insert INTO restaurant (restaurant_name, restaurant_street, restaurant_number, restaurant_postalCode, restaurant_city, restaurant_email, restaurant_website, owner_id)
 						VALUES (
 									'". $this->nameRestaurant."',
 									'". $this->streetRestaurant."',
@@ -101,7 +102,8 @@
 									'". $this->postalcodeRestaurant."',
 									'". $this->cityRestaurant."',
 									'". $this->emailRestaurant."',
-									'". $this->websiteRestaurant."'
+									'". $this->websiteRestaurant."',
+									'". $ownerID."'
 								)";
 
 			$db->conn->query($sql);
