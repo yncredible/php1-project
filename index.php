@@ -22,6 +22,14 @@
 
 	$restaurant = new Restaurant();
 	$allRestaurants = $restaurant->getAllRestaurants();
+		
+		if(isset($_SESSION['ownerIdentity']))
+		{
+		//$ownerNavigation = "<a href="">"
+		echo "<a href='myRestaurants.php'>My restaurants</a>";
+		echo "<a href='logout.php'>Log Out</a>";
+		}
+
 	$SearchRestaurants = $restaurant->search();
 
 	
