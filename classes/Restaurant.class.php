@@ -148,5 +148,23 @@
 			return($res);
 		}
 
+
+		public function getAllRestaurantsFromAnOwner($ownerID)
+		{
+			$db = new Db();
+			$sql = "SELECT * FROM restaurant WHERE owner_id = '$ownerID'";
+			
+			$result = $db->conn->query($sql);
+			if($result)
+			{
+				$rows = array();
+				while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+				{
+				    $rows[] = $row;
+				}
+				return $rows;
+			}
+		}
+
 }
 ?>
