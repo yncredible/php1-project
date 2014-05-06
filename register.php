@@ -94,32 +94,49 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>OpenTable - Restaurateur registration</title>
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
 	</head>
-
-
 	<body>
-		<form action="" method="POST">
-			<label for="ownerName">Name</label>
-			<!--Print out errors-->
-			<?php if(isset($errorName)){echo '<p class="inputError">' . $errorName . '</p>';} ?>
-			<?php if(isset($errorName_char)){echo '<p class="inputError">' . $errorName_char . '</p>';} ?>
-			<input type="text" id="ownerName" placeholder="eg: John Doe, Betty's Cafe" name="owner_name" <?php if(isset($_SESSION['name'])){echo 'value="' . $_SESSION['name'] . '"';} ?>>
+		<div class="container">
 
+		<div class="jumbotron">
+			<h2>Registreer uzelf als restauranthouder</h2>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-12">
+				<form action="" method="POST" role="form">
+					<div class="formgroup">
+						<label for="ownerName">Name</label>
+						<!--Print out errors-->
+						<?php if(isset($errorName)){echo '<p class="inputError">' . $errorName . '</p>';} ?>
+						<?php if(isset($errorName_char)){echo '<p class="inputError">' . $errorName_char . '</p>';} ?>
+						<input class="form-control" type="text" id="ownerName" placeholder="eg: John Doe, Betty's Cafe" name="owner_name" <?php if(isset($_SESSION['name'])){echo 'value="' . $_SESSION['name'] . '"';} ?>>
+					</div>
+					<div class="formgroup">
+						<label for="ownerEmail">Email</label>
+						<!--Print out errors-->
+						<?php if(isset($errorEmail)){echo '<p class="inputError">' . $errorEmail . '</p>';} ?>
+						<?php if(isset($errorEmail_val)){echo '<p class="inputError">' . $errorEmail_val . '</p>';} ?>
+						<?php if(isset($errorAvailability)){echo '<p class="inputError">' . $errorAvailability . '</p>';} ?>
+						<input class="form-control" type="text" id="ownerEmail" placeholder="eg: johndoe@domain.com" name="owner_email" <?php if(isset($_SESSION['email'])){echo 'value="' . $_SESSION['email'] . '"';} ?>>
+					</div>
+					<div class="form-group">
+						<label for="ownerPassword">Password</label>
+						<!--Print out errors-->
+						<?php if(isset($errorPassword)){echo '<p class="inputError">' . $errorPassword . '</p>';} ?>
+						<?php if(isset($errorPassword_len)){echo '<p class="inputError">' . $errorPassword_len . '</p>';} ?>
+						<input class="form-control" type="password" id="ownerPassword" name="owner_password" <?php if(isset($_SESSION['password'])){echo 'value="' . $_SESSION['password'] . '"';} ?>>
+					</div>
+						<input type="submit" value="Sign Up" name="register" class="btn btn-default">
 
-			<label for="ownerEmail">Email</label>
-			<!--Print out errors-->
-			<?php if(isset($errorEmail)){echo '<p class="inputError">' . $errorEmail . '</p>';} ?>
-			<?php if(isset($errorEmail_val)){echo '<p class="inputError">' . $errorEmail_val . '</p>';} ?>
-			<?php if(isset($errorAvailability)){echo '<p class="inputError">' . $errorAvailability . '</p>';} ?>
-			<input type="text" id="ownerEmail" placeholder="eg: johndoe@domain.com" name="owner_email" <?php if(isset($_SESSION['email'])){echo 'value="' . $_SESSION['email'] . '"';} ?>>
+						<p>Bent u al geregistreerd? <a href="login.php">Log dan snel in!</a></p>
+				</form>
+			</div>
+		</div>
+		
 
-			<label for="ownerPassword">Password</label>
-			<!--Print out errors-->
-			<?php if(isset($errorPassword)){echo '<p class="inputError">' . $errorPassword . '</p>';} ?>
-			<?php if(isset($errorPassword_len)){echo '<p class="inputError">' . $errorPassword_len . '</p>';} ?>
-			<input type="password" id="ownerPassword" name="owner_password" <?php if(isset($_SESSION['password'])){echo 'value="' . $_SESSION['password'] . '"';} ?>>
-
-			<input type="submit" value="Sign Up" name="register">
-		</form>
+		</div>
 	</body>
 </html>
