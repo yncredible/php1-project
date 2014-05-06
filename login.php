@@ -30,23 +30,48 @@
 		header("location: index.php");
 	}
 
- ?><!doctype html>
+?><!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Document</title>
+		<title>Opentable | Log in</title>
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<form action="" method="POST">
-			<?php if(isset($errorLogin)){echo '<p class="inputError">' . $errorLogin . '</p>';} ?>
+		<div class="container">
 
-			<label for="loginEmail">Email</label>
-			<input id="loginEmail" type="text" name="login_email">
-			
-			<label for="loginPassword">Password</label>
-			<input id="loginPassword" type="text" name="login_password">
+		<div class="jumbotron">
+			<h2>Opentable user Log in</h2>
+		</div>
 
-			<input type="submit" value="Log In" name="login">
-		</form>
+		<div class="row">
+			<div class="col-sm-12">
+				<form action="" method="POST" role="form" class="form-horizontal">
+					<?php if(isset($errorLogin)){echo '<p class="inputError">' . $errorLogin . '</p>';} ?>
+
+					<div class="form-group">
+						<label for="loginEmail" class="col-sm-2 control-label">Email</label>
+						<div class="col-sm-10">	
+							<input id="loginEmail" type="text" name="login_email" class="form-control">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="loginPassword" class="col-sm-2 control-label">Password</label>
+							<div class="col-sm-10">	
+								<input id="loginPassword" type="text" name="login_password" class="form-control">
+							</div>
+					</div>
+					
+					<div class="form-group">
+    					<div class="col-sm-offset-2 col-sm-10">
+    						<input type="submit" value="Log In" name="login" class="btn btn-default">
+    					</div>
+    				</div>
+				</form>
+			</div>
+		</div>
+
+		</div>
 	</body>
 </html>
