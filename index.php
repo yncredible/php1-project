@@ -44,7 +44,16 @@
 				<li><a href="logout.php">Log Out</a></li>
 			</ul>
 
+		<?php } 
+
+		else { ?>
+		
+			<ul class="nav nav-pills">
+				<li><a href="login.php">Log In</a></li>
+			</ul>
+
 		<?php }
+
 	?>
 	</nav>
 
