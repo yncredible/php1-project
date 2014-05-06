@@ -6,7 +6,13 @@
 		header("location: login.php");
 	}
 
+<<<<<<< HEAD
 	var_dump($_SESSION);
+=======
+	include_once('classes/Restaurant.class.php');
+	$restaurant = new Restaurant();
+	$ownersRestaurants = $restaurant->getAllRestaurantsFromAnOwner($_SESSION['ownerIdentity']);
+>>>>>>> updateBranch
 
 
  ?><!doctype html>
@@ -18,5 +24,20 @@
 
 	<body>
 		<a href="addRestaurant.php">Add a new restaurant</a>
+<<<<<<< HEAD
+=======
+
+		<ul>
+			<?php 
+				foreach ($ownersRestaurants as $Orestaurant) 
+				{
+					echo "<li>";
+						echo "<a href='managerestaurant.php?id=". $Orestaurant["restaurant_id"] ."'>" . $Orestaurant['restaurant_name'] . "</a>";
+						echo $Orestaurant['restaurant_city'];
+					echo "</li>";
+				}
+			 ?>
+		</ul>
+>>>>>>> updateBranch
 	</body>
 </html>
