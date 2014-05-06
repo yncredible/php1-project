@@ -1,6 +1,7 @@
 <?php
 	include_once('Db.class.php');
-	class Menu{
+	class Menu
+	{
 
 		private $m_sMenuName;
 		private $m_sMenuDescription;
