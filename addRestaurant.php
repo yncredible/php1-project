@@ -60,23 +60,44 @@
 				<div class="col-sm-12">
 
 				<form method="post" role="form">
+					<div class="form-group">						
 					<label for="name_restaurant">Name Restaurant</label>
-					<input type="text" name="name_restaurant" id="name_restaurant"><br/>
+					<input class="form-control" type="text" name="name_restaurant" id="name_restaurant">
+					</div>
+
+					<div class="form-group">	
 					<label for="street_restaurant">Street </label>
-					<input type="text" name="street_restaurant" id="street_restaurant"><br/>
+					<input class="form-control" type="text" name="street_restaurant" id="street_restaurant">
+					</div>
+
+					<div class="form-group">
 					<label for="number_restaurant">Number</label>
-					<input type="text" name="number_restaurant" id="number_restaurant"><br/>
+					<input class="form-control" type="text" name="number_restaurant" id="number_restaurant">
+					</div>
+
+					<div class="form-group">		
 					<label for="postalcode_restaurant">Postalcode</label>
-					<input type="text" name="postalcode_restaurant" id="postalcode_restaurant"><br/>
+					<input class="form-control" type="text" name="postalcode_restaurant" id="postalcode_restaurant">
+					</div>
+
+					<div class="form-group">	
 					<label for="city_restaurant">City</label>
-					<input type="text" name="city_restaurant" id="city_restaurant"><br/>
+					<input class="form-control" type="text" name="city_restaurant" id="city_restaurant">
+					</div>
+
+					<div class="form-group">	
 					<label for="email_restaurant">Email</label>
-					<input type="email" name="email_restaurant" id="email_restaurant"><br/>
+					<input class="form-control" type="email" name="email_restaurant" id="email_restaurant">
+					</div>
+
+					<div class="form-group">	
 					<label for="website_restaurant">Website</label>
-					<input type="text" name="website_restaurant" id="website_restaurant"><br/>
+					<input class="form-control" type="text" name="website_restaurant" id="website_restaurant">
+					</div>
 
-
-					<input type="submit" value="Add restaurant" name="register_restaurant" id="register_restaurant">
+					<div class="form-group">
+					<input class="btn btn-default" type="submit" value="Add restaurant" name="register_restaurant" id="register_restaurant">
+					</div>
 				</form>
 			
 				</div>
