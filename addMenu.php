@@ -8,11 +8,10 @@
  		header("location: login.php");
  	}
 
+ 	include_once("classes/Menu.class.php");
+ 	$menu = new Menu();
 	if(!empty($_POST))
 	{
-		include_once("classes/Menu.class.php");
-
-		$menu = new Menu();
 		$menu->menuName = $_POST["menu_name"];
 		$menu->menuDescription = $_POST["menu_description"];
 		$menu->menuPrice = $_POST["menu_price"];
@@ -21,11 +20,7 @@
 		$menu->addMenu($restaurantID);
 	}
 
-	include_once('classes/Menu.class.php');
-	$menu = new Menu();
 	$menuList = $menu->getSpecificMenufromRestaurant($restaurantID);
-
-
 
  ?><!doctype html>
  <html lang="en">
@@ -35,13 +30,13 @@
  </head>
  <body>
    <form action='#' method="post">
-    <label for="menu_name">Name:</label>
+    <label for="menu_name">Name</label>
     <input id="menu_name" name="menu_name" />
 
-    <label for="menu_description">Description:</label>
+    <label for="menu_description">Description</label>
     <input id="menu_description" name="menu_description" />
 
-    <label for="menu_price">Price:</label>
+    <label for="menu_price">Price</label>
     <input id="menu_price" name="menu_price" />
 
 	<label for="menu_category">Category</label>
@@ -97,9 +92,6 @@
   		}
   	 ?>
   </ul>
-
-
-
 
  </body>
  </html>
