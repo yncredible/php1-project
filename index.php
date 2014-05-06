@@ -3,7 +3,6 @@
 	session_start();
 
 	include_once('classes/Restaurant.class.php');
-	include_once('classes/Restaurateur.class.php');
 
 	//delete previous sessions
 	if(isset($_SESSION['name']))
@@ -15,24 +14,18 @@
 	if(isset($_SESSION['password']))
 	{session_unset($_SESSION['password']);}
 
-	
-	$ownerIdentity = $_SESSION['ownerIdentity'];
-	
-	echo $ownerIdentity;
-
 	$restaurant = new Restaurant();
 	$allRestaurants = $restaurant->getAllRestaurants();
-		
-		if(isset($_SESSION['ownerIdentity']))
-		{
+	$allRestaurants = $restaurant->search();
+
+
+	if(isset($_SESSION['ownerIdentity']))
+	{
 		//$ownerNavigation = "<a href="">"
-		echo "<a href='myRestaurants.php?id=$ownerIdentity'>My restaurants</a>";
+		echo "<a href='myRestaurants.php'>My restaurants</a>";
 		echo "<a href='logout.php'>Log Out</a>";
-		}
+	}
 
-	$SearchRestaurants = $restaurant->search();
-
-	
 
  ?><!doctype html>
 <html lang="en">
