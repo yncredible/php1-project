@@ -69,6 +69,11 @@
     					</div>
     				</div>
 				</form>
+
+				<p class="col-sm-offset-2 col-sm-10">
+					You don't have an account? No problem! <a href="register.php">Register</a> here.
+				</p>
+				
 			</div>
 		</div>
 
