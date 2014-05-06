@@ -54,22 +54,38 @@
 				break;
 			}
 		}
-		public function addMenu(){
+		public function addMenu($restaurantID)
+		{
 
 			$db = new Db();
 
-			$sql = "insert INTO menu (menu_name, menu_description, menu_price, menu_category, restaurant_id)
+			$sql = "INSERT INTO menu (menu_name, menu_description, menu_price, menu_category, restaurant_id)
 						VALUES (
-									'". $this->menuName."',
-									'". $this->menuDescription."',
-									". $this->menuPrice.",
-									'". $this->menuCategory."',
-									". 1 ."
+									'". $db->conn->real_escape_string($this->menuName)."',
+									'". $db->conn->real_escape_string($this->menuDescription)."',
+									". $db->conn->real_escape_string($this->menuPrice).",
+									'". $db->conn->real_escape_string($this->menuCategory)."',
+									". $restaurantID ."
 								)";
-			echo($sql);
-			$db->conn->query($sql);
-			
 
+			$db->conn->query($sql);
+		}
+
+		public function getSpecificMenufromRestaurant($restaurantID)
+		{
+			$db = new Db();
+			$sql = "SELECT * FROM menu WHERE restaurant_id = '$restaurantID'";
+			
+			$result = $db->conn->query($sql);
+			if($result)
+			{
+				$rows = array();
+				while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+				{
+				    $rows[] = $row;
+				}
+				return $rows;
+			}
 		}
 	}
 ?>
