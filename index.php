@@ -89,8 +89,8 @@
 		
 
 			<!-- 		
-			<ul>
-			<?php
+			//<ul>
+			//<?php
 			
 				//while ($alleRestauranten = $allRestaurants->fetch_assoc()) {
 					
@@ -98,8 +98,8 @@
 					//echo "<a href='#'><li class='opmaak'><p>" . $alleRestauranten['restaurant_city'] . "</p></li></a>";
 					//}
 				//}
-			?>
-			</ul> 
+			//?>
+			//</ul> 
 			-->
 
 
