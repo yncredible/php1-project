@@ -6,14 +6,12 @@
 		header("location: login.php");
 	}
 
-<<<<<<< HEAD
+
 	var_dump($_SESSION);
-=======
+
 	include_once('classes/Restaurant.class.php');
 	$restaurant = new Restaurant();
 	$ownersRestaurants = $restaurant->getAllRestaurantsFromAnOwner($_SESSION['ownerIdentity']);
->>>>>>> updateBranch
-
 
  ?><!doctype html>
 <html lang="en">
@@ -24,8 +22,6 @@
 
 	<body>
 		<a href="addRestaurant.php">Add a new restaurant</a>
-<<<<<<< HEAD
-=======
 
 		<ul>
 			<?php 
@@ -38,6 +34,5 @@
 				}
 			 ?>
 		</ul>
->>>>>>> updateBranch
 	</body>
 </html>
