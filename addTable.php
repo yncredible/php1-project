@@ -21,7 +21,6 @@
 	}
 
 	$tableList = $table->getSpecificTablesfromRestaurant($restaurantID);
-
  ?><!doctype html>
 <html lang="en">
 	<head>
@@ -92,9 +91,14 @@
 				{
 					echo "<li>";
 						echo $tableItem['table_nr'];
+						echo " ";
 						echo $tableItem['table_persons'];
+						echo " ";
 						echo $tableItem['table_description'];
+						echo " ";
 						echo $tableItem['table_status'];
+						echo " ";
+						echo "<a href='changeStatus.php?".$tableItem['table_id']."'>Change status</a>";
 					echo "</li>";
 				}
 			 ?>
