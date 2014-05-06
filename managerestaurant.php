@@ -34,7 +34,7 @@
 		
 		 <div id="menu">
 		 	 <h1>Echo out Menu here too</h1>
-		 	 <a href="addMenu.php?id=" <?php echo $restaurantID; ?>>Manage menu</a>
+		 	 <a href="addMenu.php?id=<?php echo $restaurantID; ?>">Manage menu</a>
 		 </div>
 
 		<div id="tables">
