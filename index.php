@@ -26,7 +26,7 @@
 		if(isset($_SESSION['ownerIdentity']))
 		{
 		//$ownerNavigation = "<a href="">"
-		echo "<a href='myRestaurants.php'>My restaurants</a>";
+		echo "<a href='myRestaurants.php?id=$ownerIdentity'>My restaurants</a>";
 		echo "<a href='logout.php'>Log Out</a>";
 		}
 
