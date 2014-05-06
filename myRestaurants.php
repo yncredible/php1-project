@@ -28,7 +28,7 @@
 				foreach ($ownersRestaurants as $Orestaurant) 
 				{
 					echo "<li>";
-						echo "<a href='managerestaurant.php?id=". $Orestaurant["restaurant_id"] ."'>" . $Orestaurant['restaurant_name'] . "</a>";
+						echo "<a href='managerestaurant.php?id=". $Orestaurant["restaurant_id"] ."'>" ." ". $Orestaurant['restaurant_name'] . "</a>";
 						echo $Orestaurant['restaurant_city'];
 					echo "</li>";
 				}
