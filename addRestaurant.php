@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	
+	var_dump($_SESSION);
 	if(!isset($_SESSION['ownerIdentity']))
  	{
  		header("location: login.php");
@@ -32,6 +32,7 @@
 			header("location: managerestaurant.php?id=$restaurantID");
 		}
 	}
+	var_dump($_SESSION);
 
 ?><!doctype html>
 <html lang="en">
