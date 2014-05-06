@@ -166,5 +166,22 @@
 			}
 		}
 
+		public function getSpecificRestaurantfromOwner($restaurantID)
+		{
+			$db = new Db();
+			$sql = "SELECT * FROM restaurant WHERE restaurant_id = '$restaurantID'";
+			
+			$result = $db->conn->query($sql);
+			if($result)
+			{
+				$rows = array();
+				while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+				{
+				    $rows[] = $row;
+				}
+				return $rows;
+			}
+		}
+
 }
 ?>
