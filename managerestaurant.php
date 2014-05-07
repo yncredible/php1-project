@@ -57,26 +57,6 @@
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
-
-		<script>
-			$(document).ready(function(){
-
-				$('.toggleMenu').on('click', function(e){
-
-					$('.menu').toggle();
-
-					e.preventDefault();	
-				});
-
-				$('.toggleTable').on('click', function(e){
-
-					$('.tableToggle').toggle();
-
-					e.preventDefault();	
-				});
-
-			});
-		</script>
 		
 	</head>
 
