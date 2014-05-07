@@ -59,6 +59,8 @@
 				</ul>
 			</nav>
 
+			<!-- STILL HAVE TO LINK RESTAURANT ID -->
+
 			<div class="row">
 				<div class="col-sm-12">
 					<form action="" method="post" role="form">
