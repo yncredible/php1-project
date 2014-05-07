@@ -182,7 +182,7 @@
 		}
 	}
 
-	public function addOpeninghours($restaurantID)
+	public function addOpeninghours()
 	{
 		$db = new Db();
 
@@ -193,8 +193,8 @@
 												opening_tuesday_until,
 												opening_wednesday_from,
 												opening_wednesday_until,
-												opening_thurday_from,
-												opening_thurday_until,
+												opening_thursday_from,
+												opening_thursday_until,
 												opening_friday_from,
 												opening_friday_until,
 												opening_saturday_from,
@@ -220,9 +220,9 @@
 									'". $db->conn->real_escape_string($this->SundayFrom)."',
 									'". $db->conn->real_escape_string($this->SundayUntil)."',
 									'". $db->conn->real_escape_string($this->Remarks)."',
-									'". $restaurantID."'
+									". 5 ."
 								)";
-
+			echo $sql;
 			$result = $db->conn->query($sql);
 	}
 	}
