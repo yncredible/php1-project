@@ -1,4 +1,8 @@
 <?php 
+	// email = admin@thomasmore.be
+	// password = adminadmin
+
+
 	session_start();
 
 		include_once('classes/Restaurant.class.php');
@@ -81,18 +85,19 @@
 					</tr>
 				</thead>
 				<tbody>
-					
-						<?php 
-							while($alleRestauranten = $allRestaurants->fetch_assoc()){ ?>
-								<tr>
-								<td><a href="#"><?php echo $alleRestauranten['restaurant_name']; ?></a></td>
-								<td><?php echo $alleRestauranten['restaurant_street'] . " " . $alleRestauranten['restaurant_number'] ; ?></td>
-								<td><?php echo $alleRestauranten['restaurant_postalCode']; ?></td>
-								<td><?php echo $alleRestauranten['restaurant_city']; ?></td>
-								</tr>
+					<?php 
+							foreach($allRestaurants as $rest){ ?>
+									
+									<tr>
+										<td><a href="detailRestaurant.php?id=<?php echo $rest['restaurant_id'];?>"><?php echo $rest['restaurant_name']; ?></a></td>
+										<td><?php echo $rest['restaurant_street']; ?></td>
+										<td><?php echo $rest['restaurant_postalCode']; ?></td>
+										<td><?php echo $rest['restaurant_city']; ?></td>
+									</tr>
+
 							<?php }
 						?>
-					
+					allRestaurants
 				</tbody>
 				
 			</table>
