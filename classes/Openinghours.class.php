@@ -4,21 +4,21 @@
 	class Openinghours
 	{
 
-		private $opening_monday_from;
-		private $opening_monday_until;
-		private $opening_tuesday_from;
-		private $opening_tuesday_until;
-		private $opening_wednesday_from;
-		private $opening_wednesday_until;
-		private $opening_thursday_from;
-		private $opening_thursday_until;
-		private $opening_friday_from;
-		private $opening_friday_until;
-		private $opening_saturday_from;
-		private $opening_saturday_until;
-		private $opening_sunday_from;
-		private $opening_sunday_until;
-		private $opening_remarks;
+		private $m_sOpening_monday_from;
+		private $m_sOpening_monday_until;
+		private $m_sOpening_tuesday_from;
+		private $m_sOpening_tuesday_until;
+		private $m_sOpening_wednesday_from;
+		private $m_sOpening_wednesday_until;
+		private $m_sOpening_thursday_from;
+		private $m_sOpening_thursday_until;
+		private $m_sOpening_friday_from;
+		private $m_sOpening_friday_until;
+		private $m_sOpening_saturday_from;
+		private $m_sOpening_saturday_until;
+		private $m_sOpening_sunday_from;
+		private $m_sOpening_sunday_until;
+		private $m_sOpening_remarks;
 
 	public function __set($p_sProperty, $p_vValue)
 	{
@@ -26,91 +26,91 @@
 		{
 			case "MondayFrom":
 			{
-				$this->opening_monday_from = $p_vValue;
+				$this->m_sOpening_monday_from = $p_vValue;
 			}
 			break;
 
 			case "MondayUntil":
 			{
-				$this->opening_monday_until = $p_vValue;
+				$this->m_sOpening_monday_until = $p_vValue;
 			}
 			break;
 
 			case "TuesdayFrom":
 			{
-				$this->opening_tuesday_from = $p_vValue;
+				$this->m_sOpening_tuesday_from = $p_vValue;
 			}
 			break;
 
 			case "TuesdayUntil":
 			{
-				$this->opening_tuesday_until = $p_vValue;
+				$this->m_sOpening_tuesday_until = $p_vValue;
 			}
 			break;
 
 			case "WednesdayFrom":
 			{
-				$this->opening_wednesday_from = $p_vValue;
+				$this->m_sOpening_wednesday_from = $p_vValue;
 			}
 			break;
 
 			case "WednesdayUntil":
 			{
-				$this->opening_wednesday_until = $p_vValue;
+				$this->m_sOpening_wednesday_until = $p_vValue;
 			}
 			break;
 
 			case "ThursdayFrom":
 			{
-				$this->opening_thursday_from = $p_vValue;
+				$this->m_sOpening_thursday_from = $p_vValue;
 			}
 			break;
 
 			case "ThursdayUntil":
 			{
-				$this->opening_thursday_until = $p_vValue;
+				$this->m_sOpening_thursday_until = $p_vValue;
 			}
 			break;
 
 			case "FridayFrom":
 			{
-				$this->opening_friday_from = $p_vValue;
+				$this->m_sOpening_friday_from = $p_vValue;
 			}
 			break;
 
 			case "FridayUntil":
 			{
-				$this->opening_friday_until = $p_vValue;
+				$this->m_sOpening_friday_until = $p_vValue;
 			}
 			break;
 
 			case "SaturdayFrom":
 			{
-				$this->opening_saturday_from = $p_vValue;
+				$this->m_sOpening_saturday_from = $p_vValue;
 			}
 			break;
 
 			case "SaturdayUntil":
 			{
-				$this->opening_saturday_until = $p_vValue;
+				$this->m_sOpening_saturday_until = $p_vValue;
 			}
 			break;
 
 			case "SundayFrom":
 			{
-				$this->opening_sunday_from = $p_vValue;
+				$this->m_sOpening_sunday_from = $p_vValue;
 			}
 			break;
 
 			case "SundayUntil":
 			{
-				$this->opening_sunday_until = $p_vValue;
+				$this->m_sOpening_sunday_until = $p_vValue;
 			}
 			break;
 
 			case "Remarks":
 			{
-				$this->opening_remarks = $p_vValue;
+				$this->m_sOpening_remarks = $p_vValue;
 			}
 			break;
 		}
@@ -121,63 +121,63 @@
 		switch($p_sProperty)
 		{
 			case "MondayFrom":
-			return $this->opening_monday_from;
+			return $this->m_sOpening_monday_from;
 			break;
 
 			case "MondayUntil":
-			return $this->opening_monday_until;
+			return $this->m_sOpening_monday_until;
 			break;
 
 			case "TuesdayFrom":
-			return $this->opening_tuesday_from;
+			return $this->m_sOpening_tuesday_from;
 			break;
 
 			case "TuesdayUntil":
-			return $this->opening_tuesday_until;
+			return $this->m_sOpening_tuesday_until;
 			break;
 
 			case "WednesdayFrom":
-			return $this->opening_wednesday_from;
+			return $this->m_sOpening_wednesday_from;
 			break;
 
 			case "WednesdayUntil":
-			return $this->opening_wednesday_until;
+			return $this->m_sOpening_wednesday_until;
 			break;
 
 			case "ThursdayFrom":
-			return $this->opening_thursday_from;
+			return $this->m_sOpening_thursday_from;
 			break;
 
 			case "ThursdayUntil":
-			return $this->opening_thursday_until;
+			return $this->m_sOpening_thursday_until;
 			break;
 
 			case "FridayFrom":
-			return $this->opening_friday_from;
+			return $this->m_sOpening_friday_from;
 			break;
 
 			case "FridayUntil":
-			return $this->opening_friday_until;
+			return $this->m_sOpening_friday_until;
 			break;
 
 			case "SaturdayFrom":
-			return $this->opening_saturday_from;
+			return $this->m_sOpening_saturday_from;
 			break;
 
 			case "SaturdayUntil":
-			return $this->opening_saturday_until;
+			return $this->m_sOpening_saturday_until;
 			break;
 
 			case "SundayFrom":
-			return $this->opening_sunday_from;
+			return $this->m_sOpening_sunday_from;
 			break;
 
 			case "SundayUntil":
-			return $this->opening_sunday_until;
+			return $this->m_sOpening_sunday_until;
 			break;
 
 			case "Remarks":
-			return $this->opening_remarks;
+			return $this->m_sOpening_remarks;
 			break;
 		}
 	}
