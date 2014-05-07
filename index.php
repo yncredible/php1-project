@@ -38,7 +38,7 @@
 	
 	<div class="jumbotron">
 		<h2>Opentable</h2>
-		<h3>We offer good food</h3>
+		<h3>Going to dinner was never so easy</h3>
 	</div>
 	
 	<nav>
