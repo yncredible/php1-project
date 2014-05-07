@@ -38,6 +38,7 @@
 	
 	<div class="jumbotron">
 		<h2>Opentable</h2>
+		<h3>We offer good food</h3>
 	</div>
 	
 	<nav>
@@ -65,14 +66,28 @@
 	</nav>
 
 	
-	
+	<ul class="flow">
+		<li>
+			<img src="images/search.png"/>
+			<p>Search a restaurant in your area</p>
+		</li>
+		<li>
+			<img src="images/food.png"/>
+			<p>Check their menu</p>
+		</li>
+		<li>
+			<img src="images/table.png"/>
+			<p>Reserve a table</p>
+		</li>
+	</ul>
 
 	<div class="row">
 		<div class="col-sm-12">
-		<form action="" method="post" role="form">
-			<label for="zoek_gemeente">Zoek op gemeente</label><br/>
-			<input type="input" name="zoek_gemeente" id="zoek_gemeente" class="">
-		</form>
+			<h4>Our restaurants</h4>
+			<form action="" method="post" role="form" id="search">
+				<label for="zoek_gemeente">Zoek op gemeente</label><br/>
+				<input type="input" name="zoek_gemeente" id="zoek_gemeente" class="">
+			</form>
 		</div>
 	</div>
 
