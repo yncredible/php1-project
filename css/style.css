@@ -19,6 +19,16 @@
 	font-size: 55px;
 	padding-top: 35px;
 }
+.jumbotron h3
+{
+	color:black;
+	font-size: 25px;
+	background-color: white;
+	display: inline;
+	padding:7px 0px;
+	opacity: 0.8;
+
+}
 footer
 {
 	width: 100%;
@@ -37,4 +47,94 @@ header
 table.table thead tr th
 {
 	font-weight: bold;
+}
+
+body
+{
+	background-color: #f9f1ee;
+}
+ul.flow
+{
+	width:100%;
+	margin: 25px 0px;
+	min-width: 300px;
+}
+ul.flow li
+{
+	float:left;
+	width:33.33%;
+	margin: auto;
+}
+ul.flow li img 
+{
+	margin: auto;
+	display: block;
+}
+ul.flow li p 
+{
+	text-align: center; 
+	font-size: 17px;
+	margin-top: 25px;
+
+}
+h4
+{
+	margin-top:50px;
+	font-size: 18px;
+	font-weight: bolder;
+}
+.form-group
+{
+	text-align: left;
+}
+.form-group.col-sm-2 .control-label
+{
+	width: 100%;
+	text-align: left;
+}
+.form-horizontal .control-label
+{
+	text-align: left;
+	width: 100%;
+}
+input#loginEmail.form-control
+{
+	width: 100%;
+	max-width: 350px;
+	margin-bottom: 15px;
+}
+input#ownerName.form-control
+{
+	width: 100%;
+	max-width: 350px;
+	margin-bottom: 15px;
+}
+input#ownerPassword.form-control
+{
+	width: 100%;
+	max-width: 350px;
+	margin-bottom: 15px;
+}
+input#ownerEmail.form-control
+{
+	width: 100%;
+	max-width: 350px;
+	margin-bottom: 15px;
+}
+input#loginPassword.form-control
+{
+	width: 100%;
+	max-width: 350px;
+	margin-bottom: 15px;
+}
+.col-sm-offset-2
+{
+	margin-left: 0%;
+}
+p.col-sm-offset-2.col-sm-10
+{
+	text-align: center;
+	width: 100%;
+	margin-left: 0%;
+	padding-left: 0%;
 }
