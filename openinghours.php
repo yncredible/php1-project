@@ -11,9 +11,29 @@
  	}
 
 
+	if(!empty($_POST['add_openinghours']))
+	{
+		include_once("classes/Openinghours.class.php");
 
+		$openinghours = new Openinghours();
+		$openinghours->opening_monday_from = $_POST["monday_from"];
+		$openinghours->opening_monday_until = $_POST["monday_until"];
+		$openinghours->opening_tuesday_from = $_POST["tuesday_from"];
+		$openinghours->opening_tuesday_until = $_POST["tuesday_until"];
+		$openinghours->opening_wednesday_from = $_POST["wednesday_from"];
+		$openinghours->opening_wednesday_until = $_POST["wednesday_until"];
+		$openinghours->opening_thursday_from = $_POST["thursday_from"];
+		$openinghours->opening_thursday_until = $_POST["thursday_until"];
+		$openinghours->opening_friday_from = $_POST["friday_from"];
+		$openinghours->opening_friday_until = $_POST["friday_until"];
+		$openinghours->opening_saturday_from = $_POST["saturday_from"];
+		$openinghours->opening_saturday_until = $_POST["saturday_until"];
+		$openinghours->opening_sunday_from = $_POST["sunday_from"];
+		$openinghours->opening_sunday_until = $_POST["sunday_until"];
+		$openinghours->opening_remarks = $_POST["remarks"];
 
-
+		$openinghours->addOpeninghours();
+	}
 
 
 
