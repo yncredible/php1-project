@@ -23,6 +23,7 @@
 	}
 
 	include_once('classes/Table.class.php');
+
 	$table = new Table();
 	if(!empty($_POST['table_add']))
 	{
@@ -141,7 +142,7 @@
 					<option value="desserts">Desserts</option>
 			</select>
 
-	 		<button type="submit" id='btnSubmit' name="add_menu">Add!</button>
+	 		<input type="submit" id='btnSubmit' name="add_menu" value="add">
  		</form>
 
 		<div class="row">
