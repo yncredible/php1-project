@@ -16,5 +16,29 @@ $(document).ready(function(){
 
 	}
 	});
+
+
+
+
+
+
+
+
+	// YANNICK'S CUSTOM CODE
+
+
+	$('.toggleMenu').on('click', function(e){
+
+		$('.menu').toggle();
+
+		e.preventDefault();	
+	});
+
+	$('.toggleTable').on('click', function(e){
+
+		$('.tableToggle').toggle();
+
+		e.preventDefault();	
+	});
 	
 });
