@@ -39,6 +39,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>OpenTable | Add restaurant</title>
+		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
