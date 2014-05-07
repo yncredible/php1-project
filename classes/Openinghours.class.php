@@ -225,5 +225,6 @@
 
 			$result = $db->conn->query($sql);
 	}
+	}
 
  ?>
