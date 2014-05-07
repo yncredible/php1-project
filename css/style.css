@@ -1,0 +1,26 @@
+.jumbotron
+{
+	background-image: url(../images/banner.png);
+	background-size: cover;
+	width: 100%;
+	background-color: green;
+	height: 250px;
+	width: 100%;
+	margin-bottom: 0px;
+}
+
+.container .jumbotron
+{
+	border-radius: 0px;
+}
+.jumbotron h2
+{
+	color: white;
+	font-size: 55px;
+	padding-top: 35px;
+}
+
+.nav-pills>li>a
+{
+	border-radius: 0px;	
+}	

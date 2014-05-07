@@ -32,10 +32,12 @@
 </head>
 <body>
 	<div class="container">
-	
+
 	<div class="jumbotron">
 		<h2>Opentable</h2>
 	</div>
+	
+
 
 	
 	<nav>
@@ -106,7 +108,7 @@
 	</div>
 
 	</div>
-	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
