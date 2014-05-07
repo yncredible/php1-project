@@ -192,7 +192,335 @@
 					
 					</div>
 
+					<div>
+					<h4><span class="label label-primary">Alcoholic beverages</span></h4>
+					
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php 
+								foreach ($menuList as $menuItem) 
+								{
+									if($menuItem['menu_category'] == "alcoholBeverages")
+									{ ?>
 
+										<tr>
+											<td><?php echo $menuItem['menu_name']; ?></td>
+											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+										</tr>
+
+
+									<?php }
+								}
+							?>
+						</tbody>
+					</table>
+					
+					</div>
+
+					<div>
+					<h4><span class="label label-primary">Appetizers</span></h4>
+					
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php 
+								foreach ($menuList as $menuItem) 
+								{
+									if($menuItem['menu_category'] == "appetizers")
+									{ ?>
+
+										<tr>
+											<td><?php echo $menuItem['menu_name']; ?></td>
+											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+										</tr>
+
+
+									<?php }
+								}
+							?>
+						</tbody>
+					</table>
+					
+					</div>
+
+					<div>
+					<h4><span class="label label-primary">Soups</span></h4>
+					
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php 
+								foreach ($menuList as $menuItem) 
+								{
+									if($menuItem['menu_category'] == "soups")
+									{ ?>
+
+										<tr>
+											<td><?php echo $menuItem['menu_name']; ?></td>
+											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+										</tr>
+
+
+									<?php }
+								}
+							?>
+						</tbody>
+					</table>
+					
+					</div>
+
+					<div>
+					<h4><span class="label label-primary">Salads</span></h4>
+					
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php 
+								foreach ($menuList as $menuItem) 
+								{
+									if($menuItem['menu_category'] == "salads")
+									{ ?>
+
+										<tr>
+											<td><?php echo $menuItem['menu_name']; ?></td>
+											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+										</tr>
+
+
+									<?php }
+								}
+							?>
+						</tbody>
+					</table>
+					
+					</div>
+
+					<div>
+					<h4><span class="label label-primary">Chicken</span></h4>
+					
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php 
+								foreach ($menuList as $menuItem) 
+								{
+									if($menuItem['menu_category'] == "chicken")
+									{ ?>
+
+										<tr>
+											<td><?php echo $menuItem['menu_name']; ?></td>
+											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+										</tr>
+
+
+									<?php }
+								}
+							?>
+						</tbody>
+					</table>
+					
+					</div>
+
+					<div>
+					<h4><span class="label label-primary">Pasta</span></h4>
+					
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php 
+								foreach ($menuList as $menuItem) 
+								{
+									if($menuItem['menu_category'] == "pasta")
+									{ ?>
+
+										<tr>
+											<td><?php echo $menuItem['menu_name']; ?></td>
+											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+										</tr>
+
+
+									<?php }
+								}
+							?>
+						</tbody>
+					</table>
+					
+					</div>
+
+					<div>
+					<h4><span class="label label-primary">Seafood</span></h4>
+					
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php 
+								foreach ($menuList as $menuItem) 
+								{
+									if($menuItem['menu_category'] == "seafood")
+									{ ?>
+
+										<tr>
+											<td><?php echo $menuItem['menu_name']; ?></td>
+											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+										</tr>
+
+
+									<?php }
+								}
+							?>
+						</tbody>
+					</table>
+					
+					</div>
+
+					<div>
+					<h4><span class="label label-primary">Rib / Steaks</span></h4>
+					
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php 
+								foreach ($menuList as $menuItem) 
+								{
+									if($menuItem['menu_category'] == "ribSteaks")
+									{ ?>
+
+										<tr>
+											<td><?php echo $menuItem['menu_name']; ?></td>
+											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+										</tr>
+
+
+									<?php }
+								}
+							?>
+						</tbody>
+					</table>
+					
+					</div>
+
+					<div>
+					<h4><span class="label label-primary">Kids Menu</span></h4>
+					
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php 
+								foreach ($menuList as $menuItem) 
+								{
+									if($menuItem['menu_category'] == "kidsMenu")
+									{ ?>
+
+										<tr>
+											<td><?php echo $menuItem['menu_name']; ?></td>
+											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+										</tr>
+
+
+									<?php }
+								}
+							?>
+						</tbody>
+					</table>
+					
+					</div>
+
+					<div>
+					<h4><span class="label label-primary">Desserts</span></h4>
+					
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php 
+								foreach ($menuList as $menuItem) 
+								{
+									if($menuItem['menu_category'] == "desserts")
+									{ ?>
+
+										<tr>
+											<td><?php echo $menuItem['menu_name']; ?></td>
+											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+										</tr>
+
+
+									<?php }
+								}
+							?>
+						</tbody>
+					</table>
+					
+					</div>
 				</div>
 			</div>
 
