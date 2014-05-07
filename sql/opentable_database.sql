@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Machine: 127.0.0.1
--- Genereertijd: 07 mei 2014 om 10:50
+-- Genereertijd: 07 mei 2014 om 11:20
 -- Serverversie: 5.5.27
 -- PHP-versie: 5.4.7
 
@@ -29,23 +29,12 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `menu` (
   `menu_id` int(11) NOT NULL AUTO_INCREMENT,
   `menu_name` longtext NOT NULL,
-  `menu_description` longtext NOT NULL,
-  `menu_price` varchar(255) NOT NULL,
+  `menu_description` longtext,
+  `menu_price` decimal(10,2) NOT NULL,
   `menu_category` varchar(255) NOT NULL,
   `restaurant_id` int(11) NOT NULL,
   PRIMARY KEY (`menu_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
-
---
--- Gegevens worden uitgevoerd voor tabel `menu`
---
-
-INSERT INTO `menu` (`menu_id`, `menu_name`, `menu_description`, `menu_price`, `menu_category`, `restaurant_id`) VALUES
-(2, 'Sloppy joe''s', 'Big piece of diabetes', '4,5', 'burgerSandwiches', 6),
-(3, 'Balletjes', 'Big piece of diabetes', '500', 'kidsMenu', 3),
-(4, 'Sloppy joe''s', 'Big piece of diabetes', '500', 'burgerSandwiches', 3),
-(5, 'Balletjes', 'met tomatensaus', '500', 'beverages', 13),
-(6, 'Sloppy joe''s', 'Big piece of diabetes', '4', 'burgerSandwiches', 5);
 
 -- --------------------------------------------------------
 
@@ -55,21 +44,21 @@ INSERT INTO `menu` (`menu_id`, `menu_name`, `menu_description`, `menu_price`, `m
 
 CREATE TABLE IF NOT EXISTS `openinghours` (
   `opening_id` int(11) NOT NULL AUTO_INCREMENT,
-  `opening_monday_from` time NOT NULL,
-  `opening_monday_until` time NOT NULL,
-  `opening_tuesday_from` time NOT NULL,
-  `opening_tuesday_until` time NOT NULL,
-  `opening_wednesday_from` time NOT NULL,
-  `opening_wednesday_until` time NOT NULL,
-  `opening_thursday_from` time NOT NULL,
-  `opening_thursday_until` time NOT NULL,
-  `opening_friday_from` time NOT NULL,
-  `opening_friday_until` time NOT NULL,
-  `opening_saturday_from` time NOT NULL,
-  `opening_saturday_until` time NOT NULL,
-  `opening_sunday_from` time NOT NULL,
-  `opening_sunday_until` time NOT NULL,
-  `opening_remarks` longtext NOT NULL,
+  `opening_monday_from` time DEFAULT NULL,
+  `opening_monday_until` time DEFAULT NULL,
+  `opening_tuesday_from` time DEFAULT NULL,
+  `opening_tuesday_until` time DEFAULT NULL,
+  `opening_wednesday_from` time DEFAULT NULL,
+  `opening_wednesday_until` time DEFAULT NULL,
+  `opening_thursday_from` time DEFAULT NULL,
+  `opening_thursday_until` time DEFAULT NULL,
+  `opening_friday_from` time DEFAULT NULL,
+  `opening_friday_until` time DEFAULT NULL,
+  `opening_saturday_from` time DEFAULT NULL,
+  `opening_saturday_until` time DEFAULT NULL,
+  `opening_sunday_from` time DEFAULT NULL,
+  `opening_sunday_until` time DEFAULT NULL,
+  `opening_remarks` longtext,
   `restaurant_id` int(11) NOT NULL,
   PRIMARY KEY (`opening_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -83,8 +72,8 @@ CREATE TABLE IF NOT EXISTS `openinghours` (
 CREATE TABLE IF NOT EXISTS `order` (
   `order_id` int(11) NOT NULL AUTO_INCREMENT,
   `order_quantity` int(11) NOT NULL,
-  `order_price` varchar(255) NOT NULL,
-  `order_totalprice` varchar(255) NOT NULL,
+  `order_price` decimal(10,2) NOT NULL,
+  `order_totalprice` decimal(10,2) NOT NULL,
   `menu_id` int(11) NOT NULL,
   `table_id` int(11) NOT NULL,
   PRIMARY KEY (`order_id`)
@@ -109,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `restaurant` (
   `menu_id` int(11) NOT NULL,
   `openingHours_id` int(11) NOT NULL,
   PRIMARY KEY (`restaurant_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
 -- Gegevens worden uitgevoerd voor tabel `restaurant`
@@ -135,7 +124,8 @@ INSERT INTO `restaurant` (`restaurant_id`, `restaurant_name`, `restaurant_street
 (19, 'Pizza Hut', 'Fancy street', 3, 4212, 'burger', 'pizzahut@pizza.be', 'www.tacoballs.be', 25, 0, 0),
 (20, 'Pizza Hut', 'Fancy street', 3, 4212, 'burger', 'pizzahut@pizza.be', 'www.tacoballs.be', 25, 0, 0),
 (21, 'New restaurant', 'Londerzeel', 13, 1840, 'Londerzeel', 'bigjoe@gmail.com', 'www.wbtsg.gerf', 25, 0, 0),
-(22, 'New test restaurant', 'testing ', 33, 4325, 'Testing City', 'testingrestaurant@yahoo.com', 'www.testingrestaurant.com', 25, 0, 0);
+(22, 'New test restaurant', 'testing ', 33, 4325, 'Testing City', 'testingrestaurant@yahoo.com', 'www.testingrestaurant.com', 25, 0, 0),
+(23, 'Belli cosa', 'Mechelseweg', 12, 1512, 'Mechelen', 'test@cdc.vcd', 'cdcdcd', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -173,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `table` (
   `table_nr` varchar(255) NOT NULL,
   `table_persons` int(11) NOT NULL,
   `table_status` varchar(255) NOT NULL,
-  `table_description` longtext NOT NULL,
+  `table_description` longtext,
   `restaurant_id` int(11) NOT NULL,
   PRIMARY KEY (`table_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
