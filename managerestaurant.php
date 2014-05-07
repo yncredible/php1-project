@@ -53,8 +53,30 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>OpenTable | Uw restaurant</title>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/style.css">
+
+		<script>
+			$(document).ready(function(){
+
+				$('.toggleMenu').on('click', function(e){
+
+					$('.menu').toggle();
+
+					e.preventDefault();	
+				});
+
+				$('.toggleTable').on('click', function(e){
+
+					$('.tableToggle').toggle();
+
+					e.preventDefault();	
+				});
+
+			});
+		</script>
+		
 	</head>
 
 
@@ -124,8 +146,9 @@
 			
 			<div class="row">
 				<div class="col-sm-12">
-					<h3>Menu</h3>
-					
+					<h3>Menu <span class="toggleMenu"><a href="#">(Hide)</a></span></h3>
+
+					<div class="menu">
 					<div>
 					<h4><span class="label label-primary">Beverages</span></h4>
 					
@@ -522,6 +545,7 @@
 					
 					</div>
 				</div>
+				</div>
 			</div>
 
 
@@ -601,7 +625,9 @@
 
 		<div class="row">
 			<div class="col-sm-12">
-				<h3>Tables overview</h3>
+				<h3>Tables overview <span class="toggleTable"><a href="#">(Hide)</a></span></h3>
+
+				<div class="tableToggle">
 
 				<table class="table">
 					<thead>
@@ -627,6 +653,8 @@
 						?>
 					</tbody>
 				</table>
+
+				</div>
 				
 			</div>
 		</div> 
