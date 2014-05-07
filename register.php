@@ -102,11 +102,18 @@
 		<div class="container">
 
 		<div class="jumbotron">
-			<h2>Registreer uzelf als restauranthouder</h2>
+			<h2>Opentable<h2>
 		</div>
+		
+		<nav>
+			<ul class="nav nav-pills">
+				<li><a href="index.php">Home</a></li>
+			</ul>
+		</nav>
 		
 		<div class="row">
 			<div class="col-sm-12">
+				<h4>Register</h4>
 				<form action="" method="POST" role="form">
 					<div class="formgroup">
 						<label for="ownerName">Name</label>
@@ -132,7 +139,7 @@
 					</div>
 						<input type="submit" value="Sign Up" name="register" class="btn btn-default">
 
-						<p>Already have an account? <a href="login.php">login here</a></p>
+						<p>Already registered? <a href="login.php">Login here!</a></p>
 				</form>
 			</div>
 		</div>

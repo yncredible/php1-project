@@ -43,11 +43,16 @@
 		<div class="container">
 
 		<div class="jumbotron">
-			<h2>Opentable user Log in</h2>
+			<h2>Opentable</h2>
 		</div>
-
+		<nav>
+			<ul class="nav nav-pills">
+				<li><a href="index.php">Home</a></li>
+			</ul>
+		</nav>
 		<div class="row">
 			<div class="col-sm-12">
+				<h4>Login</h4>
 				<form action="" method="POST" role="form" class="form-horizontal">
 					<?php if(isset($errorLogin)){echo '<p class="inputError">' . $errorLogin . '</p>';} ?>
 
@@ -72,7 +77,7 @@
 				</form>
 
 				<p class="col-sm-offset-2 col-sm-10">
-					You don't have an account? No problem! <a href="register.php">Register</a> here.
+					You don't have an account? No problem! <a href="register.php">Register here.</a>
 				</p>
 				
 			</div>
