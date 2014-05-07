@@ -132,7 +132,7 @@
 					</div>
 						<input type="submit" value="Sign Up" name="register" class="btn btn-default">
 
-						<p>Bent u al geregistreerd? <a href="login.php">Log dan snel in!</a></p>
+						<p>Already have an account? <a href="login.php">login here</a></p>
 				</form>
 			</div>
 		</div>
