@@ -6,11 +6,16 @@
 		header("location: login.php");
 	}
 
-	// var_dump($_SESSION);
+	//var_dump($_SESSION);
 
 	include_once('classes/Restaurant.class.php');
 	$restaurant = new Restaurant();
 	$ownersRestaurants = $restaurant->getAllRestaurantsFromAnOwner($_SESSION['ownerIdentity']);
+
+	if(!empty($_POST['deleteRestaurant']))
+	{
+		
+	}
 
  ?><!doctype html>
 <html lang="en">
@@ -41,6 +46,7 @@
 				<tr>
 					<th>Naam restaurant</th>
 					<th>Gemeente</th>
+					<th>Delete</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -48,8 +54,13 @@
 					foreach($ownersRestaurants as $Orestaurant){ ?>
 						
 						<tr>
-							<td><a href="managerestaurant.php?id=<?php echo $Orestaurant['restaurant_id'];?>"><?php echo $Orestaurant['restaurant_name']; ?></a></td>
-							<td><?php echo $Orestaurant['restaurant_city']; ?></td>
+							<form action="#" method="get" role="form">
+								<td><a href="managerestaurant.php?id=<?php echo $Orestaurant['restaurant_id'];?>"><?php echo $Orestaurant['restaurant_name']; ?></a></td>
+								<td><?php echo $Orestaurant['restaurant_city']; ?></td>
+								<td>
+									<input type="submit" value="<?php echo $Orestaurant['restaurant_id'] ?>" name="deleteRestaurant">
+								</td>
+    						</form>
 						</tr>
 
 					<?php }
