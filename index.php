@@ -31,14 +31,14 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	<header>
+		&nbsp;
+	</header>
 	<div class="container">
-
+	
 	<div class="jumbotron">
 		<h2>Opentable</h2>
 	</div>
-	
-
-
 	
 	<nav>
 	<?php 
@@ -63,6 +63,9 @@
 
 	?>
 	</nav>
+
+	
+	
 
 	<div class="row">
 		<div class="col-sm-12">
