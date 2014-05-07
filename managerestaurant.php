@@ -76,109 +76,135 @@
 			</ul>
 		</nav>
 
-
+		<hr>
 		
-		 <div id="menu">
-		 <h1>Menu</h1>
-		 	 <h2>Beverages</h2>
-			  <ul>
-			  	<?php 
-			  		foreach ($menuList as $menuItem) 
-			  		{
-			  			if($menuItem['menu_category'] == "beverages")
-			  			{
-			  				echo "<li>";
-			  					echo $menuItem['menu_name'];
-			  					echo $menuItem['menu_description'];
-			  					echo $menuItem['menu_price'];
-			  				echo "</li>";
-			  			}
-			  		}
-			  	 ?>
-			  </ul>
-
-
-			  <h2>Burger/Sandwiches</h2>
-			  <ul>
-			  	<?php 
-			  		foreach ($menuList as $menuItem) 
-			  		{
-			  			if($menuItem['menu_category'] == "burgerSandwiches")
-			  			{
-			  				echo "<li>";
-			  					echo $menuItem['menu_name'];
-			  					echo $menuItem['menu_description'];
-			  					echo $menuItem['menu_price'];
-			  				echo "</li>";
-			  			}
-			  		}
-			  	 ?>
-			  </ul>
-		 </div>
-
-		 <form action='#' method="post">
-		    <label for="menu_name">Name</label>
-		    <input id="menu_name" name="menu_name" />
-
-		    <label for="menu_description">Description</label>
-		    <input id="menu_description" name="menu_description" />
-
-		    <label for="menu_price">Price</label>
-		    <input id="menu_price" name="menu_price" />
-
-			<label for="menu_category">Category</label>
-			<select id="menu_category" name="menu_category">
-					<option value="beverages">Beverages</option>
-					<option value="alcoholBeverages">Alcoholic beverages</option>
-					<option value="appetizers">Appetizers</option>
-					<option value="soups">Soups</option>
-					<option value="salads">Salads</option>
-					<option value="chicken">Chicken</option>
-					<option value="pasta">Pasta</option>
-					<option value="seafood">Seafood</option>
-					<option value="ribSteaks">Rib/Steaks</option>
-					<option value="burgerSandwiches">Burger/Sandwiches</option>
-					<option value="kidsMenu">Kids Menu</option>
-					<option value="desserts">Desserts</option>
-			</select>
-
-	 		<input type="submit" id='btnSubmit' name="add_menu" value="add">
- 		</form>
-
-		<div class="row">
+		<div id="menuView">
+			<div class="row">
 			<div class="col-sm-12">
-				<h2>Tables overview</h2>
-				<table class="table">
-					<thead>
-						<tr>
-							<th>Table nr.</th>
-							<th>Persons</th>
-							<th>Description</th>
-							<th>Status</th>
-						</tr>
-					</thead>
-					<tbody>
-						<?php 
-							foreach($tableList as $tableItem){ ?>
-									
-									<tr>
-										<td><?php echo $tableItem['table_nr']; ?></td>
-										<td><?php echo $tableItem['table_persons']; ?></td>
-										<td><?php echo $tableItem['table_description']; ?></td>
-										<td><?php echo $tableItem['table_status']; ?></td>
-									</tr>
 
-							<?php }
-						?>
-					</tbody>
-				</table>
-				
+			<p><span class="label label-default">Add menu items</span></p>
+
+			
+			<form action='' method="post" role="form" class="form-inline">
+				<div class="form-group">
+					<label for="menu_name">Name</label>
+					<input class="form-control" id="menu_name" name="menu_name" />
+				</div>
+				<div class="form-group">
+					<label for="menu_description">Description</label>
+					<input class="form-control" id="menu_description" name="menu_description" />
+				</div>
+				<div class="form-group">
+					<label for="menu_price">Price</label>
+					<input class="form-control" id="menu_price" name="menu_price" />
+				</div>
+				<div class="form-group">
+					<label for="menu_category">Category</label>
+					<select class="form-control" id="menu_category" name="menu_category">
+							<option value="beverages">Beverages</option>
+							<option value="alcoholBeverages">Alcoholic beverages</option>
+							<option value="appetizers">Appetizers</option>
+							<option value="soups">Soups</option>
+							<option value="salads">Salads</option>
+							<option value="chicken">Chicken</option>
+							<option value="pasta">Pasta</option>
+							<option value="seafood">Seafood</option>
+							<option value="ribSteaks">Rib/Steaks</option>
+							<option value="burgerSandwiches">Burger/Sandwiches</option>
+							<option value="kidsMenu">Kids Menu</option>
+							<option value="desserts">Desserts</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<input class="btn btn-primary" type="submit" id='btnSubmit' name="add_menu" value="add">
+				</div>
+			</form>
 			</div>
-		</div> 
+			</div>
+			
+			<div class="row">
+				<div class="col-sm-12">
+					<h3>Menu</h3>
+					
+					<div>
+					<h4><span class="label label-primary">Beverages</span></h4>
+					
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php 
+								foreach ($menuList as $menuItem) 
+								{
+									if($menuItem['menu_category'] == "beverages")
+									{ ?>
 
+										<tr>
+											<td><?php echo $menuItem['menu_name']; ?></td>
+											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+										</tr>
+
+
+									<?php }
+								}
+							?>
+						</tbody>
+					</table>
+
+					</div>
+
+					<div>
+					<h4><span class="label label-primary">Burger/Sandwiches</span></h4>
+					
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php 
+								foreach ($menuList as $menuItem) 
+								{
+									if($menuItem['menu_category'] == "burgerSandwiches")
+									{ ?>
+
+										<tr>
+											<td><?php echo $menuItem['menu_name']; ?></td>
+											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+										</tr>
+
+
+									<?php }
+								}
+							?>
+						</tbody>
+					</table>
+					
+					</div>
+
+
+				</div>
+			</div>
+
+
+		</div>
+
+		<hr>	
+
+		<div id="tableView">
 		<div class="row">
 		<div class="col-sm-12">
-
+		<p><span class="label label-default">Add table</span></p>
 		<form action="" method="POST" role="form" class="form-inline">
 			
 			<div class="form-group">
@@ -245,7 +271,42 @@
 		</div>
 		</div>
 
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>Tables overview</h3>
+
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Table nr.</th>
+							<th>Persons</th>
+							<th>Description</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php 
+							foreach($tableList as $tableItem){ ?>
+									
+									<tr>
+										<td><?php echo $tableItem['table_nr']; ?></td>
+										<td><?php echo $tableItem['table_persons']; ?></td>
+										<td><?php echo $tableItem['table_description']; ?></td>
+										<td><?php echo $tableItem['table_status']; ?></td>
+									</tr>
+
+							<?php }
+						?>
+					</tbody>
+				</table>
+				
+			</div>
+		</div> 
+
+
+		<hr>
 
 		</div>
+	</div>
 	</body>
 </html>
