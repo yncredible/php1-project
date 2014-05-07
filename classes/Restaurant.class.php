@@ -182,6 +182,13 @@
 				return $rows;
 			}
 		}
-
+		
+		public function deleteRestaurant($restaurantID){
+			$db = new Db();
+			$deleteAll = "DELETE FROM `restaurant` WHERE `restaurant_id` = '$restaurantID'";
+			
+			$res = $db->conn->query($deleteAll);
+		
+		}
 }
 ?>
