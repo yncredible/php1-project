@@ -222,7 +222,7 @@
 									'". $db->conn->real_escape_string($this->Remarks)."',
 									". 5 ."
 								)";
-			echo $sql;
+			
 			$result = $db->conn->query($sql);
 	}
 	}
