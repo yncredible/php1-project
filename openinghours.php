@@ -41,7 +41,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>OpenTable | Openingshours</title>
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -58,8 +58,66 @@
 					<li><a href="myRestaurants.php">My Restaurants</a></li>
 				</ul>
 			</nav>
-			
+
 			<div class="row">
+				<div class="col-sm-12">
+					<form action="" method="post" role="form">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>&nbsp;</th>
+									<th>From</th>
+									<th>Until</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Monday</strong></td>
+									<td><input class="form-control" type="text" name="monday_from" id="monday_from"></td>
+									<td><input class="form-control" type="text" name="monday_until" id="monday_until"></td>
+								</tr>
+								<tr>
+									<td><strong>Tuesday</strong></td>
+									<td><input class="form-control" type="text" name="tuesday_from" id="tuesday_from"></td>
+									<td><input class="form-control" type="text" name="tuesday_until" id="tuesday_until"></td>
+								</tr>
+								<tr>
+									<td><strong>Wednesday</strong></td>
+									<td><input class="form-control" type="text" name="wednesday_from" id="wednesday_from"></td>
+									<td><input class="form-control" type="text" name="wednesday_until" id="wednesday_until"></td>
+								</tr>
+								<tr>
+									<td><strong>Thursday</strong></td>
+									<td><input class="form-control" type="text" name="thursday_from" id="thursday_from"></td>
+									<td><input class="form-control" type="text" name="thursday_until" id="thursday_until"></td>
+								</tr>
+								<tr>
+									<td><strong>Friday</strong></td>
+									<td><input class="form-control" type="text" name="friday_from" id="friday_from"></td>
+									<td><input class="form-control" type="text" name="friday_until" id="friday_until"></td>
+								</tr>
+								<tr>
+									<td><strong>Saturday</strong></td>
+									<td><input class="form-control" type="text" name="saturday_from" id="saturday_from"></td>
+									<td><input class="form-control" type="text" name="saturday_until" id="saturday_until"></td>
+								</tr>
+								<tr>
+									<td><strong>Sunday</strong></td>
+									<td><input class="form-control" type="text" name="sunday_from" id="sunday_from"></td>
+									<td><input class="form-control" type="text" name="sunday_until" id="sunday_until"></td>
+								</tr>
+							</tbody>
+						</table>
+
+					<div class="form-group">
+						<input class="btn btn-default" type="submit" value="Add Openinghours" name="add_openinghours" id="add_openinghours">
+					</div>
+
+					</form>
+				</div>
+			</div>
+
+<!-- 			<div class="row">
 				<div class="col-sm-12">
 
 				<form method="post" role="form">
@@ -77,14 +135,6 @@
 					<input class="form-control" type="text" name="tuesday_from" id="tuesday_from">
 					<label for="tuesday_until">Until</label>
 					<input class="form-control" type="text" name="tuesday_until" id="tuesday_until">
-					</div>
-
-					<div class="form-group">
-					<h4>Wednesday</h4>						
-					<label for="wednesday_from">From</label>
-					<input class="form-control" type="text" name="wednesday_from" id="wednesday_from">
-					<label for="wednesday_until">Until</label>
-					<input class="form-control" type="text" name="wednesday_until" id="wednesday_until">
 					</div>
 
 					<div class="form-group">
@@ -140,7 +190,9 @@
 			
 				</div>
 			</div>
-		</div>
+
+ -->		</div>
+
 	<footer>
 		Php project - Kimberly Gysbrecht Segers - Kristof Van Espen - Yannick Nijs - Jens Ivens
 	</footer>
