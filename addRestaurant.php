@@ -103,15 +103,10 @@
 			
 				</div>
 			</div>
-
-
-
-
-
-
-
-
 		</div>
+	<footer>
+		Php project - Kimberly Gysbrecht Segers - Kristof Van Espen - Yannick Nijs - Jens Ivens
+	</footer>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 	</body>
