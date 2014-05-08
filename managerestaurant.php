@@ -149,8 +149,8 @@
 									{ ?>
 
 										<tr>
-											<td><?php echo $menuItem['menu_name']; ?></td>
-											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+											<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
 											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
 										</tr>
 
@@ -182,8 +182,8 @@
 									{ ?>
 
 										<tr>
-											<td><?php echo $menuItem['menu_name']; ?></td>
-											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+											<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
 											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
 										</tr>
 
@@ -215,8 +215,8 @@
 									{ ?>
 
 										<tr>
-											<td><?php echo $menuItem['menu_name']; ?></td>
-											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+											<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
 											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
 										</tr>
 
@@ -248,8 +248,8 @@
 									{ ?>
 
 										<tr>
-											<td><?php echo $menuItem['menu_name']; ?></td>
-											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+											<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
 											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
 										</tr>
 
@@ -281,8 +281,8 @@
 									{ ?>
 
 										<tr>
-											<td><?php echo $menuItem['menu_name']; ?></td>
-											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+											<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
 											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
 										</tr>
 
@@ -314,8 +314,8 @@
 									{ ?>
 
 										<tr>
-											<td><?php echo $menuItem['menu_name']; ?></td>
-											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+											<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
 											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
 										</tr>
 
@@ -347,8 +347,8 @@
 									{ ?>
 
 										<tr>
-											<td><?php echo $menuItem['menu_name']; ?></td>
-											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+											<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
 											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
 										</tr>
 
@@ -380,8 +380,8 @@
 									{ ?>
 
 										<tr>
-											<td><?php echo $menuItem['menu_name']; ?></td>
-											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+											<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
 											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
 										</tr>
 
@@ -413,11 +413,10 @@
 									{ ?>
 
 										<tr>
-											<td><?php echo $menuItem['menu_name']; ?></td>
-											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+											<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
 											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
 										</tr>
-
 
 									<?php }
 								}
@@ -446,8 +445,8 @@
 									{ ?>
 
 										<tr>
-											<td><?php echo $menuItem['menu_name']; ?></td>
-											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+											<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
 											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
 										</tr>
 
@@ -479,8 +478,8 @@
 									{ ?>
 
 										<tr>
-											<td><?php echo $menuItem['menu_name']; ?></td>
-											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+											<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
 											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
 										</tr>
 
@@ -512,8 +511,8 @@
 									{ ?>
 
 										<tr>
-											<td><?php echo $menuItem['menu_name']; ?></td>
-											<td><?php echo $menuItem['menu_description']; ?></td>
+											<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+											<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
 											<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
 										</tr>
 
@@ -626,8 +625,8 @@
 									<tr>
 										<td><?php echo $tableItem['table_nr']; ?></td>
 										<td><?php echo $tableItem['table_persons']; ?></td>
-										<td><?php echo $tableItem['table_description']; ?></td>
-										<td><?php echo $tableItem['table_status']; ?></td>
+										<td><?php echo ucfirst($tableItem['table_description']); ?></td>
+										<td><?php echo ucfirst($tableItem['table_status']); ?></td>
 									</tr>
 
 							<?php }
