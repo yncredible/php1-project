@@ -1,3 +1,7 @@
+body
+{
+	background-color: #fdfbfb;
+}
 .jumbotron
 {
 	background-image: url(../images/banner.png);
@@ -47,11 +51,6 @@ header
 table.table thead tr th
 {
 	font-weight: bold;
-}
-
-body
-{
-	background-color: #f9f1ee;
 }
 ul.flow
 {
@@ -137,4 +136,11 @@ p.col-sm-offset-2.col-sm-10
 	width: 100%;
 	margin-left: 0%;
 	padding-left: 0%;
+}
+h2 small
+{
+	background-color: white;
+	color: black;
+	opacity: 0.8;
+	display: inline;
 }
