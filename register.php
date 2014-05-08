@@ -99,57 +99,60 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
+		<header>
+			&nbsp;
+		</header>
 		<div class="container">
 
-		<div class="jumbotron">
-			<h2>Opentable<h2>
-		</div>
-		
-		<nav>
-			<ul class="nav nav-pills">
-				<li><a href="index.php">Home</a></li>
-			</ul>
-		</nav>
-		
-		<div class="row">
-			<div class="col-sm-12">
-				<h4>Register</h4>
-				<form action="" method="POST" role="form">
-					<div class="formgroup">
-						<label for="ownerName">Name</label>
-						<!--Print out errors-->
-						<?php if(isset($errorName)){echo '<p class="inputError">' . $errorName . '</p>';} ?>
-						<?php if(isset($errorName_char)){echo '<p class="inputError">' . $errorName_char . '</p>';} ?>
-						<input class="form-control" type="text" id="ownerName" placeholder="eg: John Doe, Betty's Cafe" name="owner_name" <?php if(isset($_SESSION['name'])){echo 'value="' . $_SESSION['name'] . '"';} ?>>
-					</div>
-					<div class="formgroup">
-						<label for="ownerEmail">Email</label>
-						<!--Print out errors-->
-						<?php if(isset($errorEmail)){echo '<p class="inputError">' . $errorEmail . '</p>';} ?>
-						<?php if(isset($errorEmail_val)){echo '<p class="inputError">' . $errorEmail_val . '</p>';} ?>
-						<?php if(isset($errorAvailability)){echo '<p class="inputError">' . $errorAvailability . '</p>';} ?>
-						<input class="form-control" type="text" id="ownerEmail" placeholder="eg: johndoe@domain.com" name="owner_email" <?php if(isset($_SESSION['email'])){echo 'value="' . $_SESSION['email'] . '"';} ?>>
-					</div>
-					<div class="form-group">
-						<label for="ownerPassword">Password</label>
-						<!--Print out errors-->
-						<?php if(isset($errorPassword)){echo '<p class="inputError">' . $errorPassword . '</p>';} ?>
-						<?php if(isset($errorPassword_len)){echo '<p class="inputError">' . $errorPassword_len . '</p>';} ?>
-						<input class="form-control" type="password" id="ownerPassword" name="owner_password" <?php if(isset($_SESSION['password'])){echo 'value="' . $_SESSION['password'] . '"';} ?>>
-					</div>
-						<input type="submit" value="Sign Up" name="register" class="btn btn-default">
-
-						<p>Already registered? <a href="login.php">Login here!</a></p>
-				</form>
+			<div class="jumbotron">
+				<h2>Opentable <small>Going to dinner was never so easy</small></h2>
 			</div>
-		</div>
+			
+			<nav>
+				<ul class="nav nav-pills">
+					<li><a href="index.php">Home</a></li>
+				</ul>
+			</nav>
+			
+			<div class="row">
+				<div class="col-sm-12">
+					<h4>Register</h4>
+					<form action="" method="POST" role="form">
+						<div class="formgroup">
+							<label for="ownerName">Name</label>
+							<!--Print out errors-->
+							<?php if(isset($errorName)){echo '<p class="inputError">' . $errorName . '</p>';} ?>
+							<?php if(isset($errorName_char)){echo '<p class="inputError">' . $errorName_char . '</p>';} ?>
+							<input class="form-control" type="text" id="ownerName" placeholder="eg: John Doe, Betty's Cafe" name="owner_name" <?php if(isset($_SESSION['name'])){echo 'value="' . $_SESSION['name'] . '"';} ?>>
+						</div>
+						<div class="formgroup">
+							<label for="ownerEmail">Email</label>
+							<!--Print out errors-->
+							<?php if(isset($errorEmail)){echo '<p class="inputError">' . $errorEmail . '</p>';} ?>
+							<?php if(isset($errorEmail_val)){echo '<p class="inputError">' . $errorEmail_val . '</p>';} ?>
+							<?php if(isset($errorAvailability)){echo '<p class="inputError">' . $errorAvailability . '</p>';} ?>
+							<input class="form-control" type="text" id="ownerEmail" placeholder="eg: johndoe@domain.com" name="owner_email" <?php if(isset($_SESSION['email'])){echo 'value="' . $_SESSION['email'] . '"';} ?>>
+						</div>
+						<div class="form-group">
+							<label for="ownerPassword">Password</label>
+							<!--Print out errors-->
+							<?php if(isset($errorPassword)){echo '<p class="inputError">' . $errorPassword . '</p>';} ?>
+							<?php if(isset($errorPassword_len)){echo '<p class="inputError">' . $errorPassword_len . '</p>';} ?>
+							<input class="form-control" type="password" id="ownerPassword" name="owner_password" <?php if(isset($_SESSION['password'])){echo 'value="' . $_SESSION['password'] . '"';} ?>>
+						</div>
+							<input type="submit" value="Sign Up" name="register" class="btn btn-default">
+
+							<p class="col-sm-offset-2 col-sm-10">Already registered? <a href="login.php">Login here!</a></p>
+					</form>
+				</div>
+			</div>
 		
 
 		</div>
-	<footer>
-		Php project - Kimberly Gysbrecht Segers - Kristof Van Espen - Yannick Nijs - Jens Ivens
-	</footer>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script type="text/javascript" src="js/script.js"></script>
+		<footer>
+			Php project - Kimberly Gysbrecht Segers - Kristof Van Espen - Yannick Nijs - Jens Ivens
+		</footer>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script type="text/javascript" src="js/script.js"></script>
 	</body>
 </html>
