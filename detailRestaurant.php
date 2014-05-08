@@ -16,6 +16,7 @@
 	$table = new Table();
 	$tableList = $table->getSpecificTablesfromRestaurant($restaurantID);
 
+	//saving reservations
 	if(isset($_POST) && !empty($_POST)){
 		include_once('classes/Reservation.class.php');
 		$reservation = new Reservation();
@@ -25,26 +26,17 @@
 		$reservation->reservationHour = $_POST['reservation_hour'];
 		$reservation->reservationEmail = $_POST['reservation_email'];
 
+	$reservation->saveReservations($restaurantID);
+	 // sending an email to restaurant
 
+	$reservation->sendEmail($restaurantID);
 	}
 ?><html>
 <head>
-	<meta charset="UTF-8">
-	<title>Opentable | Restaurant details</title>
-	<link rel="stylesheet" href="css/reset.css">
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.css">
+	<title></title>
 </head>
 
 <body>
-	<header>
-		&nbsp;
-	</header>
-	<div class="container">
-	
-	<div class="jumbotron">
-		<h2>Opentable <small>Going to dinner was never so easy</small></h2>
-	</div>
 	<h2>info restaurant</h2>
 	<?php
 		foreach ($restaurantList as $restaurants) {?> 
@@ -82,24 +74,33 @@
 	<?php } ?>
 	
 	<form action="#" method="post">
-		<label for="reservationName">Name:</label>
+		<label for="reservationName" id="lblname">Name:</label>
 		<input type="text" id="reservationName" name="reservation_name">
-		<label for="reservationNumber">Number of people :</label>
+		<label for="reservationNumber" id="lblnumber">Number of people :</label>
 		<input type="text" id="reservationNumber" name="reservation_numberPeople">
-		<label for="reservationDay">Day :</label>
+		<label for="reservationDay" id="lblday">Day :</label>
 		<input type="text" id="reservationDay" name="reservation_day">
-		<label for="reservationHour">Hour :</label>
+		<label for="reservationHour" id="lblhour">Hour :</label>
 		<input type="text" id="reservationHour" name="reservation_hour">
-		<input type="checkbox" id="confirmReservation" name="confirm_reservation"><label for="confirmReservation">Send me a confirmation mail</label>
+		<input type="checkbox" id="reservationConfirmation" name="confirm_reservation"><label for="confirmReservation" id="lblconfirmation">Send me a confirmation mail</label>
 		<label for="reservationEmail" id="lblemail">Email</label>
 		<input type="text" name="reservation_email" id="reservationEmail">
-		<input type="submit" name="reservationSubmit" value="Make a reservation" display="none">
+		<input type="submit" id="reservationSubmit" name="reservation_submit" value="Make a reservation">
+		<input type="button"  id="reservate" value="Reservate">
 
 	</form>
-	<footer>
-		Php project - Kimberly Gysbrecht Segers - Kristof Van Espen - Yannick Nijs - Jens Ivens
-	</footer>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+	
+	<script href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css"></script>
 	<script type="text/javascript" src="js/script.js"></script>
+
+	<!-- ik zet dit hier, als ik het in script.js zet, doet em niks, oplossing komt nog -->
+	<script type="text/javascript">
+               $(document).ready(function(){
+                     
+                 $("#reservationDay").datepicker();
+               });
+       </script>
 </body>
 </html>
