@@ -29,10 +29,22 @@
 	}
 ?><html>
 <head>
-	<title></title>
+	<meta charset="UTF-8">
+	<title>Opentable | Restaurant details</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+	<header>
+		&nbsp;
+	</header>
+	<div class="container">
+	
+	<div class="jumbotron">
+		<h2>Opentable <small>Going to dinner was never so easy</small></h2>
+	</div>
 	<h2>info restaurant</h2>
 	<?php
 		foreach ($restaurantList as $restaurants) {?> 
