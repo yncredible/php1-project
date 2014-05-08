@@ -13,8 +13,6 @@ Contributors:
 ---
 ---
 
-**UPDATE:** ***trying to fix yncredible authorship***
-
 	
 
 
