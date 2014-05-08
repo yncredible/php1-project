@@ -30,7 +30,7 @@
 		<div class="container">
 
 		<div class="jumbotron">
-			<h2>Overzicht van mijn restaurants</h2>
+			<h2>My restaurants</h2>
 		</div>
 		
 		<nav>
@@ -44,8 +44,8 @@
 		<table class="table table-hover">
 			<thead>
 				<tr>
-					<th>Naam restaurant</th>
-					<th>Gemeente</th>
+					<th>Name restaurant</th>
+					<th>City</th>
 					<th>Delete</th>
 				</tr>
 			</thead>
