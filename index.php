@@ -98,7 +98,7 @@
 				<thead>
 					<tr>
 						<th>Name</th>
-						<th>Street</th>
+						<th>Address</th>
 						<th>Postal code</th>
 						<th>City</th>
 					</tr>
@@ -109,7 +109,7 @@
 									
 									<tr>
 										<td><a href="detailRestaurant.php?id=<?php echo $rest['restaurant_id'];?>"><?php echo ucfirst($rest['restaurant_name']); ?></a></td>
-										<td><?php echo ucfirst($rest['restaurant_street']); ?></td>
+										<td><?php echo ucfirst($rest['restaurant_street']) . " " . ucfirst($rest['restaurant_number']); ?></td>
 										<td><?php echo $rest['restaurant_postalCode']; ?></td>
 										<td><?php echo ucfirst($rest['restaurant_city']); ?></td>
 									</tr>
