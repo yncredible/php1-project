@@ -37,8 +37,7 @@
 	<div class="container">
 	
 	<div class="jumbotron">
-		<h2>Opentable</h2>
-		<h3>Going to dinner was never so easy</h3>
+		<h2>Opentable <small>Going to dinner was never so easy</small></h2>
 	</div>
 	
 	<nav>
@@ -85,8 +84,8 @@
 		<div class="col-sm-12">
 			<h4>Our restaurants</h4>
 			<form action="" method="post" role="form" id="search">
-				<label for="zoek_gemeente">Zoek op gemeente</label><br/>
-				<input type="input" name="zoek_gemeente" id="zoek_gemeente" class="">
+				<label for="zoek_gemeente">Search a restaurant</label><br/>
+				<input type="input" name="zoek_gemeente" id="zoek_gemeente" class="" placeholder="Postal code">
 			</form>
 		</div>
 	</div>
@@ -98,10 +97,10 @@
 			<table class="table">
 				<thead>
 					<tr>
-						<th>Naam</th>
-						<th>Straat</th>
-						<th>Postcode</th>
-						<th>Gemeente</th>
+						<th>Name</th>
+						<th>Street</th>
+						<th>Postal code</th>
+						<th>City</th>
 					</tr>
 				</thead>
 				<tbody>
