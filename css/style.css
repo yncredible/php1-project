@@ -126,6 +126,48 @@ input#loginPassword.form-control
 	max-width: 350px;
 	margin-bottom: 15px;
 }
+input#name_restaurant
+{
+	width: 100%;
+	max-width: 350px;
+	margin-bottom: 15px;
+}
+input#street_restaurant
+{
+	width: 100%;
+	max-width: 350px;
+	margin-bottom: 15px;
+}
+input#number_restaurant
+{
+	width: 100%;
+	max-width: 350px;
+	margin-bottom: 15px;
+}
+input#postalcode_restaurant
+{
+	width: 100%;
+	max-width: 350px;
+	margin-bottom: 15px;
+}
+input#city_restaurant
+{
+	width: 100%;
+	max-width: 350px;
+	margin-bottom: 15px;
+}
+input#email_restaurant
+{
+	width: 100%;
+	max-width: 350px;
+	margin-bottom: 15px;
+}
+input#website_restaurant
+{
+	width: 100%;
+	max-width: 350px;
+	margin-bottom: 15px;
+}
 .col-sm-offset-2
 {
 	margin-left: 0%;
