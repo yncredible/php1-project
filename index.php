@@ -58,7 +58,9 @@
 			?>
 			</section>
 
-			<h2>Opentable <small>Going to dinner was never so easy</small></h2>
+			<h2>OpenTable</h2>
+			<h3 class="slogan">Going out to dinner was never so easy.</h3>
+
 		</div>
 	</div>
 	
