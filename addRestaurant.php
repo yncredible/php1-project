@@ -45,21 +45,61 @@
 	</head>
 
 	<body>
-		<div class="container">
+		<header>&nbsp;</header>
+
 			<div class="jumbotron">
-				<h2>Add a new restaurant</h2>
+				<div class="container">
+					<h2>Add a new restaurant</h2>
+				</div>
 			</div>
 
-			<nav>
-				<ul class="nav nav-pills">
-					<li><a href="index.php">Home</a></li>
-					<li><a href="myRestaurants.php">My Restaurants</a></li>
+    <!-- Navigation -->
+    <div class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.php">OpenTable</a>
+        </div>
+        <div class="navbar-collapse collapse">
+
+			<?php 
+
+			if(isset($_SESSION['ownerIdentity'])) { ?>
+
+				<ul class="nav navbar-nav">
+					<li><a href="index.php">All restaurants</a></li>
+					<li><a href="myRestaurants.php">My restaurants</a></li>
 				</ul>
-			</nav>
+
+			<?php } 
+
+			else { ?>
+			
+				<ul class="nav navbar-nav">
+					<li><a href="index.php">All restaurants</a></li>
+				</ul>
+
+			<?php }
+
+			?> 
+
+		</div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <!-- End Navigation -->
+			
+
+
+	<div class="container">
 			
 			<div class="row">
 				<div class="col-sm-12">
-					<h4>Add restaurant</h4>
+					<h3>Add restaurant</h3>
 
 					<form method="post" role="form">
 						<div class="form-group">						
@@ -98,7 +138,7 @@
 						</div>
 
 						<div class="form-group">
-						<input class="btn btn-default" type="submit" value="Add restaurant" name="register_restaurant" id="register_restaurant">
+						<input class="btn btn-primary" type="submit" value="Add restaurant" name="register_restaurant" id="register_restaurant">
 						</div>
 					</form>
 			
