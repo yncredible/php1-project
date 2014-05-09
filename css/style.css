@@ -41,6 +41,7 @@ footer
 	text-align: center;
 	padding-top: 5px;
 	padding-bottom: 5px;
+	clear:both;
 }
 header
 {
@@ -195,3 +196,11 @@ h2 small
 	outline:1px solid #CCC;
 	outline-offset:4px;
 }
+
+
+
+
+
+
+
+

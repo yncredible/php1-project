@@ -122,7 +122,9 @@
 	</div>
 
 	<hr>	
-
+	
+	<div class="row">
+	<div class="col-md-5">
 	<div id="menuView">
 		<div class="row">
 			<div class="col-sm-12">
@@ -547,18 +549,17 @@
 
 
 	</div>
+</div>
+	
 
-	<hr>	
-
+	<div class="col-md-7">
 	<div id="tableView">
-
-	<div class="row">
-		<div class="col-sm-12">
+			
 			<h3>Tables overview <span class="toggleTable"><a href="#">(Hide)</a></span></h3>
 
 			<div class="tableToggle">
 
-			<table class="table">
+			<table class="table table-condensed">
 				<thead>
 					<tr>
 						<th>Table nr.</th>
@@ -584,15 +585,10 @@
 				</tbody>
 			</table>
 
-			</div>
-			
-		</div>
 	</div>
 	
 	<hr>
 
-	<div class="row">
-		<div class="col-md-12">
 			<h2>Reserve a table now!</h2>
 
 			<form action="#" method="post" role="form" >
@@ -612,9 +608,8 @@
 
 			<a name="reserveNow"></a>
 
-		</div>
-	</div>
-	
+			</div>
+		</div> <!-- /row -->
     </div>
 
     <footer></footer>
