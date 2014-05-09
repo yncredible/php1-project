@@ -9,7 +9,20 @@
 	// Showing menu per specific restaurant
 	include_once('classes/Menu.class.php');
 	$menu = new Menu();
-	$menuList = $menu->getSpecificMenufromRestaurant($restaurantID);
+	// $menuList = $menu->getSpecificMenufromRestaurant($restaurantID);
+	$menuListBeverages = $menu->getBeverages($restaurantID);
+	$menuListAlcohol = $menu->getAlcoholBeverages($restaurantID);
+	$menuListAppetizer = $menu->getAppetizers($restaurantID);
+	$menuListSoup = $menu->getSoups($restaurantID);
+	$menuListSalads = $menu->getSalads($restaurantID);
+	$menuListChicken = $menu->getChicken($restaurantID);
+	$menuListPasta = $menu->getPasta($restaurantID);
+	$menuListSeafood = $menu->getSeafood($restaurantID);
+	$menuListRibsteak = $menu->getRibSteaks($restaurantID);
+	$menuListBurgerSandwiches = $menu->getBurgerSandwiches($restaurantID);
+	$menuListKidsMenu = $menu->getKidsMenu($restaurantID);
+	$menuListDessert = $menu->getDesserts($restaurantID);
+
 
 	// Showing tables per specific restaurant
 	include_once('classes/Table.class.php');
@@ -52,15 +65,43 @@
 	<?php } ?>
 
 	<h2>Menu lijst</h2>
-	<?php
-		foreach ($menuList as $menus) {?> 
 
-		<li> <?php echo $menus['menu_name'];?> </li>
-		<li> <?php echo $menus['menu_description'];?> </li>
-		<li> <?php echo $menus['menu_price'];?> </li>
-		<li> <?php echo $menus['menu_category'];?> </li>
+	<div class="menu">
+
+	<?php if(isset($menuListBeverages) && !empty($menuListBeverages))
+	{ ?>
+		<div>
+			<h4><span class="label label-primary">Beverages</span></h4>
 		
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Description</th>
+						<th>Price</th>
+					</tr>
+				</thead>
+
+				<tbody id="beveragesList">
+					<?php 
+						foreach ($menuListBeverages as $menuItem) 
+						{
+							?>
+
+							<tr>
+								<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+								<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
+								<td><?php echo ucfirst($menuItem['menu_price']); ?> €</td>
+							</tr>
+
+
+						<?php } ?>
+				</tbody>
+
+			</table>
+		</div>
 	<?php } ?>
+
 
 	<h2>Tafels</h2>
 	<?php
