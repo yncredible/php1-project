@@ -44,12 +44,20 @@
 
 	$reservation->sendEmail($restaurantID);
 	}
-?><html>
+?><!doctype html>
+<html lang="en">
 <head>
-	<title></title>
+	<meta charset="UTF-8">
+	<title>OpenTable | Uw restaurant</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+	<div class="container">
+
 	<h2>info restaurant</h2>
 	<?php
 		foreach ($restaurantList as $restaurants) {?> 
@@ -132,7 +140,6 @@
 	</form>
 	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
-	
 	<script href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css"></script>
 	<script type="text/javascript" src="js/script.js"></script>
 
@@ -142,6 +149,8 @@
                      
                  $("#reservationDay").datepicker();
                });
-       </script>
+    </script>
+
+    </div>
 </body>
 </html>
