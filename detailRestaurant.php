@@ -58,19 +58,37 @@
 <body>
 	<div class="container">
 
-	<h2>info restaurant</h2>
-	<?php
-		foreach ($restaurantList as $restaurants) {?> 
+	<div class="jumbotron">
+		<?php 
+			foreach ($restaurantList as $restaurants) { ?>
+				<h2><?php echo ucfirst($restaurants['restaurant_name']); ?></h2>
+			<?php }
+		 ?>		
+	</div>
+	
+	<div class="row">
+		<div class="col-xs-6 restaurantPhoto">
+			<!--<img src="#" alt="foto restuarant?">-->
+			<h2>fotoke hier?</h2>
+		</div>
 
-		<li> <?php echo $restaurants['restaurant_name'];?> </li>
-		<li> <?php echo $restaurants['restaurant_street'];?> </li>
-		<li> <?php echo $restaurants['restaurant_number'];?> </li>
-		<li> <?php echo $restaurants['restaurant_postalCode'];?> </li>
-		<li> <?php echo $restaurants['restaurant_city'];?> </li>
-		<li> <?php echo $restaurants['restaurant_email'];?> </li>
-		<li> <a href="http://<?php echo $restaurants['restaurant_website'];?>"><?php echo $restaurants['restaurant_website'];?> </a></li>
+		<div class="col-xs-6 restaurantAddress">
+		<?php
+			foreach ($restaurantList as $restaurants) {?>
 
-	<?php } ?>
+			<address>
+				<strong><?php echo $restaurants['restaurant_name'];?></strong><br>
+				<?php echo $restaurants['restaurant_street']." ".$restaurants['restaurant_number'];?><br>
+				<?php echo $restaurants['restaurant_postalCode']." ".$restaurants['restaurant_city'];?><br>
+				<abbr title="Email">E: </abbr><a href="mailto:#"><?php echo $restaurants['restaurant_email'];?></a><br>
+				<abbr title="Website">W: </abbr><a href="http://<?php echo $restaurants['restaurant_website'];?>"><?php echo $restaurants['restaurant_website'];?> </a>
+			</address> 
+
+		<?php } ?>
+		</div>
+	</div>
+
+	<hr>	
 
 	<h2>Menu lijst</h2>
 
