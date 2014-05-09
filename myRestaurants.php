@@ -27,16 +27,61 @@
 	</head>
 
 	<body>
-		<div class="container">
+		<header>&nbsp;</header>
 
 		<div class="jumbotron">
-			<h2>My restaurants</h2>
+			<div class="container">
+				<h2>My restaurants</h2>
+			</div>
 		</div>
+
+    <!-- Navigation -->
+    <div class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.php">OpenTable</a>
+        </div>
+        <div class="navbar-collapse collapse">
+
+			<?php 
+
+			if(isset($_SESSION['ownerIdentity'])) { ?>
+
+				<ul class="nav navbar-nav">
+					<li><a href="index.php">All restaurants</a></li>
+					<li><a href="myRestaurants.php">My restaurants</a></li>
+				</ul>
+
+			<?php } 
+
+			else { ?>
+			
+				<ul class="nav navbar-nav">
+					<li><a href="index.php">All restaurants</a></li>
+				</ul>
+
+			<?php }
+
+			?> 
+
+		</div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <!-- End Navigation -->
+		
+
+
+	<div class="container">
 		
 		<nav>
 			<ul class="nav nav-pills">
-				<li><a href="index.php">Home</a></li>
-				<li class=""><a href="addRestaurant.php">Add a new restaurant</a></li>
+				<li><a class="btn btn-default" href="addRestaurant.php"><span class="glyphicon glyphicon-plus"></span> Add a new restaurant</a></li>
 			</ul>
 		</nav>
 
