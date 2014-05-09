@@ -186,3 +186,12 @@ h2 small
 	opacity: 0.8;
 	display: inline;
 }
+
+#restoPic
+{
+	max-width:295px;
+	width:100%;
+	max-height:195px;
+	outline:1px solid #CCC;
+	outline-offset:4px;
+}

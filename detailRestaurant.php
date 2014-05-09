@@ -56,20 +56,50 @@
 </head>
 
 <body id="detailResto">
-	<div class="container">
+	<header>&nbsp;</header>
 
 	<div class="jumbotron">
+		<div class="container">
 		<?php 
 			foreach ($restaurantList as $restaurants) { ?>
 				<h2><?php echo ucfirst($restaurants['restaurant_name']); ?></h2>
 			<?php }
-		 ?>		
+		 ?>
+		 </div>		
 	</div>
 	
+
+    <!-- Navigation -->
+    <div class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.php">OpenTable</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="">Link</a></li>
+            <li><a href="">Link</a></li>
+            <li><a href="">Link</a></li>
+            <li><a href="">Link</a></li>
+            <li><a href="">Link</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <!-- End Navigation -->
+
+	<div class="container">
+
 	<div class="row">
 		<div class="col-xs-6 restaurantPhoto">
 			<!--<img src="#" alt="foto restuarant?">-->
-			<h2>fotoke hier?</h2>
+			<img id="restoPic" src="images/tpl.jpg" alt="tpl pic">
 		</div>
 
 		<div class="col-xs-6 restaurantAddress">
@@ -565,7 +595,7 @@
 		<div class="col-md-12">
 			<h2>Reserve a table now!</h2>
 
-			<form action="#" method="post" role="form" class="form">
+			<form action="#" method="post" role="form" >
 				<label for="reservationName" id="lblname">Name:</label>
 				<input type="text" id="reservationName" name="reservation_name">
 				<label for="reservationNumber" id="lblnumber">Number of people :</label>
@@ -585,8 +615,11 @@
 		</div>
 	</div>
 	
+    </div>
 
-	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <footer></footer>
+
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
 	<script href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css"></script>
 	<script type="text/javascript" src="js/script.js"></script>
@@ -598,7 +631,5 @@
                  $("#reservationDay").datepicker();
                });
     </script>
-
-    </div>
 </body>
 </html>
