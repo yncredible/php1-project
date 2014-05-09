@@ -11,41 +11,31 @@
 
 	include_once("classes/Menu.class.php");
  	$menu = new Menu();
-	if(!empty($_POST['add_menu']))
-	{
-		//add a new menu item
-		$menu->menuName = $_POST["menu_name"];
-		$menu->menuDescription = $_POST["menu_description"];
-		$menu->menuPrice = $_POST["menu_price"];
-		$menu->menuCategory = $_POST["menu_category"];
+ 	//show restaurant menu
+	$menuListBeverages = $menu->getBeverages($restaurantID);
+	$menuListAlcohol = $menu->getAlcoholBeverages($restaurantID);
+	$menuListAppetizer = $menu->getAppetizers($restaurantID);
+	$menuListSoup = $menu->getSoups($restaurantID);
+	$menuListSalads = $menu->getSalads($restaurantID);
+	$menuListChicken = $menu->getChicken($restaurantID);
+	$menuListPasta = $menu->getPasta($restaurantID);
+	$menuListSeafood = $menu->getSeafood($restaurantID);
+	$menuListRibsteak = $menu->getRibSteaks($restaurantID);
+	$menuListBurgerSandwiches = $menu->getBurgerSandwiches($restaurantID);
+	$menuListKidsMenu = $menu->getKidsMenu($restaurantID);
+	$menuListDessert = $menu->getDesserts($restaurantID);
 
-		$menu->addMenu($restaurantID);
-	}
-
-	include_once('classes/Table.class.php');
-
-	$table = new Table();
-	if(!empty($_POST['table_add']))
-	{
-		//add a new table item
-		$table->Number = $_POST['table_number'];
-		$table->Persons = $_POST['table_people'];
-		$table->Status = $_POST['table_status'];
-		$table->Description = $_POST['table_description'];
-
-		$table->addTable($restaurantID);
-	}
+	
 
 
 	//show owner restaurants
 	include_once('classes/Restaurant.class.php');
 	$restaurant = new Restaurant();
 	$ownersRestaurants = $restaurant->getSpecificRestaurantfromOwner($restaurantID);
-
-	//show restaurant menu
-	$menuList = $menu->getSpecificMenufromRestaurant($restaurantID);
 	
 	//show restaurant tables
+	include_once('classes/Table.class.php');
+	$table = new Table();
 	$tableList = $table->getSpecificTablesfromRestaurant($restaurantID);
 
  ?><!doctype html>
@@ -121,6 +111,7 @@
 								<option value="desserts">Desserts</option>
 						</select>
 					</div>
+					<input type="hidden" id="specificRestaurantMenu" value="<?php echo $restaurantID; ?>">
 					<div class="form-group">
 						<input class="btn btn-primary" type="submit" id='btnSubmit' name="add_menu" value="add">
 					</div>
@@ -133,400 +124,430 @@
 						<h3>Menu <span class="toggleMenu"><a href="#">(Hide)</a></span></h3>
 
 						<div class="menu">
-						<div>
-						<h4><span class="label label-primary">Beverages</span></h4>
-						
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Name</th>
-									<th>Description</th>
-									<th>Price</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php 
-									foreach ($menuList as $menuItem) 
-									{
-										if($menuItem['menu_category'] == "beverages")
-										{ ?>
 
+						<?php if(isset($menuListBeverages) && !empty($menuListBeverages))
+						{ ?>
+							<div>
+								<h4><span class="label label-primary">Beverages</span></h4>
+							
+								<table class="table">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Description</th>
+											<th>Price</th>
+										</tr>
+									</thead>
+
+									<tbody id="beveragesList">
+										<?php 
+											foreach ($menuListBeverages as $menuItem) 
+											{
+												?>
+
+												<tr>
+													<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+													<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
+													<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+													<td><a href='#' class="deleteMenuItem" data-delete-menu-item="<?php echo $menuItem["menu_id"]; ?>">Delete</a></td>
+												</tr>
+
+
+											<?php } ?>
+									</tbody>
+
+								</table>
+							</div>
+						<?php } ?>
+
+
+							<?php if(isset($menuListAlcohol) && !empty($menuListAlcohol))
+							{ ?>
+								<div>
+									<h4><span class="label label-primary">Alcoholic Beverages</span></h4>
+								
+									<table class="table">
+										<thead>
 											<tr>
-												<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
-												<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
-												<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+												<th>Name</th>
+												<th>Description</th>
+												<th>Price</th>
 											</tr>
+										</thead>
+
+										<tbody id="alcoholList">
+											<?php 
+												foreach ($menuListAlcohol as $menuItem) 
+												{
+													?>
+
+													<tr>
+														<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+														<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
+														<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+														<td><a href='#' class="deleteMenuItem" data-delete-menu-item="<?php echo $menuItem["menu_id"]; ?>">Delete</a></td>
+													</tr>
 
 
-										<?php }
-									}
-								?>
-							</tbody>
-						</table>
+												<?php } ?>
+										</tbody>
 
-						</div>
+									</table>
+								</div>
+							<?php } ?>
 
-						<div>
-						<h4><span class="label label-primary">Burger/Sandwiches</span></h4>
-						
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Name</th>
-									<th>Description</th>
-									<th>Price</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php 
-									foreach ($menuList as $menuItem) 
-									{
-										if($menuItem['menu_category'] == "burgerSandwiches")
-										{ ?>
 
+							<?php if(isset($menuListAppetizer) && !empty($menuListAppetizer))
+							{ ?>
+								<div>
+									<h4><span class="label label-primary">Appetizers</span></h4>
+								
+									<table class="table">
+										<thead>
 											<tr>
-												<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
-												<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
-												<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+												<th>Name</th>
+												<th>Description</th>
+												<th>Price</th>
 											</tr>
+										</thead>
+
+										<tbody id="appetizerList">
+											<?php 
+												foreach ($menuListAppetizer as $menuItem) 
+												{
+													?>
+
+													<tr>
+														<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+														<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
+														<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+														<td><a href='#' class="deleteMenuItem" data-delete-menu-item="<?php echo $menuItem["menu_id"]; ?>">Delete</a></td>
+													</tr>
 
 
-										<?php }
-									}
-								?>
-							</tbody>
-						</table>
-						
-						</div>
+												<?php } ?>
+										</tbody>
 
-						<div>
-						<h4><span class="label label-primary">Alcoholic beverages</span></h4>
-						
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Name</th>
-									<th>Description</th>
-									<th>Price</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php 
-									foreach ($menuList as $menuItem) 
-									{
-										if($menuItem['menu_category'] == "alcoholBeverages")
-										{ ?>
+									</table>
+								</div>
+							<?php } ?>
 
+							<?php if(isset($menuListSoup) && !empty($menuListSoup))
+							{ ?>
+								<div>
+									<h4><span class="label label-primary">Soups</span></h4>
+								
+									<table class="table">
+										<thead>
 											<tr>
-												<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
-												<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
-												<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+												<th>Name</th>
+												<th>Description</th>
+												<th>Price</th>
 											</tr>
+										</thead>
+
+										<tbody id="soupList">
+											<?php 
+												foreach ($menuListSoup as $menuItem) 
+												{
+													?>
+
+													<tr>
+														<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+														<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
+														<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+														<td><a href='#' class="deleteMenuItem" data-delete-menu-item="<?php echo $menuItem["menu_id"]; ?>">Delete</a></td>
+													</tr>
 
 
-										<?php }
-									}
-								?>
-							</tbody>
-						</table>
-						
-						</div>
+												<?php } ?>
+										</tbody>
 
-						<div>
-						<h4><span class="label label-primary">Appetizers</span></h4>
-						
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Name</th>
-									<th>Description</th>
-									<th>Price</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php 
-									foreach ($menuList as $menuItem) 
-									{
-										if($menuItem['menu_category'] == "appetizers")
-										{ ?>
+									</table>
+								</div>
+							<?php } ?>
 
+							<?php if(isset($menuListSalads) && !empty($menuListSalads))
+							{ ?>
+								<div>
+									<h4><span class="label label-primary">Salads</span></h4>
+								
+									<table class="table">
+										<thead>
 											<tr>
-												<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
-												<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
-												<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+												<th>Name</th>
+												<th>Description</th>
+												<th>Price</th>
 											</tr>
+										</thead>
+
+										<tbody id="saladList">
+											<?php 
+												foreach ($menuListSalads as $menuItem) 
+												{
+													?>
+
+													<tr>
+														<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+														<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
+														<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+														<td><a href='#' class="deleteMenuItem" data-delete-menu-item="<?php echo $menuItem["menu_id"]; ?>">Delete</a></td>
+													</tr>
 
 
-										<?php }
-									}
-								?>
-							</tbody>
-						</table>
-						
-						</div>
+												<?php } ?>
+										</tbody>
 
-						<div>
-						<h4><span class="label label-primary">Soups</span></h4>
-						
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Name</th>
-									<th>Description</th>
-									<th>Price</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php 
-									foreach ($menuList as $menuItem) 
-									{
-										if($menuItem['menu_category'] == "soups")
-										{ ?>
+									</table>
+								</div>
+							<?php } ?>
 
+							<?php if(isset($menuListChicken) && !empty($menuListChicken))
+							{ ?>
+								<div>
+									<h4><span class="label label-primary">Chicken</span></h4>
+								
+									<table class="table">
+										<thead>
 											<tr>
-												<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
-												<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
-												<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+												<th>Name</th>
+												<th>Description</th>
+												<th>Price</th>
 											</tr>
+										</thead>
+
+										<tbody id="chickenList">
+											<?php 
+												foreach ($menuListChicken as $menuItem) 
+												{
+													?>
+
+													<tr>
+														<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+														<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
+														<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+														<td><a href='#' class="deleteMenuItem" data-delete-menu-item="<?php echo $menuItem["menu_id"]; ?>">Delete</a></td>
+													</tr>
 
 
-										<?php }
-									}
-								?>
-							</tbody>
-						</table>
-						
-						</div>
+												<?php } ?>
+										</tbody>
 
-						<div>
-						<h4><span class="label label-primary">Salads</span></h4>
-						
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Name</th>
-									<th>Description</th>
-									<th>Price</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php 
-									foreach ($menuList as $menuItem) 
-									{
-										if($menuItem['menu_category'] == "salads")
-										{ ?>
+									</table>
+								</div>
+							<?php } ?>
 
+							<?php if(isset($menuListPasta) && !empty($menuListPasta))
+							{ ?>
+								<div>
+									<h4><span class="label label-primary">Pasta</span></h4>
+								
+									<table class="table">
+										<thead>
 											<tr>
-												<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
-												<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
-												<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+												<th>Name</th>
+												<th>Description</th>
+												<th>Price</th>
 											</tr>
+										</thead>
+
+										<tbody id="pastaList">
+											<?php 
+												foreach ($menuListPasta as $menuItem) 
+												{
+													?>
+
+													<tr>
+														<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+														<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
+														<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+														<td><a href='#' class="deleteMenuItem" data-delete-menu-item="<?php echo $menuItem["menu_id"]; ?>">Delete</a></td>
+													</tr>
 
 
-										<?php }
-									}
-								?>
-							</tbody>
-						</table>
-						
-						</div>
+												<?php } ?>
+										</tbody>
 
-						<div>
-						<h4><span class="label label-primary">Chicken</span></h4>
-						
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Name</th>
-									<th>Description</th>
-									<th>Price</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php 
-									foreach ($menuList as $menuItem) 
-									{
-										if($menuItem['menu_category'] == "chicken")
-										{ ?>
+									</table>
+								</div>
+							<?php } ?>
 
+							<?php if(isset($menuListSeafood) && !empty($menuListSeafood))
+							{ ?>
+								<div>
+									<h4><span class="label label-primary">Seafood</span></h4>
+								
+									<table class="table">
+										<thead>
 											<tr>
-												<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
-												<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
-												<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+												<th>Name</th>
+												<th>Description</th>
+												<th>Price</th>
 											</tr>
+										</thead>
+
+										<tbody id="seafoodList">
+											<?php 
+												foreach ($menuListSeafood as $menuItem) 
+												{
+													?>
+
+													<tr>
+														<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+														<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
+														<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+														<td><a href='#' class="deleteMenuItem" data-delete-menu-item="<?php echo $menuItem["menu_id"]; ?>">Delete</a></td>
+													</tr>
 
 
-										<?php }
-									}
-								?>
-							</tbody>
-						</table>
-						
-						</div>
+												<?php } ?>
+										</tbody>
 
-						<div>
-						<h4><span class="label label-primary">Pasta</span></h4>
-						
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Name</th>
-									<th>Description</th>
-									<th>Price</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php 
-									foreach ($menuList as $menuItem) 
-									{
-										if($menuItem['menu_category'] == "pasta")
-										{ ?>
+									</table>
+								</div>
+							<?php } ?>
 
+							<?php if(isset($menuListRibsteak) && !empty($menuListRibsteak))
+							{ ?>
+								<div>
+									<h4><span class="label label-primary">Ribsteaks</span></h4>
+								
+									<table class="table">
+										<thead>
 											<tr>
-												<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
-												<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
-												<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+												<th>Name</th>
+												<th>Description</th>
+												<th>Price</th>
 											</tr>
+										</thead>
+
+										<tbody id="ribsteakList">
+											<?php 
+												foreach ($menuListRibsteak as $menuItem) 
+												{
+													?>
+
+													<tr>
+														<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+														<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
+														<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+														<td><a href='#' class="deleteMenuItem" data-delete-menu-item="<?php echo $menuItem["menu_id"]; ?>">Delete</a></td>
+													</tr>
 
 
-										<?php }
-									}
-								?>
-							</tbody>
-						</table>
-						
-						</div>
+												<?php } ?>
+										</tbody>
 
-						<div>
-						<h4><span class="label label-primary">Seafood</span></h4>
-						
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Name</th>
-									<th>Description</th>
-									<th>Price</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php 
-									foreach ($menuList as $menuItem) 
-									{
-										if($menuItem['menu_category'] == "seafood")
-										{ ?>
+									</table>
+								</div>
+							<?php } ?>
 
+							<?php if(isset($menuListBurgerSandwiches) && !empty($menuListBurgerSandwiches))
+							{ ?>
+								<div>
+									<h4><span class="label label-primary">Burgers/Sandwiches</span></h4>
+								
+									<table class="table">
+										<thead>
 											<tr>
-												<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
-												<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
-												<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+												<th>Name</th>
+												<th>Description</th>
+												<th>Price</th>
 											</tr>
+										</thead>
 
-										<?php }
-									}
-								?>
-							</tbody>
-						</table>
-						
-						</div>
+										<tbody id="burgerList">
+											<?php 
+												foreach ($menuListBurgerSandwiches as $menuItem) 
+												{
+													?>
 
-						<div>
-						<h4><span class="label label-primary">Rib / Steaks</span></h4>
-						
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Name</th>
-									<th>Description</th>
-									<th>Price</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php 
-									foreach ($menuList as $menuItem) 
-									{
-										if($menuItem['menu_category'] == "ribSteaks")
-										{ ?>
+													<tr>
+														<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+														<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
+														<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+														<td><a href='#' class="deleteMenuItem" data-delete-menu-item="<?php echo $menuItem["menu_id"]; ?>">Delete</a></td>
+													</tr>
 
+
+												<?php } ?>
+										</tbody>
+
+									</table>
+								</div>
+							<?php } ?>
+
+							<?php if(isset($menuListKidsMenu) && !empty($menuListKidsMenu))
+							{ ?>
+								<div>
+									<h4><span class="label label-primary">Kids menu</span></h4>
+								
+									<table class="table">
+										<thead>
 											<tr>
-												<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
-												<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
-												<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+												<th>Name</th>
+												<th>Description</th>
+												<th>Price</th>
 											</tr>
+										</thead>
+
+										<tbody id="kidsList">
+											<?php 
+												foreach ($menuListKidsMenu as $menuItem) 
+												{
+													?>
+
+													<tr>
+														<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+														<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
+														<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+														<td><a href='#' class="deleteMenuItem" data-delete-menu-item="<?php echo $menuItem["menu_id"]; ?>">Delete</a></td>
+													</tr>
 
 
-										<?php }
-									}
-								?>
-							</tbody>
-						</table>
-						
-						</div>
+												<?php } ?>
+										</tbody>
 
-						<div>
-						<h4><span class="label label-primary">Kids Menu</span></h4>
-						
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Name</th>
-									<th>Description</th>
-									<th>Price</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php 
-									foreach ($menuList as $menuItem) 
-									{
-										if($menuItem['menu_category'] == "kidsMenu")
-										{ ?>
+									</table>
+								</div>
+							<?php } ?>
 
+							<?php if(isset($menuListDessert) && !empty($menuListDessert))
+							{ ?>
+								<div>
+									<h4><span class="label label-primary">Desserts</span></h4>
+								
+									<table class="table">
+										<thead>
 											<tr>
-												<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
-												<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
-												<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+												<th>Name</th>
+												<th>Description</th>
+												<th>Price</th>
 											</tr>
+										</thead>
+
+										<tbody id="dessertList">
+											<?php 
+												foreach ($menuListDessert as $menuItem) 
+												{
+													?>
+
+													<tr>
+														<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
+														<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
+														<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
+														<td><a href='#' class="deleteMenuItem" data-delete-menu-item="<?php echo $menuItem["menu_id"]; ?>">Delete</a></td>
+													</tr>
 
 
-										<?php }
-									}
-								?>
-							</tbody>
-						</table>
+												<?php } ?>
+										</tbody>
+
+									</table>
+								</div>
+							<?php } ?>
+
 						
-						</div>
-
-						<div>
-						<h4><span class="label label-primary">Desserts</span></h4>
-						
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Name</th>
-									<th>Description</th>
-									<th>Price</th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php 
-									foreach ($menuList as $menuItem) 
-									{
-										if($menuItem['menu_category'] == "desserts")
-										{ ?>
-
-											<tr>
-												<td><?php echo ucfirst($menuItem['menu_name']); ?></td>
-												<td><?php echo ucfirst($menuItem['menu_description']); ?></td>
-												<td><?php echo "€ " . $menuItem['menu_price']; ?></td>
-											</tr>
-
-
-										<?php }
-									}
-								?>
-							</tbody>
-						</table>
-						
-						</div>
 					</div>
 					</div>
 				</div>
@@ -599,7 +620,8 @@
 				</div>
 				
 				<div class="form-group">
-				<input class="btn btn-primary" type="submit" name="table_add" value="Add table">
+				<input type="hidden" id="specificRestaurantTable" value="<?php echo $restaurantID; ?>">
+				<input class="btn btn-primary" type="submit" id="tableSave" name="table_add" value="Add table">
 				</div>
 
 			</form>
@@ -621,15 +643,27 @@
 								<th>Status</th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody id="tableList">
 							<?php 
-								foreach($tableList as $tableItem){ ?>
+								foreach($tableList as $tableItem)
+								{ ?>
 										
 										<tr>
 											<td><?php echo $tableItem['table_nr']; ?></td>
 											<td><?php echo $tableItem['table_persons']; ?></td>
 											<td><?php echo ucfirst($tableItem['table_description']); ?></td>
-											<td><?php echo ucfirst($tableItem['table_status']); ?></td>
+											<td class="tableStatusText"><?php echo ucfirst($tableItem['table_status']); ?></td>
+											
+											<td>
+												<select class="form-control changeTableStatus" name="change_table_status" data-change-status-table="<?php echo $tableItem["table_id"]; ?>">
+													<option value="" disabled selected>Change status</option>
+													<option value="Free">Free</option>
+													<option value="Reserved">Reserved</option>
+													<option value="Occupied">Occupied</option>
+												</select>
+											</td>
+
+											<td><a href='#' class="deleteTable" data-delete-table="<?php echo $tableItem["table_id"]; ?>">Delete</a></td>
 										</tr>
 
 								<?php }
