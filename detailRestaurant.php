@@ -82,14 +82,29 @@
           <a class="navbar-brand" href="index.php">OpenTable</a>
         </div>
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="">Link</a></li>
-            <li><a href="">Link</a></li>
-            <li><a href="">Link</a></li>
-            <li><a href="">Link</a></li>
-            <li><a href="">Link</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
+
+			<?php 
+
+			if(isset($_SESSION['ownerIdentity'])) { ?>
+
+				<ul class="nav navbar-nav">
+					<li><a href="index.php">All restaurants</a></li>
+					<li><a href="myRestaurants.php">My restaurants</a></li>
+				</ul>
+
+			<?php } 
+
+			else { ?>
+			
+				<ul class="nav navbar-nav">
+					<li><a href="index.php">All restaurants</a></li>
+				</ul>
+
+			<?php }
+
+			?> 
+
+		</div><!--/.nav-collapse -->
       </div>
     </div>
     <!-- End Navigation -->
