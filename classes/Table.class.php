@@ -76,6 +76,22 @@
 								)";
 
 			$result = $db->conn->query($sql);
+
+			if($result)
+			{
+				$sql2 = "SELECT LAST_INSERT_ID() FROM `table` order by table_id desc limit 1";
+				$result2 = $db->conn->query($sql2);
+
+				if($result2)
+				{
+					$results = mysqli_fetch_array($result2, MYSQL_ASSOC);
+
+					$lastEntryID = $results['LAST_INSERT_ID()'];
+
+					json_encode($lastEntryID);
+					echo $lastEntryID;
+				}
+			}
 		}
 
 		public function getSpecificTablesfromRestaurant($restaurantID)
@@ -92,6 +108,45 @@
 				    $rows[] = $row;
 				}
 				return $rows;
+			}
+		}
+
+		function DeleteTable($tableID)
+		{
+			$db = new Db();
+
+			$sql = "DELETE FROM `table`
+					WHERE table_id = '$tableID'";
+
+			$result = $db->conn->query($sql);
+			echo $sql;
+		}
+
+		function ChangeStatus($tableID, $tableChange)
+		{
+			$db = new Db();
+
+			$sql = "UPDATE `table` SET table_status = '$tableChange' WHERE table_id = '$tableID'";
+
+			$result = $db->conn->query($sql);
+
+			if($result)
+			{
+				$sql2 = "SELECT * FROM `table` WHERE table_id = '$tableID'";
+
+				$result2 = $db->conn->query($sql2);
+
+				if($result2)
+				{
+					$rows = array();
+					while ($row = mysqli_fetch_array($result2, MYSQL_ASSOC)) 
+					{
+					    $rows[] = $row;
+					}
+					$alarmInfo = $rows;
+					echo json_encode($alarmInfo);
+				}
+
 			}
 		}
 	}
