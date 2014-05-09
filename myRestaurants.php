@@ -57,9 +57,7 @@
 							<form action="#" method="get" role="form">
 								<td><a href="managerestaurant.php?id=<?php echo $Orestaurant['restaurant_id'];?>"><?php echo ucfirst($Orestaurant['restaurant_name']); ?></a></td>
 								<td><?php echo ucfirst($Orestaurant['restaurant_city']); ?></td>
-								<td>
-									<input type="submit" value="<?php echo $Orestaurant['restaurant_id'] ?>" name="deleteRestaurant">
-								</td>
+								<td><a href='#' class="deleteEntireRestaurant" data-delete-restaurant="<?php echo $Orestaurant["restaurant_id"]; ?>">Delete</a></td>
     						</form>
 						</tr>
 
