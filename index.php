@@ -2,7 +2,6 @@
 	// email = admin@thomasmore.be
 	// password = adminadmin
 
-
 	session_start();
 
 		include_once('classes/Restaurant.class.php');
@@ -34,41 +33,84 @@
 	<header>
 		&nbsp;
 	</header>
-	<div class="container">
 	
 	<div class="jumbotron">
-		<h2>Opentable <small>Going to dinner was never so easy</small></h2>
+		<div class="container">
+			<section id="userLog">
+			<?php 
+
+				if(isset($_SESSION['ownerIdentity'])) { ?>
+
+					<ul class="nav nav-pills">
+						<li><a class="btn btn-default" href="logout.php">Log Out</a></li>
+					</ul>
+
+				<?php } 
+
+				else { ?>
+				
+					<ul class="nav nav-pills">
+						<li><a class="btn btn-default" href="login.php">Log In</a></li>
+					</ul>
+
+				<?php }
+
+			?>
+			</section>
+
+			<h2>Opentable <small>Going to dinner was never so easy</small></h2>
+		</div>
 	</div>
 	
-	<nav>
-	<?php 
+    <!-- Navigation -->
+    <div class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.php">OpenTable</a>
+        </div>
+        <div class="navbar-collapse collapse">
 
-		if(isset($_SESSION['ownerIdentity'])) { ?>
-			<!--$ownerNavigation = "<a href="">" -->
+			<?php 
 
-			<ul class="nav nav-pills">
-				<li><a href="myRestaurants.php">My restaurants</a></li>
-				<li><a href="logout.php">Log Out</a></li>
-			</ul>
+			if(isset($_SESSION['ownerIdentity'])) { ?>
 
-		<?php } 
+				<ul class="nav navbar-nav">
+					<li><a href="index.php">All restaurants</a></li>
+					<li><a href="myRestaurants.php">My restaurants</a></li>
+				</ul>
 
-		else { ?>
-		
-			<ul class="nav nav-pills">
-				<li><a href="login.php">Log In</a></li>
-			</ul>
+			<?php } 
 
-		<?php }
+			else { ?>
+			
+				<ul class="nav navbar-nav">
+					<li><a href="index.php">All restaurants</a></li>
+				</ul>
 
-	?>
-	</nav>
+			<?php }
+
+			?> 
+
+		</div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <!-- End Navigation -->
+
+
+	<div class="container">
+	
 
 	
 	<ul class="flow">
 		<li>
 			<img src="images/search.png"/>
-			<p>Search a restaurant in your area</p>
+			<p>Search restaurants in your area</p>
 		</li>
 		<li>
 			<img src="images/food.png"/>

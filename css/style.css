@@ -11,6 +11,7 @@ body
 	height: 250px;
 	width: 100%;
 	margin-bottom: 0px;
+	position: relative;
 }
 
 .container .jumbotron
@@ -197,6 +198,17 @@ h2 small
 	outline-offset:4px;
 }
 
+.container
+{
+	position: relative;
+}
+
+#userLog
+{
+	position: absolute;
+	top:20px;
+	right:50px;
+}
 
 
 
