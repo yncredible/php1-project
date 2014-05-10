@@ -9,7 +9,7 @@
 		private $m_sCityRestaurant;
 		private $m_sEmailRestaurant;
 		private $m_sWebsiteRestaurant;
-
+		private $m_Photo;
 
 	public function __set($p_sProperty, $p_vValue)
 		{
@@ -52,6 +52,20 @@
 					$this->m_sWebsiteRestaurant = $p_vValue;
 				}
 				break;
+
+				case "photoRestaurant":
+				{
+					$image_size = getimagesize($_FILES['photo_restaurant']['tmp_name']);
+					echo $image_size;
+					if($image_size == false){
+						throw new Exception("This is not an image, please insert an image" . $image_size);
+					}
+					else
+					{
+						$this->m_Photo = $p_vValue;
+					}	
+				}
+				break;
 			}
 		}
 
@@ -86,6 +100,10 @@
 				case "websiteRestaurant":
 				return $this->m_sWebsiteRestaurant;
 				break;
+
+				case "photoRestaurant":
+				return $this->m_Photo;
+				break;
 				
 			}
 		}
@@ -93,21 +111,22 @@
 		{
 
 			$db = new Db();
+			
+					$sql = "insert INTO restaurant (restaurant_name, restaurant_street, restaurant_number, restaurant_postalCode, restaurant_city, restaurant_email, restaurant_website,restaurant_photo, owner_id)
+								VALUES (
+											'". $db->conn->real_escape_string($this->nameRestaurant)."',
+											'". $db->conn->real_escape_string($this->streetRestaurant)."',
+											'". $db->conn->real_escape_string($this->numberRestaurant)."',
+											'". $db->conn->real_escape_string($this->postalcodeRestaurant)."',
+											'". $db->conn->real_escape_string($this->cityRestaurant)."',
+											'". $db->conn->real_escape_string($this->emailRestaurant)."',
+											'". $db->conn->real_escape_string($this->websiteRestaurant)."',
+											'". $this->photoRestaurant."',
+											'". $ownerID."'
+										)";
 
-			$sql = "insert INTO restaurant (restaurant_name, restaurant_street, restaurant_number, restaurant_postalCode, restaurant_city, restaurant_email, restaurant_website, owner_id)
-						VALUES (
-									'". $db->conn->real_escape_string($this->nameRestaurant)."',
-									'". $db->conn->real_escape_string($this->streetRestaurant)."',
-									'". $db->conn->real_escape_string($this->numberRestaurant)."',
-									'". $db->conn->real_escape_string($this->postalcodeRestaurant)."',
-									'". $db->conn->real_escape_string($this->cityRestaurant)."',
-									'". $db->conn->real_escape_string($this->emailRestaurant)."',
-									'". $db->conn->real_escape_string($this->websiteRestaurant)."',
-									'". $ownerID."'
-								)";
-
-			$result = $db->conn->query($sql);
-
+					$result = $db->conn->query($sql);
+				
 
 			if($result)
 				{
