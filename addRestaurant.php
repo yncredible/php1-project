@@ -111,12 +111,10 @@
 					<h3>Add restaurant</h3>
 
 					<form method="post" role="form" enctype="multipart/form-data">
-						<p>
-							<?php 
-							if(isset($error)){?>
-							 <p class="alert alert-danger"><?php echo $error; }?></p>
-							
-						</p>
+					<?php 
+						if(isset($error)){?>
+						<p class="alert alert-danger"><?php echo $error; }?></p>
+
 						<div class="form-group">						
 						<label for="name_restaurant">Name Restaurant</label>
 						<input class="form-control" type="text" name="name_restaurant" id="name_restaurant">
