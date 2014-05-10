@@ -58,7 +58,7 @@
 					$image_size = getimagesize($_FILES['photo_restaurant']['tmp_name']);
 					echo $image_size;
 					if($image_size == false){
-						throw new Exception("This is not an image, please insert an image" . $image_size);
+						throw new Exception("This is not an image, please insert an image");
 					}
 					else
 					{
