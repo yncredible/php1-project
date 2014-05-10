@@ -12,26 +12,35 @@
 
 	if(!empty($_POST))
 	{
-		include_once("classes/Restaurant.class.php");
 
-		$restaurant = new Restaurant();
-		$restaurant->nameRestaurant = $_POST["name_restaurant"];
-		$restaurant->streetRestaurant = $_POST["street_restaurant"];
-		$restaurant->numberRestaurant = $_POST["number_restaurant"];
-		$restaurant->postalcodeRestaurant = $_POST["postalcode_restaurant"];
-		$restaurant->cityRestaurant = $_POST["city_restaurant"];
-		$restaurant->emailRestaurant = $_POST["email_restaurant"];
-		$restaurant->websiteRestaurant = $_POST["website_restaurant"];
+		try{
+			include_once("classes/Restaurant.class.php");
 
-		$restaurant->addRestaurant($ownerID);
+			$restaurant = new Restaurant();
+			$restaurant->nameRestaurant = $_POST["name_restaurant"];
+			$restaurant->streetRestaurant = $_POST["street_restaurant"];
+			$restaurant->numberRestaurant = $_POST["number_restaurant"];
+			$restaurant->postalcodeRestaurant = $_POST["postalcode_restaurant"];
+			$restaurant->cityRestaurant = $_POST["city_restaurant"];
+			$restaurant->emailRestaurant = $_POST["email_restaurant"];
+			$restaurant->websiteRestaurant = $_POST["website_restaurant"];
+			$restaurant->photoRestaurant = addslashes(file_get_contents($_FILES['photo_restaurant']['tmp_name']));
 
-		if(isset($_SESSION['restaurantIdentity']))
+			$restaurant->addRestaurant($ownerID);
+
+			if(isset($_SESSION['restaurantIdentity']))
+			{
+				$restaurantID = $_SESSION['restaurantIdentity'];
+				session_write_close();
+				header("location: managerestaurant.php?id=$restaurantID");
+			}
+		}catch (Exception $e) 
 		{
-			$restaurantID = $_SESSION['restaurantIdentity'];
-			session_write_close();
-			header("location: managerestaurant.php?id=$restaurantID");
-		}
+			$error = $e->getMessage();
+		}	
+
 	}
+
 	// var_dump($_SESSION);
 
 ?><!doctype html>
@@ -101,7 +110,13 @@
 				<div class="col-sm-12">
 					<h3>Add restaurant</h3>
 
-					<form method="post" role="form">
+					<form method="post" role="form" enctype="multipart/form-data">
+						<p>
+							<?php 
+							if(isset($error)){?>
+							 <p class="alert alert-danger"><?php echo $error; }?></p>
+							
+						</p>
 						<div class="form-group">						
 						<label for="name_restaurant">Name Restaurant</label>
 						<input class="form-control" type="text" name="name_restaurant" id="name_restaurant">
@@ -136,6 +151,11 @@
 						<label for="website_restaurant">Website</label>
 						<input class="form-control" type="text" name="website_restaurant" id="website_restaurant">
 						</div>
+						<div class="form-group">	
+						<label for="photo_restaurant">Upload restaurant picture</label>
+						<input class="form-control" type="file" name="photo_restaurant" id="photo_restaurant">
+						</div>
+
 
 						<div class="form-group">
 						<input class="btn btn-primary" type="submit" value="Add restaurant" name="register_restaurant" id="register_restaurant">
