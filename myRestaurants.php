@@ -27,14 +27,40 @@
 	</head>
 
 	<body>
-		<header>&nbsp;</header>
+		<header>
+		&nbsp;
+	</header>
+	
+	<div class="jumbotron">
+		<div class="container">
+			<section id="userLog">
+			<?php 
 
-		<div class="jumbotron">
-			<div class="container">
-				<h2>My restaurants</h2>
-			</div>
+				if(isset($_SESSION['ownerIdentity'])) { ?>
+
+					<ul class="nav nav-pills">
+						<li><a class="btn btn-default" href="logout.php">Log Out</a></li>
+					</ul>
+
+				<?php } 
+
+				else { ?>
+				
+					<ul class="nav nav-pills">
+						<li><a class="btn btn-default" href="login.php">Log In</a></li>
+					</ul>
+
+				<?php }
+
+			?>
+			</section>
+
+			<h2>OpenTable</h2>
+			<h3 class="slogan">Going out to dinner was never so easy.</h3>
+
 		</div>
-
+	</div>
+	
     <!-- Navigation -->
     <div class="navbar navbar-inverse" role="navigation">
       <div class="container">
@@ -74,6 +100,7 @@
       </div>
     </div>
     <!-- End Navigation -->
+
 		
 
 
