@@ -18,7 +18,14 @@
 
 		$restaurant = new Restaurant();
 		$allRestaurants = $restaurant->getAllRestaurants();
-		// $allRestaurants = $restaurant->search();
+
+	if(isset($_POST['search'])){
+		$restaurantsSearch = new Restaurant();
+		$restaurantsSearch->searchRestaurant = $_POST["search_city"];
+		$restaurantsSearch->searchTypeRestaurant = $_POST["search_type"];
+
+		$restaurantwithSearch = $restaurantsSearch->Search();
+	}
 
 ?><!doctype html>
 <html lang="en">
@@ -127,9 +134,21 @@
 	<div class="row">
 		<div class="col-sm-12">
 			<h4>Our restaurants</h4>
-			<form action="" method="post" role="form" id="search">
-				<label for="zoek_gemeente">Search a restaurant</label><br/>
-				<input type="input" name="zoek_gemeente" id="zoek_gemeente" class="" placeholder="Postal code">
+			<form action="#" method="post" role="form" id="search">
+				<label>Search a restaurant</label></br>
+				<label for="search_city">City :</label>
+				<input type="input" name="search_city" id="search_city" placeholder="Postal code"/>
+				<label for="search_type">Type : </label>
+				<select id="search_type" name="search_type">
+							<option value="all">All</option>
+							<option value="restaurant">restaurant</option>
+							<option value="brasserie">brasserie</option>
+							<option value="cafe">café</option>
+							<option value="fastfood">fastfood</option>
+							<option value="foodtruck">Foodtruck</option>
+							<option value="snackbar">Snackbar</option>
+				</select>
+				<input type="submit" name="search" id="search" value="filter">
 			</form>
 		</div>
 	</div>
@@ -148,23 +167,38 @@
 					</tr>
 				</thead>
 				<tbody>
-					<?php 
-							foreach($allRestaurants as $rest){ ?>
-									
-									<tr>
-										<td><a href="detailRestaurant.php?id=<?php echo $rest['restaurant_id'];?>"><?php echo ucfirst($rest['restaurant_name']); ?></a></td>
-										<td><?php echo ucfirst($rest['restaurant_street']) . " " . ucfirst($rest['restaurant_number']); ?></td>
-										<td><?php echo $rest['restaurant_postalCode']; ?></td>
-										<td><?php echo ucfirst($rest['restaurant_city']); ?></td>
-									</tr>
+				<?php
+				if(empty($restaurantCity))
+				{
+					foreach($allRestaurants as $rest){ ?>
+										
+										<tr>
+											<td><a href="detailRestaurant.php?id=<?php echo $rest['restaurant_id'];?>"><?php echo ucfirst($rest['restaurant_name']); ?></a></td>
+											<td><?php echo ucfirst($rest['restaurant_street']) . " " . ucfirst($rest['restaurant_number']); ?></td>
+											<td><?php echo $rest['restaurant_postalCode']; ?></td>
+											<td><?php echo ucfirst($rest['restaurant_city']); ?></td>
+										</tr>
 
-							<?php }
-						?>
-					
-				</tbody>
+								<?php }	
+				}
+				else
+				{
+					foreach ($restaurantwithSearch as $restSearch)
+					{?>
+					  	<tr>
+											<td><a href="detailRestaurant.php?id=<?php echo $restSearch['restaurant_id'];?>"><?php echo ucfirst($restSearch['restaurant_name']); ?></a></td>
+											<td><?php echo ucfirst($restSearch['restaurant_street']) . " " . ucfirst($restSearch['restaurant_number']); ?></td>
+											<td><?php echo $restSearch['restaurant_postalCode']; ?></td>
+											<td><?php echo ucfirst($restSearch['restaurant_city']); ?></td>
+										</tr>
+					 <?php } 
+				}
+				?>
+			</tbody>
 				
 			</table>
-		
+			
+
 		</div>
 	</div>
 
