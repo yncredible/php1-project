@@ -18,6 +18,7 @@
 
 			$restaurant = new Restaurant();
 			$restaurant->nameRestaurant = $_POST["name_restaurant"];
+			$restaurant->typeRestaurant = $_POST['type_restaurant'];
 			$restaurant->streetRestaurant = $_POST["street_restaurant"];
 			$restaurant->numberRestaurant = $_POST["number_restaurant"];
 			$restaurant->postalcodeRestaurant = $_POST["postalcode_restaurant"];
@@ -118,6 +119,18 @@
 						<div class="form-group">						
 						<label for="name_restaurant">Name Restaurant</label>
 						<input class="form-control" type="text" name="name_restaurant" id="name_restaurant">
+						</div>
+
+						<div class="form-group">						
+						<label for="type_restaurant">Type : </label>
+						<select id="type_restaurant" name="type_restaurant">
+							<option value="restaurant">Restaurant</option>
+							<option value="brasserie">Brasserie</option>
+							<option value="cafe">Café</option>
+							<option value="fastfood">Fastfood</option>
+							<option value="foodtruck">Foodtruck</option>
+							<option value="snackbar">Snackbar</option>
+						</select>
 						</div>
 
 						<div class="form-group">	

@@ -10,7 +10,9 @@
 		private $m_sEmailRestaurant;
 		private $m_sWebsiteRestaurant;
 		private $m_Photo;
+		private $m_sResultSearch;
 		private $m_sTypeRestaurant;
+		private $m_sResultType;
 
 	public function __set($p_sProperty, $p_vValue)
 		{
@@ -58,6 +60,17 @@
 					$this->m_sWebsiteRestaurant = $p_vValue;
 				}
 				break;
+				case "searchRestaurant":
+				{
+					$this->m_sResultSearch = $p_vValue;
+				}
+				break;
+				case "searchTypeRestaurant":
+				{
+					$this->m_sResultType = $p_vValue;
+				}
+				break;
+
 				case "photoRestaurant":
 				{
 					$image_size = getimagesize($_FILES['photo_restaurant']['tmp_name']);
@@ -108,6 +121,13 @@
 
 				case "websiteRestaurant":
 				return $this->m_sWebsiteRestaurant;
+				break;
+
+				case "searchRestaurant":
+				return $this->m_sResultSearch;
+				break;
+				case "searchTypeRestaurant":
+				return $this->m_sResultType;
 				break;
 
 				case "photoRestaurant":
@@ -210,19 +230,12 @@
 		
 		}
 
-		public function Search($type,$city){
+		public function Search(){
 			$db = new Db();
-			$search = "SELECT * FROM restaurant WHERE restaurant_city = '$city' OR restaurant_type = '$type'";
+			$search = "SELECT * FROM restaurant WHERE restaurant_city = '$this->searchRestaurant' OR restaurant_type = '$this->searchTypeRestaurant'";
 			echo $search;
 			$res = $db->conn->query($search);
 			return ($res);
-
-			if($res == true){
-				console.log('gelukt');
-
-			}else{
-				console.log("niet gelukt");
-			}
 		}
 }
 ?>
