@@ -131,7 +131,6 @@
 											'". $db->conn->real_escape_string($this->typeRestaurant)."',
 											'". $db->conn->real_escape_string($this->emailRestaurant)."',
 											'". $db->conn->real_escape_string($this->websiteRestaurant)."',
-											'". $this->photoRestaurant."',
 											'". $ownerID."'
 										)";
 
@@ -208,6 +207,10 @@
 			
 			$res = $db->conn->query($deleteAll);
 		
+		}
+
+		public function getImage(){
+			
 		}
 
 		public function Search($type,$city){
