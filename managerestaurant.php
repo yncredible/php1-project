@@ -52,31 +52,85 @@
 
 
 	<body>
-		<header>
-			&nbsp;
-		</header>
+	<header>
+		&nbsp;
+	</header>
+	
+	<div class="jumbotron">
 		<div class="container">
+			<section id="userLog">
+			<?php 
 
-			<div class="jumbotron">
-				<?php 
-					foreach ($ownersRestaurants as $restaurant) { ?>
-						<h2>Manage <?php echo ucfirst($restaurant['restaurant_name']); ?></h2>
-					<?php }
-				 ?>		
-			</div>
+				if(isset($_SESSION['ownerIdentity'])) { ?>
 
-			<nav>
-				<ul class="nav nav-pills">
-					<li><a href="index.php">Home</a></li>
-					<li><a href="myRestaurants.php">My Restaurants</a></li>
+					<ul class="nav nav-pills">
+						<li><a class="btn btn-default" href="logout.php">Log Out</a></li>
+					</ul>
+
+				<?php } 
+
+				else { ?>
+				
+					<ul class="nav nav-pills">
+						<li><a class="btn btn-default" href="login.php">Log In</a></li>
+					</ul>
+
+				<?php }
+
+			?>
+			</section>
+
+			<h2>OpenTable</h2>
+			<h3 class="slogan">Going out to dinner was never so easy.</h3>
+
+		</div>
+	</div>
+	
+    <!-- Navigation -->
+    <div class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.php">OpenTable</a>
+        </div>
+        <div class="navbar-collapse collapse">
+
+			<?php 
+
+			if(isset($_SESSION['ownerIdentity'])) { ?>
+
+				<ul class="nav navbar-nav">
+					<li><a href="index.php">All restaurants</a></li>
+					<li><a href="myRestaurants.php">My restaurants</a></li>
 				</ul>
-			</nav>
 
-			<hr>
+			<?php } 
+
+			else { ?>
 			
-			<div id="menuView">
-				<div class="row">
-				<div class="col-sm-12">
+				<ul class="nav navbar-nav">
+					<li><a href="index.php">All restaurants</a></li>
+				</ul>
+
+			<?php }
+
+			?> 
+
+		</div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <!-- End Navigation -->
+
+
+	<div class="container">
+		<div id="menuView">
+			<div class="row">
+			<div class="col-sm-12">
 
 				<p><span class="label label-default">Add menu items</span></p>
 
