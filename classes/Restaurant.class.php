@@ -10,6 +10,9 @@
 		private $m_sEmailRestaurant;
 		private $m_sWebsiteRestaurant;
 		private $m_Photo;
+		private $m_sResultSearch;
+		private $m_sTypeRestaurant;
+		private $m_sResultType;
 
 	public function __set($p_sProperty, $p_vValue)
 		{
@@ -41,6 +44,11 @@
 					$this->m_sCityRestaurant = $p_vValue;
 				}
 				break;
+				case "typeRestaurant":
+				{
+					$this->m_sTypeRestaurant = $p_vValue;
+				}
+				break;
 				case "emailRestaurant":
 				{
 					$this->m_sEmailRestaurant = $p_vValue;
@@ -50,6 +58,16 @@
 				case "websiteRestaurant":
 				{
 					$this->m_sWebsiteRestaurant = $p_vValue;
+				}
+				break;
+				case "searchRestaurant":
+				{
+					$this->m_sResultSearch = $p_vValue;
+				}
+				break;
+				case "searchTypeRestaurant":
+				{
+					$this->m_sResultType = $p_vValue;
 				}
 				break;
 
@@ -93,12 +111,23 @@
 				return $this->m_sCityRestaurant;
 				break;
 
+				case "typeRestaurant":
+				return $this->m_sTypeRestaurant;
+				break;
+
 				case "emailRestaurant":
 				return $this->m_sEmailRestaurant;
 				break;
 
 				case "websiteRestaurant":
 				return $this->m_sWebsiteRestaurant;
+				break;
+
+				case "searchRestaurant":
+				return $this->m_sResultSearch;
+				break;
+				case "searchTypeRestaurant":
+				return $this->m_sResultType;
 				break;
 
 				case "photoRestaurant":
@@ -112,13 +141,14 @@
 
 			$db = new Db();
 			
-					$sql = "insert INTO restaurant (restaurant_name, restaurant_street, restaurant_number, restaurant_postalCode, restaurant_city, restaurant_email, restaurant_website,restaurant_photo, owner_id)
+					$sql = "insert INTO restaurant (restaurant_name, restaurant_street, restaurant_number, restaurant_postalCode, restaurant_city, restaurant_type, restaurant_email, restaurant_website,restaurant_photo, owner_id)
 								VALUES (
 											'". $db->conn->real_escape_string($this->nameRestaurant)."',
 											'". $db->conn->real_escape_string($this->streetRestaurant)."',
 											'". $db->conn->real_escape_string($this->numberRestaurant)."',
 											'". $db->conn->real_escape_string($this->postalcodeRestaurant)."',
 											'". $db->conn->real_escape_string($this->cityRestaurant)."',
+											'". $db->conn->real_escape_string($this->typeRestaurant)."',
 											'". $db->conn->real_escape_string($this->emailRestaurant)."',
 											'". $db->conn->real_escape_string($this->websiteRestaurant)."',
 											'". $this->photoRestaurant."',
@@ -144,16 +174,6 @@
 					}
 				}
 			
-
-		}
-		public function search(){
-			$db = new Db();
-			$searchCity = "SELECT restaurant_city FROM restaurant";
-
-			$result = $db->conn->query($searchCity);
-			//echo $searchCity;
-			return($result);
-			return($searchCity);
 
 		}
 
@@ -208,6 +228,14 @@
 			
 			$res = $db->conn->query($deleteAll);
 		
+		}
+
+		public function Search(){
+			$db = new Db();
+			$search = "SELECT * FROM restaurant WHERE restaurant_city = '$this->searchRestaurant' OR restaurant_type = '$this->searchTypeRestaurant'";
+			echo $search;
+			$res = $db->conn->query($search);
+			return ($res);
 		}
 }
 ?>
