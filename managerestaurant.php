@@ -130,48 +130,48 @@
 	<div class="container">
 		<div id="menuView">
 			<div class="row">
-			<div class="col-sm-12">
+				<div class="col-sm-12">
 
-				<p><span class="label label-default">Add menu items</span></p>
+					<p><span class="label label-default">Add menu items</span></p>
 
-				
-				<form action='' method="post" role="form" class="form-inline">
-					<div class="form-group">
-						<label for="menu_name">Name</label>
-						<input class="form-control" id="menu_name" name="menu_name" />
-					</div>
-					<div class="form-group">
-						<label for="menu_description">Description</label>
-						<input class="form-control" id="menu_description" name="menu_description" />
-					</div>
-					<div class="form-group">
-						<label for="menu_price">Price</label>
-						<input class="form-control" id="menu_price" name="menu_price" />
-					</div>
-					<div class="form-group">
-						<label for="menu_category">Category</label>
-						<select class="form-control" id="menu_category" name="menu_category">
-								<option value="beverages">Beverages</option>
-								<option value="alcoholBeverages">Alcoholic beverages</option>
-								<option value="appetizers">Appetizers</option>
-								<option value="soups">Soups</option>
-								<option value="salads">Salads</option>
-								<option value="chicken">Chicken</option>
-								<option value="pasta">Pasta</option>
-								<option value="seafood">Seafood</option>
-								<option value="ribSteaks">Rib/Steaks</option>
-								<option value="burgerSandwiches">Burger/Sandwiches</option>
-								<option value="kidsMenu">Kids Menu</option>
-								<option value="desserts">Desserts</option>
-						</select>
-					</div>
-					<input type="hidden" id="specificRestaurantMenu" value="<?php echo $restaurantID; ?>">
-					<div class="form-group">
-						<input class="btn btn-primary" type="submit" id='btnSubmit' name="add_menu" value="add">
-					</div>
-				</form>
+					
+					<form action='' method="post" role="form" class="form-inline">
+						<div class="form-group">
+							<label for="menu_name">Name</label>
+							<input class="form-control" id="menu_name" type="text" name="menu_name" required>
+						</div>
+						<div class="form-group">
+							<label for="menu_description">Description</label>
+							<input class="form-control" type="text" id="menu_description" name="menu_description" required>
+						</div>
+						<div class="form-group">
+							<label for="menu_price">Price</label>
+							<input class="form-control" type="text" id="menu_price" name="menu_price" required>
+						</div>
+						<div class="form-group">
+							<label for="menu_category">Category</label>
+							<select class="form-control" id="menu_category" name="menu_category">
+									<option value="beverages">Beverages</option>
+									<option value="alcoholBeverages">Alcoholic beverages</option>
+									<option value="appetizers">Appetizers</option>
+									<option value="soups">Soups</option>
+									<option value="salads">Salads</option>
+									<option value="chicken">Chicken</option>
+									<option value="pasta">Pasta</option>
+									<option value="seafood">Seafood</option>
+									<option value="ribSteaks">Rib/Steaks</option>
+									<option value="burgerSandwiches">Burger/Sandwiches</option>
+									<option value="kidsMenu">Kids Menu</option>
+									<option value="desserts">Desserts</option>
+							</select>
+						</div>
+						<input type="hidden" id="specificRestaurantMenu" value="<?php echo $restaurantID; ?>">
+						<div class="form-group">
+							<input class="btn btn-primary" type="submit" id='btnSubmit' name="add_menu" value="add">
+						</div>
+					</form>
 				</div>
-				</div>
+			</div>
 				
 				<div class="row">
 					<div class="col-sm-12">
@@ -645,7 +645,7 @@
 
 				<div class="form-group">
 				<label for="tablePeople">Amount of people</label>
-				<select class="form-control" id="tablePeople" name="table_people">
+				<select class="form-control" id="tablePeople" name="table_people" required>
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>

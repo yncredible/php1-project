@@ -611,19 +611,19 @@
 			<form action="#" method="post" role="form" >
 				<div class="formgroup">
 					<label for="reservationName" id="lblname">Name:</label>
-					<input type="text" id="reservationName" name="reservation_name">
+					<input type="text" id="reservationName" name="reservation_name" required>
 				</div>
 				<div class='formgroup'>
 					<label for="reservationNumber" id="lblnumber">Number of people :</label>
-					<input type="text" id="reservationNumber" name="reservation_numberPeople">
+					<input type="text" id="reservationNumber" name="reservation_numberPeople" required>
 				</div>
 				<div class="formgroup">
 					<label for="reservationDay" id="lblday">Day :</label>
-					<input type="text" id="reservationDay" name="reservation_day">
+					<input type="date" id="reservationDay" name="reservation_day" required>
 				</div>
 				<div class="formgroup">
 					<label for="reservationHour" id="lblhour">Hour :</label>
-					<input type="text" id="reservationHour" name="reservation_hour">
+					<input type="time" id="reservationHour" name="reservation_hour" required>
 				</div>
 				<div class="formgroup">
 					<input type="checkbox" id="reservationConfirmation" name="confirm_reservation"><label for="confirmReservation" id="lblconfirmation">Send me a confirmation mail</label>

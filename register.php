@@ -182,7 +182,7 @@
 							<!--Print out errors-->
 							<?php if(isset($errorName)){echo '<p class="inputError">' . $errorName . '</p>';} ?>
 							<?php if(isset($errorName_char)){echo '<p class="inputError">' . $errorName_char . '</p>';} ?>
-							<input class="form-control" type="text" id="ownerName" placeholder="eg: John Doe, Betty's Cafe" name="owner_name" <?php if(isset($_SESSION['name'])){echo 'value="' . $_SESSION['name'] . '"';} ?>>
+							<input class="form-control" type="text" id="ownerName" placeholder="eg: John Doe, Betty's Cafe" name="owner_name" <?php if(isset($_SESSION['name'])){echo 'value="' . $_SESSION['name'] . '"';} ?> required>
 						</div>
 						<div class="formgroup">
 							<label for="ownerEmail">Email</label>
@@ -190,14 +190,14 @@
 							<?php if(isset($errorEmail)){echo '<p class="inputError">' . $errorEmail . '</p>';} ?>
 							<?php if(isset($errorEmail_val)){echo '<p class="inputError">' . $errorEmail_val . '</p>';} ?>
 							<?php if(isset($errorAvailability)){echo '<p class="inputError">' . $errorAvailability . '</p>';} ?>
-							<input class="form-control" type="text" id="ownerEmail" placeholder="eg: johndoe@domain.com" name="owner_email" <?php if(isset($_SESSION['email'])){echo 'value="' . $_SESSION['email'] . '"';} ?>>
+							<input class="form-control" type="text" id="ownerEmail" placeholder="eg: johndoe@domain.com" name="owner_email" <?php if(isset($_SESSION['email'])){echo 'value="' . $_SESSION['email'] . '"';} ?> required>
 						</div>
 						<div class="form-group">
 							<label for="ownerPassword">Password</label>
 							<!--Print out errors-->
 							<?php if(isset($errorPassword)){echo '<p class="inputError">' . $errorPassword . '</p>';} ?>
 							<?php if(isset($errorPassword_len)){echo '<p class="inputError">' . $errorPassword_len . '</p>';} ?>
-							<input class="form-control" type="password" id="ownerPassword" name="owner_password" <?php if(isset($_SESSION['password'])){echo 'value="' . $_SESSION['password'] . '"';} ?>>
+							<input class="form-control" type="password" id="ownerPassword" name="owner_password" <?php if(isset($_SESSION['password'])){echo 'value="' . $_SESSION['password'] . '"';} ?> required>
 						</div>
 							<input type="submit" value="Sign Up" name="register" class="btn btn-default">
 

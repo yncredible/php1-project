@@ -118,12 +118,12 @@
 
 						<div class="form-group">						
 						<label for="name_restaurant">Name Restaurant</label>
-						<input class="form-control" type="text" name="name_restaurant" id="name_restaurant">
+						<input class="form-control" type="text" name="name_restaurant" id="name_restaurant" required>
 						</div>
 
 						<div class="form-group">						
 						<label for="type_restaurant">Type : </label>
-						<select id="type_restaurant" name="type_restaurant">
+						<select id="type_restaurant" name="type_restaurant" required>
 							<option value="all">All</option>
 							<option value="restaurant">Restaurant</option>
 							<option value="brasserie">Brasserie</option>
@@ -136,27 +136,27 @@
 
 						<div class="form-group">	
 						<label for="street_restaurant">Street </label>
-						<input class="form-control" type="text" name="street_restaurant" id="street_restaurant">
+						<input class="form-control" type="text" name="street_restaurant" id="street_restaurant" required>
 						</div>
 
 						<div class="form-group">
 						<label for="number_restaurant">Number</label>
-						<input class="form-control" type="text" name="number_restaurant" id="number_restaurant">
+						<input class="form-control" type="text" name="number_restaurant" id="number_restaurant" required>
 						</div>
 
 						<div class="form-group">		
 						<label for="postalcode_restaurant">Postal code</label>
-						<input class="form-control" type="text" name="postalcode_restaurant" id="postalcode_restaurant">
+						<input class="form-control" type="text" name="postalcode_restaurant" id="postalcode_restaurant" required>
 						</div>
 
 						<div class="form-group">	
 						<label for="city_restaurant">City</label>
-						<input class="form-control" type="text" name="city_restaurant" id="city_restaurant">
+						<input class="form-control" type="text" name="city_restaurant" id="city_restaurant" required>
 						</div>
 
 						<div class="form-group">	
 						<label for="email_restaurant">Email</label>
-						<input class="form-control" type="email" name="email_restaurant" id="email_restaurant">
+						<input class="form-control" type="email" name="email_restaurant" id="email_restaurant" required>
 						</div>
 
 						<div class="form-group">	
