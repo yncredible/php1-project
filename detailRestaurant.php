@@ -49,7 +49,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>OpenTable | Uw restaurant</title>
+	<title>OpenTable | Your restaurant</title>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -133,7 +133,7 @@
 
 		<?php } ?>
 
-		<h3 class="callToAction"><a class="btn btn-primary" href="#reserveNow">Reserve a table now!</a></h3>
+		<h3 class="callToAction"><a class="btn btn-primary" href="#reserveNow">Reserve a table now at <?php echo ucfirst($restaurants['restaurant_name']); ?> !</a></h3>
 
 		</div>
 	</div>
@@ -606,30 +606,43 @@
 	
 	<hr>
 
-			<h2>Reserve a table now!</h2>
+			<h2>Reserve a table now at <?php echo ucfirst($restaurants['restaurant_name']); ?>!</h2>
 
 			<form action="#" method="post" role="form" >
-				<label for="reservationName" id="lblname">Name:</label>
-				<input type="text" id="reservationName" name="reservation_name">
-				<label for="reservationNumber" id="lblnumber">Number of people :</label>
-				<input type="text" id="reservationNumber" name="reservation_numberPeople">
-				<label for="reservationDay" id="lblday">Day :</label>
-				<input type="text" id="reservationDay" name="reservation_day">
-				<label for="reservationHour" id="lblhour">Hour :</label>
-				<input type="text" id="reservationHour" name="reservation_hour">
-				<input type="checkbox" id="reservationConfirmation" name="confirm_reservation"><label for="confirmReservation" id="lblconfirmation">Send me a confirmation mail</label>
-				<label for="reservationEmail" id="lblemail">Email</label>
-				<input type="text" name="reservation_email" id="reservationEmail">
-				<input type="submit" id="reservationSubmit" name="reservation_submit" value="Make a reservation">
+				<div class="formgroup">
+					<label for="reservationName" id="lblname">Name:</label>
+					<input type="text" id="reservationName" name="reservation_name">
+				</div>
+				<div class='formgroup'>
+					<label for="reservationNumber" id="lblnumber">Number of people :</label>
+					<input type="text" id="reservationNumber" name="reservation_numberPeople">
+				</div>
+				<div class="formgroup">
+					<label for="reservationDay" id="lblday">Day :</label>
+					<input type="text" id="reservationDay" name="reservation_day">
+				</div>
+				<div class="formgroup">
+					<label for="reservationHour" id="lblhour">Hour :</label>
+					<input type="text" id="reservationHour" name="reservation_hour">
+				</div>
+				<div class="formgroup">
+					<input type="checkbox" id="reservationConfirmation" name="confirm_reservation"><label for="confirmReservation" id="lblconfirmation">Send me a confirmation mail</label>
+					<label for="reservationEmail" id="lblemail">Email:</label>
+					<input type="text" name="reservation_email" id="reservationEmail">
+				</div>
+				<div class="formgroup">
+					<input type="submit" id="reservationSubmit" name="reservation_submit" class="btn btn-primary" value="Make a reservation">
+				</div>
+				<a name="reserveNow"></a>
+
 			</form>
-
-			<a name="reserveNow"></a>
-
 			</div>
 		</div> <!-- /row -->
     </div>
 
-    <footer></footer>
+    <footer>
+			Php project - Kimberly Gysbrecht Segers - Kristof Van Espen - Yannick Nijs - Jens Ivens
+	</footer>
 
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
