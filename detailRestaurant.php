@@ -43,6 +43,7 @@
 	 // sending an email to restaurant
 
 	$reservation->sendEmail($restaurantID);
+
 	}
 ?><!doctype html>
 <html lang="en">
@@ -114,7 +115,7 @@
 	<div class="row">
 		<div class="col-xs-6 restaurantPhoto">
 			<!--<img src="#" alt="foto restuarant?">-->
-			<img id="restoPic" src="images/tpl.jpg" alt="tpl pic">
+			<!--<img id="restoPic" src="images/tpl.jpg" alt="tpl pic">-->
 		</div>
 
 		<div class="col-xs-6 restaurantAddress">
@@ -127,6 +128,7 @@
 					<?php echo $restaurants['restaurant_postalCode']." ".$restaurants['restaurant_city'];?><br>
 					<abbr title="Email">E: </abbr><a href="mailto:#"><?php echo $restaurants['restaurant_email'];?></a><br>
 					<abbr title="Website">W: </abbr><a href="http://<?php echo $restaurants['restaurant_website'];?>"><?php echo $restaurants['restaurant_website'];?> </a>
+					<img src="<?php echo mysql_fetch_assoc($restaurants['restaurant_photo']); ?>"/>
 				</address> 
 
 		<?php } ?>
