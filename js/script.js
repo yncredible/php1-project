@@ -3,8 +3,8 @@ $(document).ready(function(){
 	$("#reservationEmail").css( "display", "none" );
 	$("#lblemail").css( "display", "none" );
 
-	$("#confirmReservation").on('click',function(){
-	if($("#confirmReservation").is(":checked")){
+	$("#reservationConfirmation").on('click',function(){
+	if($("#reservationConfirmation").is(":checked")){
 		
 		$("#reservationEmail").css( "display", "block" );
 		$("#lblemail").css( "display", "block" );
