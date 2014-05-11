@@ -206,7 +206,10 @@ p.col-sm-offset-2.col-sm-10
 	right:50px;
 }
 
-
+.navbar
+{
+	border-radius: 0px;
+}
 
 
 
