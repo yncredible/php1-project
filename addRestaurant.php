@@ -124,6 +124,7 @@
 						<div class="form-group">						
 						<label for="type_restaurant">Type : </label>
 						<select id="type_restaurant" name="type_restaurant">
+							<option value="all">All</option>
 							<option value="restaurant">Restaurant</option>
 							<option value="brasserie">Brasserie</option>
 							<option value="cafe">Café</option>
