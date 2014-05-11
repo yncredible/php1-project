@@ -44,6 +44,7 @@ footer
 	padding-top: 5px;
 	padding-bottom: 5px;
 	clear:both;
+	margin-top: 15px;
 }
 header
 {
@@ -183,8 +184,6 @@ p.col-sm-offset-2.col-sm-10
 	padding-left: 0%;
 }
 
-
-
 #restoPic
 {
 	max-width:295px;
@@ -211,7 +210,36 @@ p.col-sm-offset-2.col-sm-10
 	border-radius: 0px;
 }
 
-
+input#reservationName
+{
+	width: 100%;
+	max-width: 350px;
+	margin-bottom: 15px;
+}
+input#reservationNumber
+{
+	width: 100%;
+	max-width: 350px;
+	margin-bottom: 15px;
+}
+input#reservationDay
+{
+	width: 100%;
+	max-width: 350px;
+	margin-bottom: 15px;
+}
+input#reservationHour
+{
+	width: 100%;
+	max-width: 350px;
+	margin-bottom: 15px;
+}
+input#reservationEmail
+{
+	width: 100%;
+	max-width: 350px;
+	margin-bottom: 15px;
+}
 
 
 
