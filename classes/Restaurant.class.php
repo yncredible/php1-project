@@ -210,22 +210,15 @@
 		}
 
 		public function getImage(){
-			
+
 		}
 
 		public function Search($type,$city){
 			$db = new Db();
 			$search = "SELECT * FROM restaurant WHERE restaurant_city = '$city' OR restaurant_type = '$type'";
-			echo $search;
 			$res = $db->conn->query($search);
 			return ($res);
 
-			if($res == true){
-				console.log('gelukt');
-
-			}else{
-				console.log("niet gelukt");
-			}
 		}
 }
 ?>
