@@ -21,10 +21,10 @@
 
 	if(isset($_POST['search'])){
 		$restaurantsSearch = new Restaurant();
-		$restaurantsSearch->searchRestaurant = $_POST["search_city"];
-		$restaurantsSearch->searchTypeRestaurant = $_POST["search_type"];
-
-		$restaurantwithSearch = $restaurantsSearch->Search();
+		$restaurantType = $_POST["search_type"];
+		$restaurantCity = $_POST["search_city"];
+	
+		$restaurantwithSearch = $restaurantsSearch->Search($restaurantType,$restaurantCity);
 	}
 
 ?><!doctype html>
