@@ -40,20 +40,78 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<header>
-			&nbsp;
-		</header>
-		
+<div class="jumbotron">
+		<div class="container">
+			<section id="userLog">
+			<?php 
+
+				if(isset($_SESSION['ownerIdentity'])) { ?>
+
+					<ul class="nav nav-pills">
+						<li><a class="btn btn-default" href="logout.php">Log Out</a></li>
+					</ul>
+
+				<?php } 
+
+				else { ?>
+				
+					<ul class="nav nav-pills">
+						<li><a class="btn btn-default" href="login.php">Log In</a></li>
+					</ul>
+
+				<?php }
+
+			?>
+			</section>
+
+			<h2>OpenTable</h2>
+			<h3 class="slogan">Going out to dinner was never so easy.</h3>
+
+		</div>
+	</div>
+	
+    <!-- Navigation -->
+    <div class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.php">OpenTable</a>
+        </div>
+        <div class="navbar-collapse collapse">
+
+			<?php 
+
+			if(isset($_SESSION['ownerIdentity'])) { ?>
+
+				<ul class="nav navbar-nav">
+					<li><a href="index.php">All restaurants</a></li>
+					<li><a href="myRestaurants.php">My restaurants</a></li>
+				</ul>
+
+			<?php } 
+
+			else { ?>
+			
+				<ul class="nav navbar-nav">
+					<li><a href="index.php">All restaurants</a></li>
+				</ul>
+
+			<?php }
+
+			?> 
+
+		</div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <!-- End Navigation -->
+
 		<div class="container">
 
-			<div class="jumbotron">
-				<h2>Opentable <small>Going to dinner was never so easy</small></h2>
-			</div>
-			<nav>
-				<ul class="nav nav-pills">
-					<li><a href="index.php">Home</a></li>
-				</ul>
-			</nav>
 			<div class="row">
 				<div class="col-sm-12">
 					<h4>Login</h4>
