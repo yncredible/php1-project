@@ -55,65 +55,20 @@
 		<header>
 			&nbsp;
 		</header>
+		<div class="container">
 
-	
 			<div class="jumbotron">
-				<div class="container">
 				<?php 
 					foreach ($ownersRestaurants as $restaurant) { ?>
 						<h2>Manage <?php echo ucfirst($restaurant['restaurant_name']); ?></h2>
 					<?php }
 				 ?>		
-				</div>
 			</div>
-
-    <!-- Navigation -->
-    <div class="navbar navbar-inverse" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.php">OpenTable</a>
-        </div>
-        <div class="navbar-collapse collapse">
-
-			<?php 
-
-			if(isset($_SESSION['ownerIdentity'])) { ?>
-
-				<ul class="nav navbar-nav">
-					<li><a href="index.php">All restaurants</a></li>
-					<li><a href="myRestaurants.php">My restaurants</a></li>
-				</ul>
-
-			<?php } 
-
-			else { ?>
-			
-				<ul class="nav navbar-nav">
-					<li><a href="index.php">All restaurants</a></li>
-				</ul>
-
-			<?php }
-
-			?> 
-
-		</div><!--/.nav-collapse -->
-      </div>
-    </div>
-    <!-- End Navigation -->
-
-
-			
-			<div class="container">
 
 			<nav>
 				<ul class="nav nav-pills">
-					<li><a class="btn btn-default" href="myRestaurants.php"><span class="glyphicon glyphicon-chevron-left"></span> My Restaurants</a></li>
+					<li><a href="index.php">Home</a></li>
+					<li><a href="myRestaurants.php">My Restaurants</a></li>
 				</ul>
 			</nav>
 
