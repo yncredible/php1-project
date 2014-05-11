@@ -40,7 +40,12 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-<div class="jumbotron">
+		<header>
+			&nbsp;
+		</header>
+	
+
+		<div class="jumbotron">
 		<div class="container">
 			<section id="userLog">
 			<?php 

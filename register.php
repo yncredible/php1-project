@@ -99,6 +99,9 @@
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
+		<header>
+			&nbsp;
+		</header>
 		<div class="jumbotron">
 		<div class="container">
 			<section id="userLog">
