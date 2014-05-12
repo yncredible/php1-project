@@ -31,6 +31,11 @@
 
 	$FreeTables = $table->getFreeTables($restaurantID);
 
+	// getting openingshours from restaurant
+	include_once('classes/Openinghours.class.php');
+	$openinghour = new Openinghours();
+	$openingshoursRestaurant = $openinghour->getOpeningHoursFromSpecificRestaurant($restaurantID);
+
 	//saving reservations
 	if(isset($_POST) && !empty($_POST)){
 		include_once('classes/Reservation.class.php');
@@ -650,7 +655,128 @@
 			?>
 			</div>
 		</div> <!-- /row -->
+		<!-- begin openingshours-->
+		<hr>
+					<div id="openingshoursview">
+						<p><span class="label label-default">Add openingshours</span></p>
+						<h3>Openingshours<span class="toggleHours"><a href="#">(Hide/Show)</a></span></h3>
+					
+					<form action="" method="post" role="form">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>&nbsp;</th>
+									<th>From</th>
+									<th>Until</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>Monday</strong></td>
+									<td><?php 
+										foreach ($openingshoursRestaurant as $opening) { ?>
+											<td><?php echo $opening['opening_monday_from']; ?></td>
+										<?php }
+									?></td>
+									<td><?php 
+										foreach ($openingshoursRestaurant as $opening) { ?>
+											<td><?php echo $opening['opening_monday_until']; ?></td>
+										<?php }
+									?></td>
+								</tr>
+								<tr>
+									<td><strong>Tuesday</strong></td>
+									<td><?php 
+										foreach ($openingshoursRestaurant as $opening) { ?>
+											<td><?php echo $opening['opening_tuesday_from']; ?></td>
+										<?php }
+									?></td>
+									<td><?php 
+										foreach ($openingshoursRestaurant as $opening) { ?>
+											<td><?php echo $opening['opening_tuesday_until']; ?></td>
+										<?php }
+									?></td>
+								</tr>
+								<tr>
+									<td><strong>Wednesday</strong></td>
+									<td><?php 
+										foreach ($openingshoursRestaurant as $opening) { ?>
+											<td><?php echo $opening['opening_wednesday_from']; ?></td>
+										<?php }
+									?></td>
+									<td><?php 
+										foreach ($openingshoursRestaurant as $opening) { ?>
+											<td><?php echo $opening['opening_wednesday_until']; ?></td>
+										<?php }
+									?></td>
+								</tr>
+								<tr>
+									<td><strong>Thursday</strong></td>
+									<td><?php 
+										foreach ($openingshoursRestaurant as $opening) { ?>
+											<td><?php echo $opening['opening_thursday_from']; ?></td>
+										<?php }
+									?></td>
+									<td><?php 
+										foreach ($openingshoursRestaurant as $opening) { ?>
+											<td><?php echo $opening['opening_thursday_until']; ?></td>
+										<?php }
+									?></td>
+									</tr>
+								<tr>
+									<td><strong>Friday</strong></td>
+									<td><?php 
+										foreach ($openingshoursRestaurant as $opening) { ?>
+											<td><?php echo $opening['opening_friday_from']; ?></td>
+										<?php }
+									?></td>
+									<td><?php 
+										foreach ($openingshoursRestaurant as $opening) { ?>
+											<td><?php echo $opening['opening_friday_until']; ?></td>
+										<?php }
+									?></td>
+									</tr>
+								<tr>
+									<td><strong>Saturday</strong></td>
+									<td><?php 
+										foreach ($openingshoursRestaurant as $opening) { ?>
+											<td><?php echo $opening['opening_saturday_from']; ?></td>
+										<?php }
+									?></td>
+									<td><?php 
+										foreach ($openingshoursRestaurant as $opening) { ?>
+											<td><?php echo $opening['opening_saturday_until']; ?></td>
+										<?php }
+									?></td>
+									</tr>
+								<tr>
+									<td><strong>Sunday</strong></td>
+									<td><?php 
+										foreach ($openingshoursRestaurant as $opening) { ?>
+											<td><?php echo $opening['opening_sunday_from']; ?></td>
+										<?php }
+									?></td>
+									<td><?php 
+										foreach ($openingshoursRestaurant as $opening) { ?>
+											<td><?php echo $opening['opening_sunday_until']; ?></td>
+										<?php }
+									?></td>
+									</tr>
+								<tr>
+									<td><strong>note :</strong></td>
+									<td><?php 
+										foreach ($openingshoursRestaurant as $opening) { ?>
+											<td><?php echo $opening['opening_remarks']; ?></td>
+										<?php }
+									?></td>
+							</tbody>
+						</table>
+
+					</form>
+		<!-- einde openingshours-->
     </div>
+
+
 
     <footer>
 			Php project - Kimberly Gysbrecht Segers - Kristof Van Espen - Yannick Nijs - Jens Ivens
