@@ -296,7 +296,7 @@ $(document).on('click', 'a.deleteEntireRestaurant', function(e)
 	//alert('sup');
 	var id = $(this).attr('data-delete-restaurant');
 
-	var ConfirmationDiv = "<div id='confirmationMessage' style='position: absolute; width: 252px; background-color: #fff; top: 50%; left: 50%; border-radius: 15px; border: solid 1px lightgrey; margin-left: -126px; margin-top: -51.5px'>" +
+	var ConfirmationDiv = "<div id='confirmationMessage' style='position: fixed; width: 252px; background-color: #fff; top: 50%; left: 50%; border-radius: 15px; border: solid 1px lightgrey; margin-left: -126px; margin-top: -51.5px'>" +
 
 								"<div style='border-bottom: 1px solid lightgrey;'><h1 style='font-size: 20px; font-family: Helvetica Neue; text-align: center; height: 40px; line-height: 40px;'>Are you sure?</h1></div>" +
 								"<div style='border-right: 1px solid lightgrey; overflow: hidden; float: left; width: 125px; height: 40px;'><a style='line-height: 40px; text-decoration: none; text-align: center; display: block; color: #7f8c8d; font-size: 16px;' id='cancelAction' href='#'>Cancel</a></div>" +
@@ -305,16 +305,18 @@ $(document).on('click', 'a.deleteEntireRestaurant', function(e)
 						   "</div>";
 	$("body").append(ConfirmationDiv);
 
-	$("#cancelAction").on("click", function(e)
+	$("#cancelAction").on("click", function(f)
 	{
 		$("#confirmationMessage").closest("div").remove();
+
+		f.preventDefault();
 	});
 
-	$("#deleteRestaurant").on("click", function(e)
+	$("#deleteRestaurant").on("click", function(f)
 	{
 		var ConfirmId = $(this).attr('data-delete-it');
 
-		var deletedRow = $("a[data-delete-restaurant='"+ConfirmId+"']").parent().parent().parent();
+		var deletedRow = $("a[data-delete-restaurant='"+ConfirmId+"']").parent().parent();
 
 		$.ajax(
 		{
@@ -331,8 +333,10 @@ $(document).on('click', 'a.deleteEntireRestaurant', function(e)
 				deletedRow.slideUp('slow', function() {$(this).remove();});
 
 				$("#deleteRestaurant").parent().parent().closest("div").remove();
+
 			}
 		});
+		f.preventDefault();
 	});
 	e.preventDefault();
 });
