@@ -612,7 +612,6 @@
 
 		<!-- begin openingshours-->
 					<div id="openingshoursview">
-						<p><span class="label label-default">Add openingshours</span></p>
 						<h3>Openingshours <span class="toggleHours"><a href="#">(Hide / Show)</a></span></h3>
 					
 						<div class="ohoursToggle">	
