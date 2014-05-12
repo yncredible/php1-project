@@ -820,20 +820,19 @@
 					</div>
 
 					</form>
-				</div>
+						</div>
 							
 						<!-- end openingshours-->
 
 					</div>
 
 
-			</div> 
+				</div> 
 
-
-			<hr>
 
 			</div>
 		</div>
+	</div>
 		
 	<footer>
 		Php project - Kimberly Gysbrecht Segers - Kristof Van Espen - Yannick Nijs - Jens Ivens
