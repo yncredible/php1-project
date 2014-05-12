@@ -128,7 +128,6 @@
 			$sql = "SELECT `table_id`, `table_nr`, `table_persons`, `table_status`, `table_description`, `restaurant_id` FROM `table` WHERE `table_status` = 'free' AND `restaurant_id` = '$restaurantID'";
 
 			$result = $db->conn->query($sql);
-			echo $sql;
 			
 			return($result);
 
