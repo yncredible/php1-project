@@ -201,12 +201,18 @@
 			}
 		}
 		
-		public function deleteRestaurant($restaurantID){
+		public function deleteRestaurant($restaurantID)
+		{
 			$db = new Db();
-			$deleteAll = "DELETE FROM `restaurant` WHERE `restaurant_id` = '$restaurantID'";
+			$deleteRestaurant = "DELETE FROM restaurant WHERE restaurant_id = '$restaurantID'";
+			$deleteMenu = "DELETE FROM menu WHERE restaurant_id = '$restaurantID'";
+			$deleteTable = "DELETE FROM `table` WHERE restaurant_id = '$restaurantID'";
+			$deleteOpeninghours = "DELETE FROM openinghours WHERE restaurant_id = '$restaurantID'";
 			
-			$res = $db->conn->query($deleteAll);
-		
+			$db->conn->query($deleteRestaurant);		
+			$db->conn->query($deleteMenu);		
+			$db->conn->query($deleteTable);		
+			$db->conn->query($deleteOpeninghours);		
 		}
 
 		
