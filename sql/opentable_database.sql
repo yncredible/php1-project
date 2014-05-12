@@ -19,8 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Databank: `phpproject`
 --
-CREATE DATABASE IF NOT EXISTS `phpproject` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `phpproject`;
+CREATE DATABASE IF NOT EXISTS `opentable` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `opentable`;
 
 -- --------------------------------------------------------
 
