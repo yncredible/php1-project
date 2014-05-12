@@ -24,7 +24,6 @@ body
 	font-size: 55px;
 	padding-top: 35px;
 }
-
 .slogan
 {
 	background-color:white;
@@ -33,8 +32,6 @@ body
 	padding:5px;
 	color:brown;
 }
-
-
 footer
 {
 	width: 100%;
@@ -183,7 +180,6 @@ p.col-sm-offset-2.col-sm-10
 	margin-left: 0%;
 	padding-left: 0%;
 }
-
 #restoPic
 {
 	max-width:295px;
@@ -192,24 +188,20 @@ p.col-sm-offset-2.col-sm-10
 	outline:1px solid #CCC;
 	outline-offset:4px;
 }
-
 .container
 {
 	position: relative;
 }
-
 #userLog
 {
 	position: absolute;
 	top:20px;
 	right:50px;
 }
-
 .navbar
 {
 	border-radius: 0px;
 }
-
 input#reservationName
 {
 	width: 100%;
@@ -240,6 +232,3 @@ input#reservationEmail
 	max-width: 350px;
 	margin-bottom: 15px;
 }
-
-
-
