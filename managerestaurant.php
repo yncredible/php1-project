@@ -800,6 +800,10 @@
 									<td><input class="form-control" type="text" name="sunday_from" id="sunday_from"></td>
 									<td><input class="form-control" type="text" name="sunday_until" id="sunday_until"></td>
 								</tr>
+								<tr>
+									<td><strong>Remarks</strong></td>
+									<td><input class="form-control" type="text" name="remarks" id="remarks"></td>
+								</tr>
 							</tbody>
 						</table>
 
