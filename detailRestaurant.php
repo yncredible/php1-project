@@ -37,7 +37,7 @@
 	$openingshoursRestaurant = $openinghour->getOpeningHoursFromSpecificRestaurant($restaurantID);
 
 	//saving reservations
-	if(isset($_POST) && !empty($_POST)){
+	if(isset($_POST['reservationSubmit']) && !empty($_POST['reservationSubmit'])){
 		include_once('classes/Reservation.class.php');
 		$reservation = new Reservation();
 		$reservation->reservationName = $_POST['reservation_name'];
@@ -49,15 +49,6 @@
 	$reservation->saveReservations($restaurantID);
 	$reservation->sendEmail($restaurantID);
 
-	// adding feedback 
-	if(isset($_POST['feedbackSubmit']) && !empty($_POST['feedbackSubmit'])){
-	$feedback = new Feedback();
-	$feedback->feedbackName = $_POST['feedbackName'];
-	$feedack->feedbackSort = $_POST['feedbackSort'];
-	$feedack->feedbackMessage = $_POST['feedbackMessage'];
-
-	$feedback->saveFeedback($restaurantID);
-	}	
 }
 ?><!doctype html>
 <html lang="en">
@@ -814,31 +805,7 @@
 			</form><!-- end reservation -->
 		</div>
 
-			<div class="col-md-6">
-			<h2>Geef feedback voor <?php echo ucfirst($restaurants['restaurant_name']); ?></h2>
-			
-			<form action="#" method="post">
-			<div class="formgroup">
-				<label for="feedbackName">Naam :</label>
-				<input type="text" name="feedbackName" id="feedbackName">
-			</div>
-				<div class="formgroup">
-				<label for="feedbackSort">Sort of feedback :</label>
-				<select name="feedbackSort" id="feedbackSort">
-					<option value="positive">Positive</option>
-					<option value="negative">Negative</option>
-				</select>
-			</div>
-			<div class="formgroup">
-				<label for="feedbackMessage">Message :</label>
-				<input type="textarea" name="feedbackMessage" id="feedbackMessage" rows="4"/>
-			</div>
-				<div class="formgroup">
-				<input type="submit" value="Send feedback" name="feedbackSubmit" class="btn btn-primary">
-			</div>
-			</form>
-			</div> <!-- end div feedback -->
-			</div>
+		</div>
     </div>
 
 
