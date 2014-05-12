@@ -173,9 +173,8 @@
     <!-- End Navigation -->
 
 		<div class="container">
-			<div class="row">
-				<div class="col-sm-12">
-					<h4>Register</h4>
+			<div id="registerForm">
+					<h4>OpenTable Register</h4>
 					<form action="" method="POST" role="form">
 						<div class="formgroup">
 							<label for="ownerName">Name</label>
@@ -199,12 +198,14 @@
 							<?php if(isset($errorPassword_len)){echo '<p class="inputError">' . $errorPassword_len . '</p>';} ?>
 							<input class="form-control" type="password" id="ownerPassword" name="owner_password" <?php if(isset($_SESSION['password'])){echo 'value="' . $_SESSION['password'] . '"';} ?> required>
 						</div>
+						<div class="form-group">
 							<input type="submit" value="Sign Up" name="register" class="btn btn-default">
-
-							<p class="col-sm-offset-2 col-sm-10">Already registered? <a href="login.php">Login here!</a></p>
+						</div>
 					</form>
+					
+					<p>Already registered? <a href="login.php">Login here!</a></p>
+
 				</div>
-			</div>
 		
 
 		</div>
