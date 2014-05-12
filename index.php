@@ -137,7 +137,7 @@
 			<form action="#" method="post" role="form" id="search">
 				<label>Search a restaurant</label></br>
 				<label for="search_city">City :</label>
-				<input type="input" name="search_city" id="search_city" placeholder="Postal code"/>
+				<input type="input" name="search_city" id="search_city" placeholder="search city"/>
 				<label for="search_type">Type : </label>
 				<select id="search_type" name="search_type">
 							<option value="all">All</option>
