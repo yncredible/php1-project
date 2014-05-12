@@ -30,7 +30,6 @@ $(document).ready(function(){
 	$('.toggleMenu').on('click', function(e){
 
 		$('.menu').slideToggle();
-		console.log('clicked');
 
 		e.preventDefault();	
 	});
