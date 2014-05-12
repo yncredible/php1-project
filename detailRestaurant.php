@@ -623,6 +623,18 @@
 					<label for="reservationNumber" id="lblnumber">Number of people :</label>
 					<input type="text" id="reservationNumber" name="reservation_numberPeople" required>
 				</div>
+				<div class='formgroup'>
+					<label for="reservationNumber" id="lblnumber">Select the table :</label>
+					<select>
+						<?php
+						foreach ($FreeTables as $free) {?>
+							<option value=' . <?php echo $free["table_nr"]; ?> .'><?php echo $free['table_description'] ."," .$free['table_status']; ?></option>
+						<?php }
+
+						?>
+					</select>	
+				</div>
+
 				<div class="formgroup">
 					<label for="reservationDay" id="lblday">Day :</label>
 					<input type="date" id="reservationDay" name="reservation_day" required>
