@@ -186,6 +186,9 @@
 	{
 		$db = new Db();
 
+			$sql1 = "DELETE FROM openinghours where restaurant_id = $restaurantID";
+			$db->conn->query($sql1);
+
 			$sql = "INSERT INTO openinghours (
 												opening_monday_from,
 												opening_monday_until,
