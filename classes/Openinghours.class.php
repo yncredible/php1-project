@@ -231,8 +231,17 @@
 			$db = new Db();
 			$sql = "SELECT * FROM openinghours WHERE restaurant_id = '$restaurantID'";
 
-			echo $sql;
+			
 			$result = $db->conn->query($sql);
+			if($result)
+			{
+				$rows = array();
+				while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+				{
+				    $rows[] = $row;
+				}
+				return $rows;
+			}
 
 	}
 	

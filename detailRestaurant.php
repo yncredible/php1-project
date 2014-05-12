@@ -659,120 +659,152 @@
 		<hr>
 					<div id="openingshoursview">
 						<p><span class="label label-default">Add openingshours</span></p>
-						<h3>Openingshours<span class="toggleHours"><a href="#">(Hide/Show)</a></span></h3>
+						<h3>Openingshours <span class="ohoursToggle"><a href="#">(Hide)</a></span></h3>
 					
-					<form action="" method="post" role="form">
-						<table class="table">
-							<thead>
-								<tr>
-									<th>&nbsp;</th>
-									<th>From</th>
-									<th>Until</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td><strong>Monday</strong></td>
-									<td><?php 
-										foreach ($openingshoursRestaurant as $opening) { ?>
-											<td><?php echo $opening['opening_monday_from']; ?></td>
-										<?php }
-									?></td>
-									<td><?php 
-										foreach ($openingshoursRestaurant as $opening) { ?>
-											<td><?php echo $opening['opening_monday_until']; ?></td>
-										<?php }
-									?></td>
-								</tr>
-								<tr>
-									<td><strong>Tuesday</strong></td>
-									<td><?php 
-										foreach ($openingshoursRestaurant as $opening) { ?>
-											<td><?php echo $opening['opening_tuesday_from']; ?></td>
-										<?php }
-									?></td>
-									<td><?php 
-										foreach ($openingshoursRestaurant as $opening) { ?>
-											<td><?php echo $opening['opening_tuesday_until']; ?></td>
-										<?php }
-									?></td>
-								</tr>
-								<tr>
-									<td><strong>Wednesday</strong></td>
-									<td><?php 
-										foreach ($openingshoursRestaurant as $opening) { ?>
-											<td><?php echo $opening['opening_wednesday_from']; ?></td>
-										<?php }
-									?></td>
-									<td><?php 
-										foreach ($openingshoursRestaurant as $opening) { ?>
-											<td><?php echo $opening['opening_wednesday_until']; ?></td>
-										<?php }
-									?></td>
-								</tr>
-								<tr>
-									<td><strong>Thursday</strong></td>
-									<td><?php 
-										foreach ($openingshoursRestaurant as $opening) { ?>
-											<td><?php echo $opening['opening_thursday_from']; ?></td>
-										<?php }
-									?></td>
-									<td><?php 
-										foreach ($openingshoursRestaurant as $opening) { ?>
-											<td><?php echo $opening['opening_thursday_until']; ?></td>
-										<?php }
-									?></td>
+						<form action="" method="post" role="form">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Day</th>
+										<th>From</th>
+										<th>Until</th>
 									</tr>
-								<tr>
-									<td><strong>Friday</strong></td>
-									<td><?php 
-										foreach ($openingshoursRestaurant as $opening) { ?>
-											<td><?php echo $opening['opening_friday_from']; ?></td>
-										<?php }
-									?></td>
-									<td><?php 
-										foreach ($openingshoursRestaurant as $opening) { ?>
-											<td><?php echo $opening['opening_friday_until']; ?></td>
-										<?php }
-									?></td>
+								</thead>
+								<tbody>
+									<tr>
+										<td><strong>Monday</strong></td>
+										<td>
+											<?php 
+												foreach ($openingshoursRestaurant as $opening) { ?>
+													<?php echo $opening['opening_monday_from']; ?>
+												<?php }
+											?>
+										</td>
+										<td>
+											<?php 
+												foreach ($openingshoursRestaurant as $opening) { ?>
+												<?php echo $opening['opening_monday_until']; ?>
+												<?php }
+											?>
+										</td>
 									</tr>
-								<tr>
-									<td><strong>Saturday</strong></td>
-									<td><?php 
-										foreach ($openingshoursRestaurant as $opening) { ?>
-											<td><?php echo $opening['opening_saturday_from']; ?></td>
-										<?php }
-									?></td>
-									<td><?php 
-										foreach ($openingshoursRestaurant as $opening) { ?>
-											<td><?php echo $opening['opening_saturday_until']; ?></td>
-										<?php }
-									?></td>
+									<tr>
+										<td><strong>Tuesday</strong></td>
+										<td>
+											<?php 
+												foreach ($openingshoursRestaurant as $opening) { ?>
+												<?php echo $opening['opening_tuesday_from']; ?>
+												<?php }
+											?>
+										</td>
+										<td>
+											<?php 
+												foreach ($openingshoursRestaurant as $opening) { ?>
+												<?php echo $opening['opening_tuesday_until']; ?>
+												<?php }
+											?>
+									</td>
 									</tr>
-								<tr>
-									<td><strong>Sunday</strong></td>
-									<td><?php 
-										foreach ($openingshoursRestaurant as $opening) { ?>
-											<td><?php echo $opening['opening_sunday_from']; ?></td>
-										<?php }
-									?></td>
-									<td><?php 
-										foreach ($openingshoursRestaurant as $opening) { ?>
-											<td><?php echo $opening['opening_sunday_until']; ?></td>
-										<?php }
-									?></td>
+									<tr>
+										<td><strong>Wednesday</strong></td>
+										<td>
+											<?php 
+												foreach ($openingshoursRestaurant as $opening) { ?>
+												<?php echo $opening['opening_wednesday_from']; ?>
+												<?php }
+											?>
+										</td>
+										<td>
+											<?php 
+												foreach ($openingshoursRestaurant as $opening) { ?>
+												<?php echo $opening['opening_wednesday_until']; ?>
+												<?php }
+											?>
+										</td>
 									</tr>
-								<tr>
-									<td><strong>note :</strong></td>
-									<td><?php 
-										foreach ($openingshoursRestaurant as $opening) { ?>
-											<td><?php echo $opening['opening_remarks']; ?></td>
-										<?php }
-									?></td>
-							</tbody>
-						</table>
+									<tr>
+										<td><strong>Thursday</strong></td>
+										<td>
+											<?php 
+												foreach ($openingshoursRestaurant as $opening) { ?>
+												<?php echo $opening['opening_thursday_from']; ?>
+												<?php }
+											?>
+										</td>
+										<td>
+											<?php 
+												foreach ($openingshoursRestaurant as $opening) { ?>
+												<?php echo $opening['opening_thursday_until']; ?>
+												<?php }
+											?>
+										</td>
+									</tr>
+									<tr>
+										<td><strong>Friday</strong></td>
+										<td>
+											<?php 
+												foreach ($openingshoursRestaurant as $opening) { ?>
+												<?php echo $opening['opening_friday_from']; ?>
+												<?php }
+											?>
+										</td>
+										<td>
+											<?php 
+												foreach ($openingshoursRestaurant as $opening) { ?>
+												<?php echo $opening['opening_friday_until']; ?>
+												<?php }
+											?>
+										</td>
+									</tr>
+									<tr>
+										<td><strong>Saturday</strong></td>
+										<td>
+											<?php 
+												foreach ($openingshoursRestaurant as $opening) { ?>
+												<?php echo $opening['opening_saturday_from']; ?>
+												<?php }
+											?>
+										</td>
+										<td>
+											<?php 
+												foreach ($openingshoursRestaurant as $opening) { ?>
+												<?php echo $opening['opening_saturday_until']; ?>
+												<?php }
+											?>
+										</td>
+									</tr>
+									<tr>
+										<td><strong>Sunday</strong></td>
+										<td>
+											<?php 
+												foreach ($openingshoursRestaurant as $opening) { ?>
+												<?php echo $opening['opening_sunday_from']; ?>
+												<?php }
+											?>
+										</td>
+										<td>
+											<?php 
+												foreach ($openingshoursRestaurant as $opening) { ?>
+												<?php echo $opening['opening_sunday_until']; ?>
+												<?php }
+											?>
+										</td>
+									</tr>
+									<tr>
+										<td><strong>Remarks</strong></td>
+										<td>
+											<?php 
+												foreach ($openingshoursRestaurant as $opening) { ?>
+												<?php echo $opening['opening_remarks']; ?>
+												<?php }
+											?>
+										</td>
+									</tr>
+								</tbody>
+							</table>
 
-					</form>
+						</form>
+					
 		<!-- einde openingshours-->
     </div>
 
