@@ -12,11 +12,6 @@
 	$restaurant = new Restaurant();
 	$ownersRestaurants = $restaurant->getAllRestaurantsFromAnOwner($_SESSION['ownerIdentity']);
 
-	if(!empty($_POST['deleteRestaurant']))
-	{
-		
-	}
-
  ?><!doctype html>
 <html lang="en">
 	<head>
