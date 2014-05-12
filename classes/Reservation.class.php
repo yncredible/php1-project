@@ -9,39 +9,39 @@
 		private $m_sreservationEmail;
 
 		public function __set($p_sProperty, $p_vValue)
+		{
+			switch($p_sProperty)
 			{
-				switch($p_sProperty)
+				case "reservationName":
 				{
-					case "reservationName":
-					{
-						$this->m_sreservationName = $p_vValue;
-					}
-					break;
-					
-					case "reservationNumberpeople":
-					{
-						$this->m_ireservationNumberpeople = $p_vValue;
-					}
-					break;
-
-					case "reservationDay":
-					{
-						$this->m_sreservationDay = $p_vValue;
-					}
-					break;
-
-					case "reservationHour":
-					{
-						$this->m_ireservationHour = $p_vValue;
-					}
-					break;
-					case "reservationEmail":
-					{
-						$this->m_sreservationEmail = $p_vValue;
-					}
-					break;
+					$this->m_sreservationName = $p_vValue;
 				}
+				break;
+				
+				case "reservationNumberpeople":
+				{
+					$this->m_ireservationNumberpeople = $p_vValue;
+				}
+				break;
+
+				case "reservationDay":
+				{
+					$this->m_sreservationDay = $p_vValue;
+				}
+				break;
+
+				case "reservationHour":
+				{
+					$this->m_ireservationHour = $p_vValue;
+				}
+				break;
+				case "reservationEmail":
+				{
+					$this->m_sreservationEmail = $p_vValue;
+				}
+				break;
 			}
+		}
 
 		public function __get($p_sProperty)
 		{
@@ -69,9 +69,11 @@
 			}
 		}
 
-		public function saveReservations($restaurantID){
+		public function saveReservations($restaurantID)
+		{
 
 			$db = new Db();
+
 			$saveRes = "insert INTO reservations 
 								(reservation_name,
 								 reservation_number,
@@ -92,17 +94,16 @@
 			
 			return($sql);
 			echo $saveRes;
-			
 		
 		}
 
-		public function sendEmail($restaurantID){
-			
-
+		public function sendEmail($restaurantID)
+		{
+		
 			if ( isset ( $_POST ['reservation_submit'] )){
 
 			$db = new Db();
-			$getEmail = "SELECT restaurant_email FROM restaurant WHERE restaurant_id = ".$restaurantID;
+			$getEmail = "SELECT restaurant_email FROM restaurant WHERE restaurant_id = $restaurantID";
 
 			$sql = $db->conn->query($getEmail);
 
@@ -110,21 +111,22 @@
 
 			// REPLACE THE LINE BELOW WITH YOUR E-MAIL ADDRESS.
 			$to = $getEmail;
-			$subject = 'reservation' ;
+			$subject = 'Restaurant reservation: ' . $this->m_sreservationName ;
 
 			// NOT SUGGESTED TO CHANGE THESE VALUES
-			$message = "reservatie op naam van: " ;
+			$message = 	"Dear " . $this->m_sreservationName . ". We are very happy you booked a table at our restaurant."
+						. "Please check your booking and let us know if something's wrong."
+						. "Name:" . $this->m_sreservationName . ", "
+						. "Number of people: " .$this->m_ireservationNumberpeople . ", "
+						. "Date: " . $this->m_sreservationDay . ", "
+						. "Hour: " . $this->m_ireservationHour . "."
+						. "Kind regards." ;
+
 			$headers = 'From: ' . $_POST[ "reservationName" ] . PHP_EOL ;
 			mail ( $to, $subject, $message, $headers ) ;
 
 			echo "Your e-mail has been sent! You should receive a reply within 24 hours!" ;}
 
-			else
-			{
-				header('Location:index.php');
-			} 
 		}
-
-
-}
+	}
 ?>
