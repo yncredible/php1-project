@@ -47,27 +47,7 @@
 
 		<div class="jumbotron">
 		<div class="container">
-			<section id="userLog">
-			<?php 
-
-				if(isset($_SESSION['ownerIdentity'])) { ?>
-
-					<ul class="nav nav-pills">
-						<li><a class="btn btn-default" href="logout.php">Log Out</a></li>
-					</ul>
-
-				<?php } 
-
-				else { ?>
-				
-					<ul class="nav nav-pills">
-						<li><a class="btn btn-default" href="login.php">Log In</a></li>
-					</ul>
-
-				<?php }
-
-			?>
-			</section>
+			
 
 			<h2>OpenTable</h2>
 			<h3 class="slogan">Going out to dinner was never so easy.</h3>
@@ -117,9 +97,8 @@
 
 		<div class="container">
 
-			<div class="row">
-				<div class="col-sm-12">
-					<h4>Login</h4>
+				<div id="loginForm">
+					<h4>OpenTable Login</h4>
 					<form action="" method="POST" role="form" class="form-horizontal">
 						<?php if(isset($errorLogin)){echo '<p class="inputError">' . $errorLogin . '</p>';} ?>
 
@@ -143,11 +122,9 @@
 	    				</div>
 					</form>
 
-					<p class="col-sm-offset-2 col-sm-10">
+					<p>
 						You don't have an account? No problem! <a href="register.php">Register here.</a>
 					</p>
-					
-				</div>
 			</div>
 
 		</div>
