@@ -2,6 +2,7 @@ body
 {
 	background-color: #fdfbfb;
 }
+
 .jumbotron
 {
 	background-image: url(../images/banner.jpg);
@@ -77,16 +78,8 @@ ul.flow li p
 	margin-top: 25px;
 
 }
-h4
-{
-	margin-top:50px;
-	font-size: 18px;
-	font-weight: bolder;
-}
-.form-group
-{
-	text-align: left;
-}
+
+
 .form-group.col-sm-2 .control-label
 {
 	width: 100%;
@@ -97,12 +90,8 @@ h4
 	text-align: left;
 	width: 100%;
 }
-input#loginEmail.form-control
-{
-	width: 100%;
-	max-width: 350px;
-	margin-bottom: 15px;
-}
+
+
 input#ownerName.form-control
 {
 	width: 100%;
@@ -121,12 +110,7 @@ input#ownerEmail.form-control
 	max-width: 350px;
 	margin-bottom: 15px;
 }
-input#loginPassword.form-control
-{
-	width: 100%;
-	max-width: 350px;
-	margin-bottom: 15px;
-}
+
 input#name_restaurant
 {
 	width: 100%;
@@ -232,3 +216,28 @@ input#reservationEmail
 	max-width: 350px;
 	margin-bottom: 15px;
 }
+
+
+#loginForm,
+#registerForm
+{
+	width:100%;
+	max-width:400px;
+	margin:50px auto;
+	outline:1px solid #F8DCC2;
+	outline-offset:10px;
+	padding:20px;
+	color:#666;
+}
+
+#loginForm h4,
+#registerForm h4
+{
+	margin-top:0;
+	color:#BB3F1D;
+}
+
+
+
+
+
