@@ -9,7 +9,7 @@
 		private $m_sCityRestaurant;
 		private $m_sEmailRestaurant;
 		private $m_sWebsiteRestaurant;
-		private $m_Photo;
+		// private $m_Photo;
 		private $m_sTypeRestaurant;
 
 	public function __set($p_sProperty, $p_vValue)
@@ -58,7 +58,7 @@
 					$this->m_sWebsiteRestaurant = $p_vValue;
 				}
 				break;
-				case "photoRestaurant":
+				/*case "photoRestaurant":
 				{
 					$image_size = getimagesize($_FILES['photo_restaurant']['tmp_name']);
 					echo $image_size;
@@ -70,7 +70,7 @@
 						$this->m_Photo = $p_vValue;
 					}	
 				}
-				break;
+				break;*/
 			}
 		}
 
@@ -110,9 +110,9 @@
 				return $this->m_sWebsiteRestaurant;
 				break;
 
-				case "photoRestaurant":
+				/*case "photoRestaurant":
 				return $this->m_Photo;
-				break;
+				break;*/
 				
 			}
 		}
@@ -121,7 +121,7 @@
 
 			$db = new Db();
 			
-					$sql = "insert INTO restaurant (restaurant_name, restaurant_street, restaurant_number, restaurant_postalCode, restaurant_city, restaurant_type, restaurant_email, restaurant_website,restaurant_photo, owner_id)
+					$sql = "insert INTO restaurant (restaurant_name, restaurant_street, restaurant_number, restaurant_postalCode, restaurant_city, restaurant_type, restaurant_email, restaurant_website, owner_id)
 								VALUES (
 											'". $db->conn->real_escape_string($this->nameRestaurant)."',
 											'". $db->conn->real_escape_string($this->streetRestaurant)."',
@@ -209,10 +209,7 @@
 		
 		}
 
-		public function getImage(){
-
-		}
-
+		
 		public function Search($type,$city){
 			$db = new Db();
 			$search = "SELECT * FROM restaurant WHERE restaurant_city = '$city' OR restaurant_type = '$type'";
