@@ -801,8 +801,8 @@
 									<td><input class="form-control" type="time" name="sunday_until" id="sunday_until"></td>
 								</tr>
 								<tr>
-									<td><strong>Remarks</strong></td>
-									<td><input class="form-control" type="text" name="remarks" id="remarks"></td>
+									<td><strong><span class="label label-primary">Remarks</span></strong></td>
+									<td colspan="2"><input class="form-control" type="text" name="remarks" id="remarks"></td>
 								</tr>
 							</tbody>
 						</table>
