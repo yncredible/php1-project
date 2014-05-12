@@ -676,14 +676,14 @@
 										<td>
 											<?php 
 												foreach ($openingshoursRestaurant as $opening) { ?>
-													<?php echo $opening['opening_monday_from']; ?>
+													<?php echo date('h:i A', strtotime($opening['opening_monday_from'])); ?>
 												<?php }
 											?>
 										</td>
 										<td>
 											<?php 
 												foreach ($openingshoursRestaurant as $opening) { ?>
-												<?php echo $opening['opening_monday_until']; ?>
+												<?php echo date('h:i A', strtotime($opening['opening_monday_until'])); ?>
 												<?php }
 											?>
 										</td>
@@ -693,14 +693,14 @@
 										<td>
 											<?php 
 												foreach ($openingshoursRestaurant as $opening) { ?>
-												<?php echo $opening['opening_tuesday_from']; ?>
+												<?php echo date('h:i A', strtotime($opening['opening_tuesday_from'])); ?>
 												<?php }
 											?>
 										</td>
 										<td>
 											<?php 
 												foreach ($openingshoursRestaurant as $opening) { ?>
-												<?php echo $opening['opening_tuesday_until']; ?>
+												<?php echo date('h:i A', strtotime($opening['opening_tuesday_until'])); ?>
 												<?php }
 											?>
 									</td>
@@ -710,14 +710,14 @@
 										<td>
 											<?php 
 												foreach ($openingshoursRestaurant as $opening) { ?>
-												<?php echo $opening['opening_wednesday_from']; ?>
+												<?php echo date('h:i A', strtotime($opening['opening_wednesday_from'])); ?>
 												<?php }
 											?>
 										</td>
 										<td>
 											<?php 
 												foreach ($openingshoursRestaurant as $opening) { ?>
-												<?php echo $opening['opening_wednesday_until']; ?>
+												<?php echo date('h:i A', strtotime($opening['opening_wednesday_until'])); ?>
 												<?php }
 											?>
 										</td>
@@ -727,14 +727,14 @@
 										<td>
 											<?php 
 												foreach ($openingshoursRestaurant as $opening) { ?>
-												<?php echo $opening['opening_thursday_from']; ?>
+												<?php echo date('h:i A', strtotime($opening['opening_thursday_from'])); ?>
 												<?php }
 											?>
 										</td>
 										<td>
 											<?php 
 												foreach ($openingshoursRestaurant as $opening) { ?>
-												<?php echo $opening['opening_thursday_until']; ?>
+												<?php echo date('h:i A', strtotime($opening['opening_thursday_until'])); ?>
 												<?php }
 											?>
 										</td>
@@ -744,14 +744,14 @@
 										<td>
 											<?php 
 												foreach ($openingshoursRestaurant as $opening) { ?>
-												<?php echo $opening['opening_friday_from']; ?>
+												<?php echo date('h:i A', strtotime($opening['opening_friday_from'])); ?>
 												<?php }
 											?>
 										</td>
 										<td>
 											<?php 
 												foreach ($openingshoursRestaurant as $opening) { ?>
-												<?php echo $opening['opening_friday_until']; ?>
+												<?php echo date('h:i A', strtotime($opening['opening_friday_until'])); ?>
 												<?php }
 											?>
 										</td>
@@ -761,14 +761,14 @@
 										<td>
 											<?php 
 												foreach ($openingshoursRestaurant as $opening) { ?>
-												<?php echo $opening['opening_saturday_from']; ?>
+												<?php echo date('h:i A', strtotime($opening['opening_saturday_from'])); ?>
 												<?php }
 											?>
 										</td>
 										<td>
 											<?php 
 												foreach ($openingshoursRestaurant as $opening) { ?>
-												<?php echo $opening['opening_saturday_until']; ?>
+												<?php echo date('h:i A', strtotime($opening['opening_saturday_until'])); ?>
 												<?php }
 											?>
 										</td>
@@ -778,14 +778,14 @@
 										<td>
 											<?php 
 												foreach ($openingshoursRestaurant as $opening) { ?>
-												<?php echo $opening['opening_sunday_from']; ?>
+												<?php echo date('h:i A', strtotime($opening['opening_sunday_from'])); ?>
 												<?php }
 											?>
 										</td>
 										<td>
 											<?php 
 												foreach ($openingshoursRestaurant as $opening) { ?>
-												<?php echo $opening['opening_sunday_until']; ?>
+												<?php echo date('h:i A', strtotime($opening['opening_sunday_until'])); ?>
 												<?php }
 											?>
 										</td>
