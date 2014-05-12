@@ -25,7 +25,7 @@
 			$restaurant->cityRestaurant = $_POST["city_restaurant"];
 			$restaurant->emailRestaurant = $_POST["email_restaurant"];
 			$restaurant->websiteRestaurant = $_POST["website_restaurant"];
-			$restaurant->photoRestaurant = addslashes(file_get_contents($_FILES['photo_restaurant']['tmp_name']));
+			//$restaurant->photoRestaurant = addslashes(file_get_contents($_FILES['photo_restaurant']['tmp_name']));
 
 			$restaurant->addRestaurant($ownerID);
 
@@ -163,10 +163,10 @@
 						<label for="website_restaurant">Website</label>
 						<input class="form-control" type="text" name="website_restaurant" id="website_restaurant">
 						</div>
-						<div class="form-group">	
+						<!--<div class="form-group">	
 						<label for="photo_restaurant">Upload restaurant picture</label>
 						<input class="form-control" type="file" name="photo_restaurant" id="photo_restaurant">
-						</div>
+						</div>-->
 
 
 						<div class="form-group">
