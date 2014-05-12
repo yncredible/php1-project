@@ -29,14 +29,15 @@ $(document).ready(function(){
 
 	$('.toggleMenu').on('click', function(e){
 
-		$('.menu').toggle();
+		$('.menu').slideToggle();
+		console.log('clicked');
 
 		e.preventDefault();	
 	});
 
 	$('.toggleTable').on('click', function(e){
 
-		$('.tableToggle').toggle();
+		$('.tableToggle').slideToggle();
 
 		e.preventDefault();	
 	});
