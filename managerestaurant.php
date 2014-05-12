@@ -199,7 +199,7 @@
 				
 				<div class="row">
 					<div class="col-sm-12">
-						<h3>Menu <span class="toggleMenu"><a href="#">(Hide)</a></span></h3>
+						<h3>Menu <span class="toggleMenu"><a href="#">(Hide / Show)</a></span></h3>
 
 						<div class="menu">
 
@@ -708,7 +708,7 @@
 
 			<div class="row">
 				<div class="col-sm-12">
-					<h3>Tables overview <span class="toggleTable"><a href="#">(Hide)</a></span></h3>
+					<h3>Tables overview <span class="toggleTable"><a href="#">(Hide / Show)</a></span></h3>
 
 					<div class="tableToggle">
 
@@ -750,11 +750,19 @@
 					</table>
 
 					<!-- hier begint de openingsuren pagina -->
-					<hr>
-					<div id="openingshoursview">
-						<p><span class="label label-default">Add openingshours</span></p>
-						<h3>Openingshours<span class="toggleHours"><a href="#">(Hide/Show)</a></span></h3>
 					
+					
+				</div>
+
+				<hr>
+					
+				<div id="openingshoursview">
+					<p><span class="label label-default">Add openingshours</span></p>
+					<h3>Openingshours <span class="toggleHours"><a href="#">(Hide / Show)</a></span></h3>
+
+					<div class="ohoursToggle">
+
+				
 					<form action="" method="post" role="form">
 						<table class="table">
 							<thead>
@@ -812,12 +820,13 @@
 					</div>
 
 					</form>
+				</div>
 							
 						<!-- end openingshours-->
 
 					</div>
-					
-				</div>
+
+
 			</div> 
 
 

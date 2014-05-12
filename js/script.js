@@ -39,6 +39,13 @@ $(document).ready(function(){
 		$('.tableToggle').slideToggle();
 
 		e.preventDefault();	
+	});	
+
+	$('.toggleHours').on('click', function(e){
+
+		$('.ohoursToggle').slideToggle();
+
+		e.preventDefault();	
 	});
 	
 });
