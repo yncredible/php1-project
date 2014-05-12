@@ -122,6 +122,27 @@
 			echo $sql;
 		}
 
+		function getFreeTables($restaurantID){
+			$db = new Db();
+
+			$sql = "SELECT * FROM 'table' WHERE table_status = 'Free' AND restaurant_id = '$restaurantID'";
+
+			$result = $db->conn->query($sql);
+			echo $sql;
+			return($result);
+
+			if($result)
+			{
+				$rows = array();
+				while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) 
+				{
+				    $rows[] = $row;
+				}
+				return $rows;
+			}
+			
+		}
+
 		function ChangeStatus($tableID, $tableChange)
 		{
 			$db = new Db();

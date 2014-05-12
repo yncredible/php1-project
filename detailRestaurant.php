@@ -29,6 +29,8 @@
 	$table = new Table();
 	$tableList = $table->getSpecificTablesfromRestaurant($restaurantID);
 
+	$FreeTables = $table->getFreeTables($restaurantID);
+
 	//saving reservations
 	if(isset($_POST) && !empty($_POST)){
 		include_once('classes/Reservation.class.php');
@@ -114,8 +116,7 @@
 
 	<div class="row">
 		<div class="col-xs-6 restaurantPhoto">
-			<!--<img src="#" alt="foto restuarant?">-->
-			<!--<img id="restoPic" src="images/tpl.jpg" alt="tpl pic">-->
+			<img id="restoPic" src="images/tpl.jpg" alt="tpl pic">
 		</div>
 
 		<div class="col-xs-6 restaurantAddress">
@@ -128,7 +129,7 @@
 					<?php echo $restaurants['restaurant_postalCode']." ".$restaurants['restaurant_city'];?><br>
 					<abbr title="Email">E: </abbr><a href="mailto:#"><?php echo $restaurants['restaurant_email'];?></a><br>
 					<abbr title="Website">W: </abbr><a href="http://<?php echo $restaurants['restaurant_website'];?>"><?php echo $restaurants['restaurant_website'];?> </a>
-					<img src="<?php echo mysql_fetch_assoc($restaurants['restaurant_photo']); ?>"/>
+					
 				</address> 
 
 		<?php } ?>
@@ -636,6 +637,17 @@
 				<a name="reserveNow"></a>
 
 			</form>
+			<?php
+				if (is_array($FreeTables)){
+			
+					foreach ($FreeTables as $free) {?>
+						<p><?php echo $free['table_description']; ?></p>
+									
+					<?php }
+								
+				}
+
+			?>
 			</div>
 		</div> <!-- /row -->
     </div>
