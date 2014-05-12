@@ -182,7 +182,7 @@
 		}
 	}
 
-	public function addOpeninghours()
+	public function addOpeninghours($restaurantID)
 	{
 		$db = new Db();
 
@@ -220,11 +220,23 @@
 									'". $db->conn->real_escape_string($this->SundayFrom)."',
 									'". $db->conn->real_escape_string($this->SundayUntil)."',
 									'". $db->conn->real_escape_string($this->Remarks)."',
-									". 5 ."
+									". $restaurantID ."
 								)";
 			
 			$result = $db->conn->query($sql);
 	}
+
+	function getOpeningHoursFromSpecificRestaurant($restaurantID)
+	{
+			$db = new Db();
+			$sql = "SELECT * FROM openinghours WHERE restaurant_id = '$restaurantID'";
+
+			echo $sql;
+			$result = $db->conn->query($sql);
+
 	}
+	
+		
+}
 
  ?>
