@@ -149,7 +149,7 @@
 	<div id="menuView">
 		<div class="row">
 			<div class="col-sm-12">
-				<h3>Menu <span class="toggleMenu"><a href="#">(Hide)</a></span></h3>
+				<h3>Menu <span class="toggleMenu"><a href="#">(Hide / Show)</a></span></h3>
 
 				<div class="menu">
 
@@ -576,7 +576,7 @@
 	<div class="col-md-7">
 	<div id="tableView">
 			
-			<h3>Tables overview <span class="toggleTable"><a href="#">(Hide)</a></span></h3>
+			<h3>Tables overview <span class="toggleTable"><a href="#">(Hide / Show)</a></span></h3>
 
 			<div class="tableToggle">
 
@@ -607,15 +607,15 @@
 			</table>
 
 	</div>
-
 				</div>
 		</div> <!-- /row -->
+
 		<!-- begin openingshours-->
-		<hr>
 					<div id="openingshoursview">
 						<p><span class="label label-default">Add openingshours</span></p>
-						<h3>Openingshours <span class="ohoursToggle"><a href="#">(Hide)</a></span></h3>
+						<h3>Openingshours <span class="toggleHours"><a href="#">(Hide / Show)</a></span></h3>
 					
+						<div class="ohoursToggle">	
 						<form action="" method="post" role="form">
 							<table class="table">
 								<thead>
@@ -747,7 +747,7 @@
 									</tr>
 									<tr>
 										<td><strong>Remarks</strong></td>
-										<td>
+										<td colspan="2">
 											<?php 
 												foreach ($openingshoursRestaurant as $opening) { ?>
 												<?php echo $opening['opening_remarks']; ?>
@@ -758,8 +758,11 @@
 								</tbody>
 							</table>
 						</form>
+					</div>
 					
 		<!-- einde openingshours-->
+    </div>
+
 		<div class="row">
 		<div class="col-md-6">
 		<h2>Reserve a table now at <?php echo ucfirst($restaurants['restaurant_name']); ?>!</h2>
@@ -806,7 +809,6 @@
 		</div>
 
 		</div>
-    </div>
 
 </div>
 </div>
