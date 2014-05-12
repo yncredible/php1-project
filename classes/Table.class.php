@@ -119,7 +119,7 @@
 					WHERE table_id = '$tableID'";
 
 			$result = $db->conn->query($sql);
-			echo $sql;
+			
 		}
 
 		function getFreeTables($restaurantID){
@@ -128,7 +128,7 @@
 			$sql = "SELECT * FROM 'table' WHERE table_status = 'Free' AND restaurant_id = '$restaurantID'";
 
 			$result = $db->conn->query($sql);
-			echo $sql;
+			
 			return($result);
 
 			if($result)
