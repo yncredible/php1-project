@@ -767,38 +767,38 @@
 							<tbody>
 								<tr>
 									<td><strong>Monday</strong></td>
-									<td><input class="form-control" type="text" name="monday_from" id="monday_from"></td>
-									<td><input class="form-control" type="text" name="monday_until" id="monday_until"></td>
+									<td><input class="form-control" type="time" name="monday_from" id="monday_from"></td>
+									<td><input class="form-control" type="time" name="monday_until" id="monday_until"></td>
 								</tr>
 								<tr>
 									<td><strong>Tuesday</strong></td>
-									<td><input class="form-control" type="text" name="tuesday_from" id="tuesday_from"></td>
-									<td><input class="form-control" type="text" name="tuesday_until" id="tuesday_until"></td>
+									<td><input class="form-control" type="time" name="tuesday_from" id="tuesday_from"></td>
+									<td><input class="form-control" type="time" name="tuesday_until" id="tuesday_until"></td>
 								</tr>
 								<tr>
 									<td><strong>Wednesday</strong></td>
-									<td><input class="form-control" type="text" name="wednesday_from" id="wednesday_from"></td>
-									<td><input class="form-control" type="text" name="wednesday_until" id="wednesday_until"></td>
+									<td><input class="form-control" type="time" name="wednesday_from" id="wednesday_from"></td>
+									<td><input class="form-control" type="time" name="wednesday_until" id="wednesday_until"></td>
 								</tr>
 								<tr>
 									<td><strong>Thursday</strong></td>
-									<td><input class="form-control" type="text" name="thursday_from" id="thursday_from"></td>
-									<td><input class="form-control" type="text" name="thursday_until" id="thursday_until"></td>
+									<td><input class="form-control" type="time" name="thursday_from" id="thursday_from"></td>
+									<td><input class="form-control" type="time" name="thursday_until" id="thursday_until"></td>
 								</tr>
 								<tr>
 									<td><strong>Friday</strong></td>
-									<td><input class="form-control" type="text" name="friday_from" id="friday_from"></td>
-									<td><input class="form-control" type="text" name="friday_until" id="friday_until"></td>
+									<td><input class="form-control" type="time" name="friday_from" id="friday_from"></td>
+									<td><input class="form-control" type="time" name="friday_until" id="friday_until"></td>
 								</tr>
 								<tr>
 									<td><strong>Saturday</strong></td>
-									<td><input class="form-control" type="text" name="saturday_from" id="saturday_from"></td>
-									<td><input class="form-control" type="text" name="saturday_until" id="saturday_until"></td>
+									<td><input class="form-control" type="time" name="saturday_from" id="saturday_from"></td>
+									<td><input class="form-control" type="time" name="saturday_until" id="saturday_until"></td>
 								</tr>
 								<tr>
 									<td><strong>Sunday</strong></td>
-									<td><input class="form-control" type="text" name="sunday_from" id="sunday_from"></td>
-									<td><input class="form-control" type="text" name="sunday_until" id="sunday_until"></td>
+									<td><input class="form-control" type="time" name="sunday_from" id="sunday_from"></td>
+									<td><input class="form-control" type="time" name="sunday_until" id="sunday_until"></td>
 								</tr>
 								<tr>
 									<td><strong>Remarks</strong></td>
