@@ -114,9 +114,7 @@
 
 	<div class="container">
 	
-
-	
-	<ul class="flow">
+<!-- 	<ul class="flow">
 		<li>
 			<img src="images/search.png"/>
 			<p>Search restaurants in your area</p>
@@ -129,15 +127,35 @@
 			<img src="images/table.png"/>
 			<p>Reserve a table</p>
 		</li>
-	</ul>
+	</ul> -->
 
 	<div class="row">
-		<div class="col-sm-12">
-			<h4>Our restaurants</h4>
+		<div class="col-sm-5">
+			<h2>Welcome to OpenTable</h2>
+
+			<p>It's easy as 1, 2, 3!</p>
+
+			<ul class="otFlow">
+				<li>
+					<span class="dropr">1. </span><p id="flowSearch">Search restaurants in your area</p>
+				</li>
+				<li>
+					<span class="dropr">2. </span><p id="flowCheck">Check their menu</p>
+				</li>
+				<li>
+					<span class="dropr">3. </span><p id="flowReserve">Reserve a table</p>
+				</li>
+			</ul>		
+		</div>
+
+		<div id="filterResto" class="col-sm-7">
+
+			<div class="breathe">
+			<h4>Search restaurants:</h4>
+
 			<form action="#" method="post" role="form" id="search">
-				<label>Search a restaurant</label></br>
 				<label for="search_city">City :</label>
-				<input type="input" name="search_city" id="search_city" placeholder="search city"/>
+				<input type="input" name="search_city" id="search_city" placeholder=" Search city"/>
 				<label for="search_type">Type : </label>
 				<select id="search_type" name="search_type">
 							<option value="all">All</option>
@@ -148,20 +166,23 @@
 							<option value="foodtruck">Foodtruck</option>
 							<option value="snackbar">Snackbar</option>
 				</select>
-				<input type="submit" name="search" id="search" value="filter">
+				<input type="submit" name="search" id="search" value="Search!" class="btn btn-default">
 			</form>
+			</div>
 		</div>
 	</div>
 
+	<hr>
+
 	<div class="row">
 		<div class="col-sm-12">
+			<h4>Our restaurants</h4>
 			
-
-			<table class="table">
+			<table id="allRestaurantsHome" class="table">
 				<thead>
 					<tr>
 						<th>Name</th>
-						<th>Address</th>
+						<th>Street</th>
 						<th>Postal code</th>
 						<th>City</th>
 					</tr>

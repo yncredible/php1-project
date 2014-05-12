@@ -54,30 +54,46 @@ table.table thead tr th
 {
 	font-weight: bold;
 }
-ul.flow
+
+.otFlow
 {
 	width:100%;
-	margin: 25px 0px;
-	min-width: 300px;
 }
-ul.flow li
-{
-	float:left;
-	width:33.33%;
-	margin: auto;
-}
-ul.flow li img 
-{
-	margin: auto;
-	display: block;
-}
-ul.flow li p 
-{
-	text-align: center; 
-	font-size: 17px;
-	margin-top: 25px;
 
+.otFlow li
+{
+	padding:5px;
 }
+
+.otFlow p
+{
+	display:inline;
+	padding-left:10px;
+	font-weight: bold;
+	font-style: italic;
+	color:#444;
+}
+
+.dropr
+{
+	display:inline-block;
+	border-radius:50%;
+	background:#E86828;
+	color:#F1D2AE;
+	width:30px;
+	height:30px;
+	text-align: center;
+	line-height:30px;
+}
+
+#allRestaurantsHome a
+{
+	color:#531909;
+	font-weight: bold;
+}
+
+
+
 
 
 .form-group.col-sm-2 .control-label
@@ -236,6 +252,20 @@ input#reservationEmail
 	margin-top:0;
 	color:#BB3F1D;
 }
+
+#filterResto h4
+{
+	margin:25px 0 40px 0;
+	font-style: italic;
+	font-weight: bold;
+	color:#444;
+}
+
+#filterResto .breathe
+{
+	padding:10px;
+}
+
 
 
 
