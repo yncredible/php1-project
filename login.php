@@ -126,6 +126,7 @@
 						You don't have an account? No problem! <a href="register.php">Register here.</a>
 					</p>
 			</div>
+		</div>
 
 		<footer>
 			Php project - Kimberly Gysbrecht Segers - Kristof Van Espen - Yannick Nijs - Jens Ivens
