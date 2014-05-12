@@ -47,11 +47,18 @@
 		$reservation->reservationEmail = $_POST['reservation_email'];
 
 	$reservation->saveReservations($restaurantID);
-	 // sending an email to restaurant
-
 	$reservation->sendEmail($restaurantID);
 
-	}
+	// adding feedback 
+	if(isset($_POST['feedbackSubmit']) && !empty($_POST['feedbackSubmit'])){
+	$feedback = new Feedback();
+	$feedback->feedbackName = $_POST['feedbackName'];
+	$feedack->feedbackSort = $_POST['feedbackSort'];
+	$feedack->feedbackMessage = $_POST['feedbackMessage'];
+
+	$feedback->saveFeedback($restaurantID);
+	}	
+}
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -609,63 +616,8 @@
 			</table>
 
 	</div>
-	
-	<hr>
 
-			<h2>Reserve a table now at <?php echo ucfirst($restaurants['restaurant_name']); ?>!</h2>
-
-			<form action="#" method="post" role="form" >
-				<div class="formgroup">
-					<label for="reservationName" id="lblname">Name:</label>
-					<input type="text" id="reservationName" name="reservation_name" required>
 				</div>
-				<div class='formgroup'>
-					<label for="reservationNumber" id="lblnumber">Number of people :</label>
-					<input type="text" id="reservationNumber" name="reservation_numberPeople" required>
-				</div>
-				<div class='formgroup'>
-					<label for="reservationNumber" id="lblnumber">Select the table :</label>
-					<select>
-						<?php
-						foreach ($FreeTables as $free) {?>
-							<option value=' . <?php echo $free["table_nr"]; ?> .'><?php echo $free['table_description'] ."," .$free['table_status']; ?></option>
-						<?php }
-
-						?>
-					</select>	
-				</div>
-
-				<div class="formgroup">
-					<label for="reservationDay" id="lblday">Day :</label>
-					<input type="date" id="reservationDay" name="reservation_day" required>
-				</div>
-				<div class="formgroup">
-					<label for="reservationHour" id="lblhour">Hour :</label>
-					<input type="time" id="reservationHour" name="reservation_hour" required>
-				</div>
-				<div class="formgroup">
-					<input type="checkbox" id="reservationConfirmation" name="confirm_reservation"><label for="confirmReservation" id="lblconfirmation">Send me a confirmation mail</label>
-					<label for="reservationEmail" id="lblemail">Email:</label>
-					<input type="text" name="reservation_email" id="reservationEmail">
-				</div>
-				<div class="formgroup">
-					<input type="submit" id="reservationSubmit" name="reservation_submit" class="btn btn-primary" value="Make a reservation">
-				</div>
-				<a name="reserveNow"></a>
-
-			</form>
-			<?php
-				if (is_array($FreeTables)){
-			
-					foreach ($FreeTables as $free) {?>
-						<p><?php echo $free['table_description']; ?></p>
-									
-					<?php }
-								
-				}
-
-			?>
-			</div>
 		</div> <!-- /row -->
 		<!-- begin openingshours-->
 		<hr>
@@ -814,10 +766,79 @@
 									</tr>
 								</tbody>
 							</table>
-
 						</form>
 					
 		<!-- einde openingshours-->
+		<div class="row">
+		<div class="col-md-6">
+		<h2>Reserve a table now at <?php echo ucfirst($restaurants['restaurant_name']); ?>!</h2>
+
+			<form action="#" method="post" role="form" >
+				<div class="formgroup">
+					<label for="reservationName" id="lblname">Name:</label>
+					<input type="text" id="reservationName" name="reservation_name" required>
+				</div>
+				<div class='formgroup'>
+					<label for="reservationNumber" id="lblnumber">Number of people :</label>
+					<input type="text" id="reservationNumber" name="reservation_numberPeople" required>
+				</div>
+				<div class='formgroup'>
+					<label for="reservationNumber" id="lblnumber">Select the table :</label>
+					<select>
+						<?php
+						foreach ($FreeTables as $free) {?>
+							<option value=' . <?php echo $free["table_nr"]; ?> .'><?php echo $free['table_description'] ."," .$free['table_status']; ?></option>
+						<?php }
+
+						?>
+					</select>	
+				</div>
+				<div class="formgroup">
+					<label for="reservationDay" id="lblday">Day :</label>
+					<input type="date" id="reservationDay" name="reservation_day" required>
+				</div>
+				<div class="formgroup">
+					<label for="reservationHour" id="lblhour">Hour :</label>
+					<input type="time" id="reservationHour" name="reservation_hour" required>
+				</div>
+				<div class="formgroup">
+					<input type="checkbox" id="reservationConfirmation" name="confirm_reservation"><label for="confirmReservation" id="lblconfirmation">Send me a confirmation mail</label>
+					<label for="reservationEmail" id="lblemail">Email:</label>
+					<input type="text" name="reservation_email" id="reservationEmail">
+				</div>
+				<div class="formgroup">
+					<input type="submit" id="reservationSubmit" name="reservation_submit" class="btn btn-primary" value="Make a reservation">
+				</div>
+				<a name="reserveNow"></a>
+
+			</form><!-- end reservation -->
+		</div>
+
+			<div class="col-md-6">
+			<h2>Geef feedback voor <?php echo ucfirst($restaurants['restaurant_name']); ?></h2>
+			
+			<form action="#" method="post">
+			<div class="formgroup">
+				<label for="feedbackName">Naam :</label>
+				<input type="text" name="feedbackName" id="feedbackName">
+			</div>
+				<div class="formgroup">
+				<label for="feedbackSort">Sort of feedback :</label>
+				<select name="feedbackSort" id="feedbackSort">
+					<option value="positive">Positive</option>
+					<option value="negative">Negative</option>
+				</select>
+			</div>
+			<div class="formgroup">
+				<label for="feedbackMessage">Message :</label>
+				<input type="textarea" name="feedbackMessage" id="feedbackMessage" rows="4"/>
+			</div>
+				<div class="formgroup">
+				<input type="submit" value="Send feedback" name="feedbackSubmit" class="btn btn-primary">
+			</div>
+			</form>
+			</div> <!-- end div feedback -->
+			</div>
     </div>
 
 
