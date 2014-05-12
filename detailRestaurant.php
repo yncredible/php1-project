@@ -665,7 +665,7 @@
 							<table class="table">
 								<thead>
 									<tr>
-										<th>Day</th>
+										<th>&nbsp;</th>
 										<th>From</th>
 										<th>Until</th>
 									</tr>
